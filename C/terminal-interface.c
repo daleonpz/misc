@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
         system(cmd);
     }
 
-	system("echo $PATH");
+	system("echo woflramon | sudo -S fdisk -l ");
 
     return 0;
 }
