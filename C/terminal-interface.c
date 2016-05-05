@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
         system(cmd);
     }
 
-	system("echo woflramon | sudo -S fdisk -l ");
+	system("echo xxx | sudo -S fdisk -l ");
 
     return 0;
 }
