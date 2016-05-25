@@ -23,7 +23,7 @@ int main(int argc, char *argv[]) {
 	  snd_pcm_uframes_t frames;
 	  char *buffer;
 	  
-	  char *pcm_device = argv[1];
+	  char *pcm_device = "default"; //argv[1];
 	  /* Open PCM device for playback. */
 	  rc = snd_pcm_open(&handle, pcm_device,   SND_PCM_STREAM_PLAYBACK, 0);
 	  if (rc < 0) {
@@ -50,8 +50,6 @@ int main(int argc, char *argv[]) {
 
 	  /* 44100 bits/second sampling rate (CD quality) */
 	  val = 44100;
-	  val = val>>1;
-	  printf("val =%i \n",val);
 	  snd_pcm_hw_params_set_rate_near(handle, params,  &val, &dir);
 
 	  /* Set period size to 32 frames. */
@@ -74,8 +72,9 @@ int main(int argc, char *argv[]) {
 
 	  /* We want to loop for 5 seconds */
 	  snd_pcm_hw_params_get_period_time(params,	&val, &dir);
+	  printf("val = %i\n",val);
 	  /* 5 seconds in microseconds divided by period time */
-	  loops = 1000000 / val;
+	  loops = 5000000 / val;
 
 	  while (loops > 0) {
 		loops--;
