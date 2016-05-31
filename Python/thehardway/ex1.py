@@ -8,4 +8,6 @@
 #print "I'd much rather 'not'."
 #print 'I "said" do not touch this.'
 
+print "''"
+print '""'
 print 'this is a line'
