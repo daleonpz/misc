@@ -74,7 +74,7 @@ int main(int argc, char *argv[]) {
 	  snd_pcm_hw_params_get_period_time(params,	&val, &dir);
 	  printf("val = %i\n",val);
 	  /* 5 seconds in microseconds divided by period time */
-	  loops = 5000000 / val;
+	  loops = 7000000 / val;
 
 	  while (loops > 0) {
 		loops--;
