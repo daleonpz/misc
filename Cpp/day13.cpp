@@ -29,7 +29,7 @@ class MyBook: public Book{
 	MyBook::MyBook (string t, string a, int p): Book(t, a) {
 		price = p;
 	}
-	
+	 
 	void MyBook::display(){
 		 cout << "Title: " << title << endl;
 		 cout << "Author: " << author << endl;
