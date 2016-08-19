@@ -21,12 +21,12 @@ class Auteur{
 class Oeuvre{
 	private:
 		string titre;
-		const Auteur auteur;
+		const Auteur& auteur;
 		string langue;
 	public:
 		// Constructors & destructors
-		Oeuvre(string titre, const Auteur& auteur, string langue)
-			:titre(titre), auteur(auteur), langue(langue){}
+		Oeuvre(string titre, const Auteur& auteur_, string langue)
+			:titre(titre), auteur(auteur_), langue(langue){}
 			
 		~Oeuvre(){
 			cout <<"L'oeuvre \"";
@@ -36,15 +36,15 @@ class Oeuvre{
 				
 		// Methods
 		string 	getTitre() 			const{ return titre;}
-		const 	Auteur getAuteur() 	const{ return auteur;}
-		string 	getLangue() 			const{ return langue;}
+		const Auteur& getAuteur() 	const{ return auteur;}
+		string 	getLangue() 		const{ return langue;}
 		
 		void affiche() const{
 			cout<< titre<< ", "<< auteur.getNom()<< ", en "<< langue;
 			}
 		
 		//  Operator overloading
-		bool operator==(const Oeuvre& oeuvre){
+		bool operator==(const Oeuvre& oeuvre) const{
 			return (
 				this->titre.compare(oeuvre.titre)==0
 				 && this->auteur.getNom().compare(oeuvre.auteur.getNom() )==0
@@ -55,13 +55,13 @@ class Oeuvre{
 
 class Exemplaire{
 	private:
-		Oeuvre *oeuvre_;
+		const Oeuvre &oeuvre_;
 	public:
 		Exemplaire(Oeuvre& other)
-			:oeuvre_(&other)	
+			:oeuvre_(other)	
 			{
 				cout<< "Nouvel exemplaire de : ";
-				oeuvre_->affiche();
+				oeuvre_.affiche();
 				cout <<endl;
 			}
 		
@@ -69,22 +69,22 @@ class Exemplaire{
 			:oeuvre_( other.oeuvre_)
 			{
 				cout<< "Copie d'un exemplaire de : ";
-				oeuvre_->affiche();
+				oeuvre_.affiche();
 				cout <<endl;
 			}
 		
 		~Exemplaire(){
 			cout<< "Un exemplaire de \"";
-			oeuvre_->affiche();
+			oeuvre_.affiche();
 			cout<<"\" a été jeté !"<< endl; 
 			//delete &oeuvre_;
 		}
 		
-		Oeuvre* getOeuvre() { return oeuvre_;}
+		const Oeuvre& getOeuvre() { return oeuvre_;}
 		
 		void affiche() const{
 			cout<< "Exemplaire de : ";
-			oeuvre_->affiche();
+			oeuvre_.affiche();
 		}
 };
 
@@ -110,7 +110,7 @@ class Bibliotheque{
 		// methods
 		string getNom() const{ return nom;}
 		
-		void stocker(Oeuvre& oeuvre,const int numbers){
+		void stocker(Oeuvre& oeuvre,int numbers){
 			for(int i=0; i<numbers; i++ ) exemplaire.push_back(new Exemplaire(oeuvre));		
 			}
 		
@@ -119,7 +119,7 @@ class Bibliotheque{
 	
 		void lister_exemplaires(string langue) {
 			for(auto  it: exemplaire) {
-				if ( langue.compare(it->getOeuvre()->getLangue())==0 ) { it->affiche(); cout<< endl;}
+				if ( langue.compare(it->getOeuvre().getLangue())==0 ) { it->affiche(); cout<< endl;}
 			}
 			}
 		
@@ -128,26 +128,26 @@ class Bibliotheque{
 			}
 		
 		
-		int compter_exemplaires(Oeuvre& oeuvre) {
+		int compter_exemplaires(const Oeuvre& oeuvre) {
 			int total=0;
-			for(auto it: exemplaire) if( *(it->getOeuvre()) == oeuvre) {total +=1;}	
+			for(auto it: exemplaire) if( (it->getOeuvre()) == oeuvre) {total +=1;}	
 			return total;
 			}
 		
 		void afficher_auteurs(bool a) const {
 			if(a) {
-				for(auto it: exemplaire) if(it->getOeuvre()->getAuteur().getPrix()) 
+				for(auto it: exemplaire) if(it->getOeuvre().getAuteur().getPrix()) 
 					{
-						cout << it->getOeuvre()->getAuteur().getNom() <<endl;
+						cout << it->getOeuvre().getAuteur().getNom() <<endl;
 					}
 			}
 			else{
-				for(auto it: exemplaire) cout << it->getOeuvre()->getAuteur().getNom()<<endl;
+				for(auto it: exemplaire) cout << it->getOeuvre().getAuteur().getNom()<<endl;
 			}
 			}
 		
 		void afficher_auteurs() const {
-				for(auto it: exemplaire) cout << it->getOeuvre()->getAuteur().getNom()<<endl;
+				for(auto it: exemplaire) cout << it->getOeuvre().getAuteur().	getNom()<<endl;
 			}
 
 		
