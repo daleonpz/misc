@@ -52,6 +52,7 @@ class LRUCache: public Cache{
 			cout << mp.find(k)->second->value <<endl;
 			mp.find(k)->second->value = val;
 			cout << mp.find(k)->second->value <<endl;
+			cout << mp.find(k)->second->prev->value <<endl;
 			
 		}
 		
