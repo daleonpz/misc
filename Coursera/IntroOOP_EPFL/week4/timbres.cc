@@ -10,6 +10,14 @@ private:
   /*****************************************************
    * Compléter le code à partir d'ici
    *****************************************************/
+  string nom;
+  unsigned int anne;
+  string pays;
+  double valeur_faciale;
+
+  static constexpr unsigned int PRIX_BASE_TRES_RARE = 600;
+  static constexpr unsigned int PRIX_BASE_RARE = 400; 
+  static constexpr unsigned int PRIX_BASE_PEU_RARE = 50;
 
 };
 
