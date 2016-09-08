@@ -68,8 +68,7 @@ public:
     else { return PRIX_BASE_PEU_RARE*age()/10.0; }
   }
 
-  unsigned int nb_exemplaires() const{
-    return num_copies;
+  unsigned int nb_exemplaires() const{return num_copies;
   }
 
 };
