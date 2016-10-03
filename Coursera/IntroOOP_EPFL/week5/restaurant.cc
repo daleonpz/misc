@@ -20,7 +20,7 @@ class Produit{
 		string getUnite() const{ return unite; }
 
 		virtual string toString( ) const{ 
-			return  getNom(); 
+			return  getNom();
 		}
 		
 		virtual const Produit* adapter( double ) const{
@@ -33,26 +33,27 @@ class Produit{
 		}
 };
 
+#include <iomanip>
+
 class Ingredient{
 	private:
-		Produit* produit_;
+		const Produit& produit_;
 		double quantity_;
 	
 	public:
 		Ingredient(const Produit& p, double q )
-			:produit_(new Produit(p.getNom(), p.getUnite())),quantity_(q){}
+			:produit_(p),quantity_(q){ }
 
-		const Produit& getProduit() const{ return *produit_;  }
-		double getQuantity() const{ return quantity_; }
+		const Produit& getProduit() const{ return produit_;  }
+		double getQuantite() const{ return quantity_; }
 
 		string descriptionAdaptee( ) {
 			std::ostringstream os;
 
-			os<< getQuantity();
+			os<< std::fixed << std::setprecision(6) << getQuantite() ;
 			return os.str() + " " + getProduit().getUnite() 
-				+ " de " + (getProduit().adapter( getQuantity()))->toString() ;
-		//	return  os.str() + " " + getProduit().getUnite() 
-		//		+ " de " + getProduit().getNom()  ;
+				+ " de " + (getProduit().adapter( getQuantite()))->toString() ;
+//				+ " de " + getProduit().toString() ;
 		}
 
 		string toString( ) const {
@@ -60,7 +61,7 @@ class Ingredient{
 		}
 
 		double quantiteTotale(const string& nomProduit ) const{
-			return getQuantity()*getProduit().quantiteTotale(nomProduit);
+			return getQuantite()*getProduit().quantiteTotale(nomProduit);
 		}
 };
 
@@ -75,15 +76,25 @@ class Recette{
 			:nom_(n), nbFois_(t){}
 
 		void ajouter( const Produit& p, double q){
-			listIn.push_back(  Ingredient(p, q*nbFois_) );
+			Ingredient temp(p, q*nbFois_);
+			listIn.push_back( temp);
+//			listIn.push_back(  Ingredient(p, q*nbFois_) );
 		}
 
-		Recette adapter(double n){
+		Recette adapter(double n) const{
 			Recette  r( nom_, nbFois_*n  );
-			for(auto it: listIn ) r.listIn.push_back( Ingredient(it.getProduit(), it.getQuantity()*n  ) );
+			for(auto it: listIn ) r.listIn.push_back( Ingredient( it.getProduit(), it.getQuantite()*n  ) );
 
 			return r;
 		}	
+
+		string getNom() const { return nom_;}
+		double getnbFois() const { return nbFois_; }
+		vector<Ingredient> getIngredients () const { return listIn; }
+
+		void setNom(string n) { nom_ = n; }
+		void setnbFois( double n) { nbFois_ = n; }
+		void setIngredients( vector<Ingredient> v ) { for(auto it : v)   listIn.push_back(it);  }
 
 		string toString( ) const{
 			string temp;
@@ -91,7 +102,7 @@ class Recette{
 
 			os << nbFois_;
 
-			temp = " Recette \"" + nom_ + "\" x " + os.str() ;
+			temp = " Recette \"" + nom_ + "\" x " + os.str() + ":" ;
 
 			double t=1; 
 			
@@ -100,7 +111,7 @@ class Recette{
 				std::ostringstream os;			
 				os << t;
 				temp +=  "\n " + os.str() + ". " + it.descriptionAdaptee();
-//				cout << it.descriptionAdaptee();
+			//	temp +=  "\n " + os.str() + ". " + it.toString();
 				t+=1;
 			}
 
@@ -131,14 +142,19 @@ class ProduitCuisine: public Produit{
 
 		const ProduitCuisine* adapter(double n) const override{
 			ProduitCuisine*	p = new ProduitCuisine(getNom());
-			p->recette.adapter(n);
+			p->setRecette( getRecette().adapter( n ) );
 			return p;
+			
 		}
 
 		const Recette& getRecette() const{ return recette; }
+		void setRecette(const Recette& r ) {
+		       	recette.setNom( r.getNom()  ); 
+			recette.setnbFois( r.getnbFois() );
+			recette.setIngredients( r.getIngredients() ); 
+	       	}
 
 		string  toString( ) const override {
-		//	cout<< getNom() << "\n"  << recette.toString() ;
 			return getNom()+"\n"+recette.toString();
 		}
 		
