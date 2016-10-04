@@ -24,8 +24,9 @@ class Produit{
 		}
 		
 		virtual const Produit* adapter( double ) const{
-			Produit* p = new Produit( nom_, unite  );
-			return p;
+			//Produit* p = new Produit( nom_, unite  );
+			//return p;
+			return this;
 		}
 
 		virtual double quantiteTotale( const string& nomProduit  ) const{
