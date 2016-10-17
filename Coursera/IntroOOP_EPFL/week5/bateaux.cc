@@ -32,13 +32,105 @@ class Navire
   /*****************************************************
    * Compléter le code à partir d'ici
    *****************************************************/
+	private:
+		Coordonnees position_;
+		Pavillon pavillon_;
+		Etat etat_;
+	public:
+		
+		Navire(int x, int y, Etat flag)
+			:position_(x,y), pavillon_(flag), etat_(Intact){}
+
+		Coordonnees& position() const { return position_; }
+
+		void avancer ( int de_x, int de_y  ){
+			if ( etat_ != Coulé )	position_+= Coordonnees( de_x, de_y );
+		}
+
+		void renflouer() { etat_ = Intact; }
+
+		ostream& afficher(ostream& output) const 
+		{
+			switch(pavillon_):
+			{
+				case JollyRogers:
+					output << "bateu pirate ";
+					break;
+				case CompagnieDuSenegal:
+					output << "navire marchand ";
+					break;
+				case CompagnieDOstende:
+					output << "navire félon ";
+					break;
+			}
+
+			output << "en " << position_ << " battant pavillion "
+			       << pavillon_ << ", " << etat_;	
+			return output;
+		}
 
 };
 
 void Coordonnees::operator+=(Coordonnees const& autre)
 {
   // à définir ici
+	x += autre.x();
+	y += autre.y();
+}
 
+ostream& operator<<(ostream& output, Navire const& ship)
+{
+	return ship.afficher(output)
+}
+
+ostream& operator<<(ostream& output, Coordonnees const& autre)
+{
+	output << "(" << autre.x() << ", " << autre.y()  << ")";
+	return output;
+}
+
+ostream& operator<<(ostream& output, Pavillon e)
+{
+	switch(e)
+	{
+ 		case JollyRogers:
+			output << "pirate";
+			break;
+		case CompagnieDuSenegal:
+		        output << "français";
+			break;
+		case CompagnieDOstende:
+			output << "autrichien";
+			break;
+		default:
+			output << "pavillon inconnu";
+			break;
+	}
+	return output;
+}
+
+ostream& operator<<(ostream& output, Etat e)
+{
+	switch(e)
+	{
+		case Intact:
+			output << "intact";
+			break;
+		case Endommage:
+			output << "ayant subi des dommage";
+			break;
+		case Coule:
+		        output << "coulé";
+	       	        break;	       
+		default: 
+			output << ""
+	}
+
+	return output;
+}
+
+double distance(Coordonnees const& c1, Coordonnees const& c2 ){
+	return  (double) sqrt( sq(c1.x()+c2.x()) + sq(c1.y()+c2.y()) );
 }
 
 /*******************************************
