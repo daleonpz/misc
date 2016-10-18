@@ -36,22 +36,22 @@ class Navire
 		Coordonnees position_;
 		Pavillon pavillon_;
 		Etat etat_;
+		const static int rayon_rencontre = 10;
 	public:
-		
-		Navire(int x, int y, Etat flag)
+		Navire(int x, int y, Pavillon flag)
 			:position_(x,y), pavillon_(flag), etat_(Intact){}
 
-		Coordonnees& position() const { return position_; }
+		Coordonnees const& position() const { return position_; }
 
 		void avancer ( int de_x, int de_y  ){
-			if ( etat_ != Coulé )	position_+= Coordonnees( de_x, de_y );
+			if ( etat_ != Coule )	position_+= Coordonnees( de_x, de_y );
 		}
 
 		void renflouer() { etat_ = Intact; }
-
 		ostream& afficher(ostream& output) const 
 		{
-			switch(pavillon_):
+			output.operator<<(position());
+			switch(pavillon_)
 			{
 				case JollyRogers:
 					output << "bateu pirate ";
@@ -63,27 +63,43 @@ class Navire
 					output << "navire félon ";
 					break;
 			}
-
-			output << "en " << position_ << " battant pavillion "
+			output << "en " << position() << " battant pavillion "
 			       << pavillon_ << ", " << etat_;	
 			return output;
 		}
-
 };
 
+class Pirate:public Navire{
+	public:
+		Pirate(int x, int y, Pavillon flag)
+			:Navire(x, y, flag){}
+};
+
+class Marchand:public Navire{
+	public:
+		Marchand(int x, int y, Pavillon flag)
+			:Navire(x, y, flag){}
+};
+
+class Felon:public Navire{
+	public:
+		Felon(int x, int y, Pavillon flag)
+			:Navire(x, y, flag){}
+};
+	
 void Coordonnees::operator+=(Coordonnees const& autre)
 {
   // à définir ici
-	x += autre.x();
-	y += autre.y();
+	this->x_ += autre.x();
+	this->y_ += autre.y();
 }
 
 ostream& operator<<(ostream& output, Navire const& ship)
 {
-	return ship.afficher(output)
+	return ship.afficher(output);
 }
 
-ostream& operator<<(ostream& output, Coordonnees const& autre)
+ostream& operator<<(ostream& output,const Coordonnees& autre)
 {
 	output << "(" << autre.x() << ", " << autre.y()  << ")";
 	return output;
@@ -123,14 +139,20 @@ ostream& operator<<(ostream& output, Etat e)
 		        output << "coulé";
 	       	        break;	       
 		default: 
-			output << ""
+			output << "";
 	}
 
 	return output;
 }
 
-double distance(Coordonnees const& c1, Coordonnees const& c2 ){
+double distance(Coordonnees const& c1, Coordonnees const& c2 )
+{
 	return  (double) sqrt( sq(c1.x()+c2.x()) + sq(c1.y()+c2.y()) );
+}
+
+double distance(Navire const& s1, Navire const& s2)
+{
+	return  distance(s1.position(), s2.position() );
 }
 
 /*******************************************
