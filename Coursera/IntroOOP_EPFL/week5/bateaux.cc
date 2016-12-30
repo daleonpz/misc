@@ -27,82 +27,15 @@ private:
   int y_;
 };
 
-class Navire
-{
-  /*****************************************************
-   * Compléter le code à partir d'ici
-   *****************************************************/
-	private:
-		Coordonnees position_;
-		Pavillon pavillon_;
-		Etat etat_;
-		const static int rayon_rencontre = 10;
-	public:
-		Navire(int x, int y, Pavillon flag)
-			:position_(x,y), pavillon_(flag), etat_(Intact){}
-
-		Coordonnees const& position() const { return position_; }
-
-		void avancer ( int de_x, int de_y  ){
-			if ( etat_ != Coule )	position_+= Coordonnees( de_x, de_y );
-		}
-
-		void renflouer() { etat_ = Intact; }
-		ostream& afficher(ostream& output) const 
-		{
-			output.operator<<(position());
-			switch(pavillon_)
-			{
-				case JollyRogers:
-					output << "bateu pirate ";
-					break;
-				case CompagnieDuSenegal:
-					output << "navire marchand ";
-					break;
-				case CompagnieDOstende:
-					output << "navire félon ";
-					break;
-			}
-			output << "en " << position() << " battant pavillion "
-			       << pavillon_ << ", " << etat_;	
-			return output;
-		}
-};
-
-class Pirate:public Navire{
-	public:
-		Pirate(int x, int y, Pavillon flag)
-			:Navire(x, y, flag){}
-};
-
-class Marchand:public Navire{
-	public:
-		Marchand(int x, int y, Pavillon flag)
-			:Navire(x, y, flag){}
-};
-
-class Felon:public Navire{
-	public:
-		Felon(int x, int y, Pavillon flag)
-			:Navire(x, y, flag){}
-};
-	
-void Coordonnees::operator+=(Coordonnees const& autre)
-{
-  // à définir ici
-	this->x_ += autre.x();
-	this->y_ += autre.y();
-}
-
-ostream& operator<<(ostream& output, Navire const& ship)
-{
-	return ship.afficher(output);
-}
-
 ostream& operator<<(ostream& output,const Coordonnees& autre)
 {
 	output << "(" << autre.x() << ", " << autre.y()  << ")";
 	return output;
+}
+
+double distance(Coordonnees const& c1, Coordonnees const& c2 )
+{
+	return  (double) sqrt( sq(c1.x()+c2.x()) + sq(c1.y()+c2.y()) );
 }
 
 ostream& operator<<(ostream& output, Pavillon e)
@@ -145,16 +78,106 @@ ostream& operator<<(ostream& output, Etat e)
 	return output;
 }
 
-double distance(Coordonnees const& c1, Coordonnees const& c2 )
+
+class Navire
 {
-	return  (double) sqrt( sq(c1.x()+c2.x()) + sq(c1.y()+c2.y()) );
+  /*****************************************************
+   * Compléter le code à partir d'ici
+   *****************************************************/
+	private:
+		Coordonnees position_;
+		Pavillon pavillon_;
+		Etat etat_;
+		const static int rayon_rencontre = 10;
+	public:
+		Navire(int x, int y, Pavillon flag)
+			:position_(x,y), pavillon_(flag), etat_(Intact){}
+
+		Coordonnees const& position() const { return position_; }
+		Etat const& getEtat() const { return etat_; }
+		Pavillon const& getPavillion() const { return pavillon_; }
+
+		void avancer ( int de_x, int de_y  ){
+			if ( etat_ != Coule )	position_+= Coordonnees( de_x, de_y );
+		}
+
+		void renflouer() { etat_ = Intact; }
+
+		ostream& afficher(ostream& output) const 
+		{
+		//	output<<position();
+			switch(pavillon_)
+			{
+				case JollyRogers:
+					output << "bateu pirate ";
+					break;
+				case CompagnieDuSenegal:
+					output << "navire marchand ";
+					break;
+				case CompagnieDOstende:
+					output << "navire félon ";
+					break;
+			}
+			output << "en " << position() << " battant pavillion "
+			       << pavillon_ << ", " << etat_;	
+			return output;
+		}
+
+		virtual void attaque( Navire const& other ){
+
+		}
+
+		virtual void replique( Navire const& other  ){
+		}
+
+		virtual void est_touche( ){
+		}
+
+		void rencontrer( Navire const& other ) {
+			if (this->etat_ != Coule && other.getEtat() != Coule 
+			  	&& this->pavillon_ != other.getPavillion() 
+			  	&& distance(this->position(), other.position() ) <=  rayon_rencontre ){
+			   
+			}
+		
+		}
+
+};
+
+class Pirate:public Navire{
+	public:
+		Pirate(int x, int y, Pavillon flag)
+			:Navire(x, y, flag){}
+};
+
+class Marchand:public Navire{
+	public:
+		Marchand(int x, int y, Pavillon flag)
+			:Navire(x, y, flag){}
+};
+
+class Felon:public Navire{
+	public:
+		Felon(int x, int y, Pavillon flag)
+			:Navire(x, y, flag){}
+};
+	
+void Coordonnees::operator+=(Coordonnees const& autre)
+{
+  // à définir ici
+	this->x_ += autre.x();
+	this->y_ += autre.y();
+}
+
+ostream& operator<<(ostream& output, Navire const& ship)
+{
+	return ship.afficher(output);
 }
 
 double distance(Navire const& s1, Navire const& s2)
 {
 	return  distance(s1.position(), s2.position() );
 }
-
 /*******************************************
  * Ne rien modifier après cette ligne.
  *******************************************/
