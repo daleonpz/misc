@@ -1,4 +1,4 @@
-GET = hello_world-1
+TARGET = hello_world-1
 CC     = gcc
 WARN   = -W -Wall -Wstrict-prototypes -Wmissing-prototypes -Wshadow -Wconversion
 CFLAGS = -g3 -O1 $(WARN) -std=c99
@@ -12,8 +12,8 @@ all: $(TARGET)
 
 .deps/%.d: %.c
 		$(shell if [ ! -d .deps/ ]; then mkdir .deps/; fi )
-			@$(CC) -MM $(CPPFLAGS) $< > $@.$$$$; \
-					sed 's,\($*\)\.o[ :]*,\1.o $@ : ,g' < $@.$$$$ > $@; rm $@.$$$$
+		@$(CC) -MM $(CPPFLAGS) $< > $@.$$$$; \
+		sed 's,\($*\)\.o[ :]*,\1.o $@ : ,g' < $@.$$$$ > $@; rm $@.$$$$
 
 ifneq ($(MAKECMDGOALS),clean)
 	-include $(DFILES)
@@ -24,14 +24,14 @@ endif
 
 clean:
 		$(RM) $(TARGET) *.o .deps/* core tags *.bz2
-			rm -rf .deps/
+		rm -rf .deps/
 
 package:
 		make bz2
 
 bz2:
 		make clean
-			cd ..; rm -rf $(TARGET)/$(TARGET).tar.bz2
-			cd ..; tar jcv ./$(TARGET) > $(TARGET).tar.bz2
-			mv ../$(TARGET).tar.bz2 .
-					
+		cd ..; rm -rf $(TARGET)/$(TARGET).tar.bz2
+		cd ..; tar jcv ./$(TARGET) > $(TARGET).tar.bz2
+		mv ../$(TARGET).tar.bz2 .
+
