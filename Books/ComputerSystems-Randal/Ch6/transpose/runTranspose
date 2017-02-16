@@ -1,6 +1,6 @@
 #!/bin/bash
 
-max=8192 #16384
+max=4096 #16384
 min=16
 loops=100
 
@@ -20,16 +20,9 @@ do
 	done
 	) > b.$n
 
-	(
-	for (( l=0; l<$loops; l+=1))
-	do
-		./transpose $n 0 3
-	done
-	) > f.$n
-	
 done
 
+echo "done!"
 mv o.* outputs/
 mv b.* outputs/
-mv f.* outputs/
 

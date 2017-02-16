@@ -8,31 +8,6 @@ typedef enum { false, true } bool;
 clock_t start, end;
 double cpu_time_used;
 
-void transpose_both(int *dst, int* src, int dim){
-	int i,ii,k,kk;
-	int n, tmp;
-	start = clock();
-	
-	int bsize = 16;
-	int bd = bsize * dim;
-
-	for ( ii=0; ii<dim; ii+=bsize)
-		for ( kk=0; kk<dim; kk+=bsize)
-			for( i=ii; i<ii+bsize; i++) {
-				n = i*dim;
-				for( k=kk; k<kk+bsize; k++)
-					if ( (k-kk) == (i-ii))
-						tmp = src[ n + k];
-					else
-						dst[ k*dim +  i ] = src[ n +  k ];
-				dst[ (kk+i-ii)*dim + i ] = tmp;
-			}
-
-	end = clock();
-
-	cpu_time_used = ((double) (end - start));
-	printf("%i\n", (int)cpu_time_used);	
-}
 
 void transpose_tmp(int *dst, int* src, int dim){
 	int i,j;
@@ -60,7 +35,7 @@ void transpose_blocking(int *dst, int* src, int dim){
 	int i,ii,k,kk;
 	start = clock();
 	
-	int bsize = 16;
+	int bsize = 4;
 	int bd = bsize * dim;
 
 	for ( ii=0; ii<dim; ii+=bsize)
@@ -178,9 +153,6 @@ int main(int argc, char *argv[] ){
 			break;
 		case 2: 
 			transpose_blocking(dst, matrix, n);
-			break;
-		case 3: 
-			transpose_both(dst, matrix, n);
 			break;
 		default:
 			transpose(dst, matrix, n);
