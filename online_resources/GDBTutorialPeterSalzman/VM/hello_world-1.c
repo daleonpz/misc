@@ -39,6 +39,7 @@ int main()
  *   0000000000601040 g       .bss	0000000000000000              __bss_start
  *   0000000000601050 g       .bss	0000000000000000              _end
  *
- *   16 bytes for bss: (double + char)
+ * bss is for uninitialized global variables
+ *   16 bytes for bss: (8bytes + char )
  *
  * */
