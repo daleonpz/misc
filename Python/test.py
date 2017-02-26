@@ -1,11 +1,12 @@
-#!/usr/bin/env python
+#!/usr/bin/python2.7
+
 from os import environ, path
 
 from pocketsphinx.pocketsphinx import *
 from sphinxbase.sphinxbase import *
 
-MODELDIR = "/usr/local/share/pocketsphinx/model/"
-DATADIR = "/home/dnl/Documents/Git/training/Python/data"
+MODELDIR = "pocketsphinx/model"
+DATADIR = "pocketsphinx/test/data"
 
 # Create a decoder with certain model
 config = Decoder.default_config()
