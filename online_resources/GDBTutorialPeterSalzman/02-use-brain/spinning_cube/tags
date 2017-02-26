@@ -1,0 +1,58 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CalculateFrameRate	video.c	/^void CalculateFrameRate( void )$/;"	f
+Debug	yerror.h	14;"	d
+HandleKeyPress	input.c	/^void HandleKeyPress(SDL_keysym *keysym)$/;"	f
+HandleKeyRelease	input.c	/^void HandleKeyRelease(SDL_keysym *keysym)$/;"	f
+INIT3D_H	init3d.h	2;"	d
+INPUT_H	input.h	2;"	d
+ImageName	init3d.c	/^const char *ImageName[ NUM_TEXTURES ] = {$/;"	v
+LoadGLTextures	init3d.c	/^void LoadGLTextures( void )$/;"	f
+MAIN_H	main.h	2;"	d
+MainLoop	main.c	/^void MainLoop( void )$/;"	f
+NUM_TEXTURES	video.h	/^	NUM_TEXTURES$/;"	e	enum:_TextureNames
+Quit	init3d.c	/^void Quit( void )$/;"	f
+RENDER_H	render.h	2;"	d
+RenderScene	render.c	/^int RenderScene( void )$/;"	f
+SCREEN_DEPTH	main.h	8;"	d
+SCREEN_HEIGHT	main.h	7;"	d
+SCREEN_WIDTH	main.h	6;"	d
+SizeOpenGLScreen	video.c	/^int SizeOpenGLScreen( int width, int height )$/;"	f
+TEXTURE_GEORDI0	video.h	/^	TEXTURE_GEORDI0,$/;"	e	enum:_TextureNames
+TEXTURE_GEORDI1	video.h	/^	TEXTURE_GEORDI1,$/;"	e	enum:_TextureNames
+TEXTURE_JULIETTE0	video.h	/^	TEXTURE_JULIETTE0,$/;"	e	enum:_TextureNames
+TEXTURE_JULIETTE1	video.h	/^	TEXTURE_JULIETTE1,$/;"	e	enum:_TextureNames
+TEXTURE_ME	video.h	/^	TEXTURE_ME,$/;"	e	enum:_TextureNames
+TEXTURE_WORK	video.h	/^	TEXTURE_WORK,$/;"	e	enum:_TextureNames
+ToggleFullScreen	video.c	/^void ToggleFullScreen( void )$/;"	f
+VIDEO_H	video.h	2;"	d
+VideoFlags	video.c	/^int          VideoFlags;$/;"	v
+Warn	yerror.c	/^void Warn(const char *fmt, ...)$/;"	f
+YERROR_H	yerror.h	2;"	d
+_TextureNames	video.h	/^enum _TextureNames {$/;"	g
+aPressed	input.c	/^aPressed     = false,$/;"	v
+debug	yerror.c	/^bool       debug = true;$/;"	v
+debug_for_reals	yerror.c	/^void debug_for_reals(const char *fmt, ...)$/;"	f
+die	yerror.h	8;"	d
+die_filename	yerror.c	/^const char *die_filename;$/;"	v
+die_for_reals	yerror.c	/^void die_for_reals(const char *fmt, ...)$/;"	f
+die_function	yerror.c	/^const char *die_function;$/;"	v
+die_line	yerror.c	/^int        die_line;$/;"	v
+downPressed	input.c	/^downPressed  = false,$/;"	v
+errCode	video.c	/^GLenum       errCode;$/;"	v
+init_game	init3d.c	/^void init_game( void )$/;"	f
+init_gl	init3d.c	/^void init_gl( void )$/;"	f
+init_sdl	init3d.c	/^void init_sdl( void )$/;"	f
+leftPressed	input.c	/^leftPressed  = false,$/;"	v
+main	main.c	/^int main( void )$/;"	f
+qPressed	input.c	/^qPressed     = false,$/;"	v
+rightPressed	input.c	/^rightPressed = false,$/;"	v
+surface	video.c	/^SDL_Surface *surface;$/;"	v
+texture	video.c	/^GLuint       texture[2];$/;"	v
+upPressed	input.c	/^upPressed    = false,$/;"	v
+wPressed	input.c	/^wPressed     = false;$/;"	v
+zPressed	input.c	/^zPressed     = false,$/;"	v
