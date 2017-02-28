@@ -18,18 +18,22 @@ int main(int argc, char *argv[])
 	double x, dx, ans;
 	double Forw, ForwDelta, Cent, CentDelta, Extr, ExtrDelta;
 
-	if (argc != 1) {
+/* change argc != 1 */
+	if (argc != 2) {
 		printf("You must supply a value for the derivative location!\n");
 		return EXIT_FAILURE;
 	}
 
 	x   = atol(argv[1]);
-	ans = sin(log(x)) / x;
+	/* the derivative is with '-'*/
+    ans = -sin(log(x)) / x;
 
 	printf("%23s%10s%10s%11s%10s%11s\n", "Forward", "error", "Central",
 		"error", "Extrap", "error");
 
-	for (int i = 1; i < 40; i -= 4)
+    /* this loop never ends 
+     * change i -= 4 */
+	for (int i = 1; i < 40; i += 4)
 	{
 		dx = 1.0 / pow(2, i-1.0);
 

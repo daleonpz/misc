@@ -2,7 +2,8 @@
 
 double ForwardDiff( double x, double dx, double (*f)(double) )
 {
-	return ( f(x - dx) - f(x) ) / dx;
+    /* used to be (x - dx)*/
+	return ( f(x + dx) - f(x) ) / dx;
 }
 
 
