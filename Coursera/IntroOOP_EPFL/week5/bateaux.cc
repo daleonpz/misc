@@ -115,20 +115,7 @@ class Navire
 
 		ostream& afficher(ostream& output) const 
 		{
-			/*switch(pavillon_)
-			{
-				case JollyRogers:
-					output << "bateu pirate ";
-					break;
-				case CompagnieDuSenegal:
-					output << "navire marchand ";
-					break;
-				case CompagnieDOstende:
-					output << "navire félon ";
-					break;
-			}*/
-    
-			output << "en " << position() << " battant pavillion "
+            output << "en " << position() << " battant pavillion "
 			       << pavillon_ << ", " << etat_;	
 			return output;
 		}
