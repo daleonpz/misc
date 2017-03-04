@@ -230,6 +230,7 @@ void Coordonnees::operator+=(Coordonnees const& autre)
 
 ostream& operator<<(ostream& output, Navire const& ship)
 {
+    ship.printNavireType(output);
 	return ship.afficher(output);
 }
 
