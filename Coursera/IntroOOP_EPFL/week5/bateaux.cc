@@ -97,16 +97,25 @@ class Navire
 		Etat const& getEtat() const { return etat_; }
 		Pavillon const& getPavillion() const { return pavillon_; }
 
+        void setEtat(Etat const& et) { etat_ = et; }
+
 		void avancer ( int de_x, int de_y  ){
 			if ( etat_ != Coule )	position_+= Coordonnees( de_x, de_y );
 		}
 
 		void renflouer() { etat_ = Intact; }
 
+        virtual ostream& printNavireType(ostream& output) const = 0; 
+
+		virtual void attaque( Navire& other ) = 0;
+
+		virtual void replique( Navire& other  ) = 0;
+
+		virtual void est_touche( ) = 0;
+
 		ostream& afficher(ostream& output) const 
 		{
-		//	output<<position();
-			switch(pavillon_)
+			/*switch(pavillon_)
 			{
 				case JollyRogers:
 					output << "bateu pirate ";
@@ -117,49 +126,99 @@ class Navire
 				case CompagnieDOstende:
 					output << "navire félon ";
 					break;
-			}
+			}*/
+    
 			output << "en " << position() << " battant pavillion "
 			       << pavillon_ << ", " << etat_;	
 			return output;
 		}
 
-		virtual void attaque( Navire const& other ){
-
-		}
-
-		virtual void replique( Navire const& other  ){
-		}
-
-		virtual void est_touche( ){
-		}
-
-		void rencontrer( Navire const& other ) {
+		void rencontrer( Navire& other ) {
 			if (this->etat_ != Coule && other.getEtat() != Coule 
 			  	&& this->pavillon_ != other.getPavillion() 
 			  	&& distance(this->position(), other.position() ) <=  rayon_rencontre ){
-			   
+			    attaque(other);
+                if (other.getEtat() != Coule ) other.replique(*this); 
 			}
 		
 		}
 
 };
 
-class Pirate:public Navire{
+class Pirate:public virtual Navire{
 	public:
 		Pirate(int x, int y, Pavillon flag)
 			:Navire(x, y, flag){}
+
+        void attaque( Navire& other) override{
+            cout << "A l'abordage !" << endl;
+            other.est_touche();
+        }
+
+        void replique( Navire& other) override{
+            if( this->getEtat() != Coule ){
+                cout << "Non mais, ils nous attaquent! On riposte!!" << endl;
+                this->attaque(other);
+            }
+        }
+
+        void est_touche() override{
+            Etat et = getEtat();
+            if (et == Intact) 
+               setEtat(Endommage);
+            if ( et == Endommage)
+               setEtat(Coule); 
+        }
+
+        ostream& printNavireType(ostream& output) const override{
+            output << "bateu pirate ";
+            return output;
+        }
+
 };
 
-class Marchand:public Navire{
+class Marchand:public virtual Navire{
 	public:
 		Marchand(int x, int y, Pavillon flag)
 			:Navire(x, y, flag){}
+        
+        void attaque(Navire& other) override{
+            cout << "On vous aura! (insultes)" << endl;
+        }
+
+        void replique(Navire& other) override {
+            if (getEtat() == Coule)
+                cout << "SOS je coule !" << endl;
+            else
+                cout << "Même pas peur !" << endl;
+        }
+
+        void est_touche() override{
+            setEtat(Coule);
+        }
+      
+        ostream& printNavireType(ostream& output) const override{
+            output << "navire marchand ";
+            return output;
+        } 
 };
 
-class Felon:public Navire{
+class Felon: public Pirate, public Marchand{
 	public:
 		Felon(int x, int y, Pavillon flag)
-			:Navire(x, y, flag){}
+			:Navire(x, y, flag),
+             Pirate(x, y, flag),
+             Marchand(x, y, flag){}
+
+        void attaque(Navire& other) override { Pirate::attaque(other); } 
+        void replique(Navire& other) override { Marchand::replique(other);}
+        void est_touche() override { Pirate::est_touche();  }
+        
+        ostream& printNavireType(ostream& output) const override{
+            output << "navire félon ";
+            return output;
+        }
+
 };
 	
 void Coordonnees::operator+=(Coordonnees const& autre)
