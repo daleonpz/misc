@@ -35,7 +35,7 @@ ostream& operator<<(ostream& output,const Coordonnees& autre)
 
 double distance(Coordonnees const& c1, Coordonnees const& c2 )
 {
-	return  (double) sqrt( sq(c1.x()+c2.x()) + sq(c1.y()+c2.y()) );
+	return  (double) sqrt( sq(c1.x()-c2.x()) + sq(c1.y()-c2.y()) );
 }
 
 ostream& operator<<(ostream& output, Pavillon e)
