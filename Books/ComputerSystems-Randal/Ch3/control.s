@@ -5,10 +5,22 @@
 asm_if:
 .LFB0:
 	.cfi_startproc
-	leal	4(%rdi), %edx
-	leal	-1(%rdi), %eax
-	testl	%edi, %edi
-	cmovg	%edx, %eax
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movl	%edi, -4(%rbp)
+	cmpl	$0, -4(%rbp)
+	jle	.L2
+	addl	$4, -4(%rbp)
+	jmp	.L3
+.L2:
+	subl	$1, -4(%rbp)
+.L3:
+	movl	-4(%rbp), %eax
+	popq	%rbp
+	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
 .LFE0:
@@ -18,13 +30,22 @@ asm_if:
 asm_while:
 .LFB1:
 	.cfi_startproc
-	testl	%edi, %edi
-	je	.L4
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movl	%edi, -4(%rbp)
+	jmp	.L6
 .L7:
-	subl	$1, %edi
+	subl	$1, -4(%rbp)
+.L6:
+	cmpl	$0, -4(%rbp)
 	jne	.L7
-.L4:
-	rep ret
+	nop
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
 	.cfi_endproc
 .LFE1:
 	.size	asm_while, .-asm_while
@@ -33,15 +54,28 @@ asm_while:
 asm_for:
 .LFB2:
 	.cfi_startproc
-	testl	%edi, %edi
-	jle	.L9
-	movl	$0, %eax
-.L11:
-	addl	$1, %eax
-	cmpl	%eax, %edi
-	jne	.L11
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movl	%edi, -20(%rbp)
+	movl	-20(%rbp), %eax
+	movl	%eax, -4(%rbp)
+	movl	$0, -8(%rbp)
+	jmp	.L9
+.L10:
+	movl	-20(%rbp), %eax
+	addl	%eax, -4(%rbp)
+	addl	$1, -8(%rbp)
 .L9:
-	rep ret
+	movl	-8(%rbp), %eax
+	cmpl	-20(%rbp), %eax
+	jl	.L10
+	nop
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
 	.cfi_endproc
 .LFE2:
 	.size	asm_for, .-asm_for
@@ -50,36 +84,53 @@ asm_for:
 asm_switch:
 .LFB3:
 	.cfi_startproc
-	cmpl	$5, %edi
-	ja	.L14
-	movl	%edi, %eax
-	jmp	*.L16(,%rax,8)
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movl	%edi, -4(%rbp)
+	cmpl	$5, -4(%rbp)
+	ja	.L12
+	movl	-4(%rbp), %eax
+	movq	.L14(,%rax,8), %rax
+	jmp	*%rax
 	.section	.rodata
 	.align 8
 	.align 4
-.L16:
-	.quad	.L14
-	.quad	.L21
+.L14:
+	.quad	.L12
+	.quad	.L13
+	.quad	.L15
+	.quad	.L16
 	.quad	.L17
 	.quad	.L18
-	.quad	.L19
-	.quad	.L20
 	.text
+.L13:
+	addl	$1, -4(%rbp)
+	jmp	.L19
+.L15:
+	subl	$1, -4(%rbp)
+	jmp	.L19
+.L16:
+	movl	-4(%rbp), %edx
+	movl	%edx, %eax
+	sall	$2, %eax
+	addl	%edx, %eax
+	movl	%eax, -4(%rbp)
+	jmp	.L19
 .L17:
-	movl	$1, %eax
-	ret
+	addl	$10, -4(%rbp)
+	jmp	.L19
 .L18:
-	movl	$15, %eax
-	ret
+	subl	$10, -4(%rbp)
+	jmp	.L19
+.L12:
+	sall	-4(%rbp)
 .L19:
-	movl	$14, %edi
-.L20:
-	addl	$10, %edi
-.L14:
-	leal	(%rdi,%rdi), %eax
-	ret
-.L21:
-	movl	$2, %eax
+	movl	-4(%rbp), %eax
+	popq	%rbp
+	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
 .LFE3:
@@ -89,17 +140,33 @@ asm_switch:
 short_switch:
 .LFB4:
 	.cfi_startproc
-	movl	$2, %eax
-	cmpl	$1, %edi
-	je	.L22
-	leal	(%rdi,%rdi), %eax
-	cmpl	$2, %edi
-	movl	$1, %edx
-	cmove	%edx, %eax
-.L22:
-	rep ret
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movl	%edi, -4(%rbp)
+	movl	-4(%rbp), %eax
+	cmpl	$1, %eax
+	je	.L23
+	cmpl	$2, %eax
+	je	.L24
+	jmp	.L27
+.L23:
+	addl	$1, -4(%rbp)
+	jmp	.L25
+.L24:
+	subl	$1, -4(%rbp)
+	jmp	.L25
+.L27:
+	sall	-4(%rbp)
+.L25:
+	movl	-4(%rbp), %eax
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
 	.cfi_endproc
 .LFE4:
 	.size	short_switch, .-short_switch
-	.ident	"GCC: (GNU) 6.1.1 20160802"
+	.ident	"GCC: (GNU) 6.3.1 20170306"
 	.section	.note.GNU-stack,"",@progbits

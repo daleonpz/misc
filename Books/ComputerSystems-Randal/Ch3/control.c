@@ -33,9 +33,10 @@ int asm_switch(int x){
 			break;
 		case 4:
 			x+=10;
-		case 5:
-			x+=10;
-
+                        break;
+                case 5:
+                        x-=10;
+                        break;
 		default:
 			x*=2;
 	}
