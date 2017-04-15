@@ -59,3 +59,15 @@ int short_switch( int x){
 
 	return x;
 }
+
+
+int short_if( int x){	
+    if (x==1)
+        x++;
+    else if (x==2)
+        x--;
+    else
+        x*=2;
+
+    return x;
+}

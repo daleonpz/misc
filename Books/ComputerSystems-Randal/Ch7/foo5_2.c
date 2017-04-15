@@ -6,6 +6,8 @@ int x = 15213;
 int y = 15212;
 
 int main(){
+	printf("x = 0x%x \t px=%p \ny = 0x%x \t py=%p \n", 
+                x, (void *)&x, y, (void *)&y);
 	f();
 	/*
 	 * the value of x=-0.0 will overwrite the value of 
@@ -20,7 +22,7 @@ int main(){
 	 *  | 8 0 0 0 0 0 0 0 |
 	 *  | Y Y Y Y X X X X |
 	 * */
-	printf("x = 0x%i \t y = 0x%i \n", 
-			x,y);
+	printf("x = 0x%x \t px=%p \ny = 0x%x \t py=%p \n", 
+                x, (void *)&x, y, (void *)&y);
 	return 0;
 }

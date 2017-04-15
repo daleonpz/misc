@@ -168,5 +168,35 @@ short_switch:
 	.cfi_endproc
 .LFE4:
 	.size	short_switch, .-short_switch
+	.globl	short_if
+	.type	short_if, @function
+short_if:
+.LFB5:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movl	%edi, -4(%rbp)
+	cmpl	$1, -4(%rbp)
+	jne	.L29
+	addl	$1, -4(%rbp)
+	jmp	.L30
+.L29:
+	cmpl	$2, -4(%rbp)
+	jne	.L31
+	subl	$1, -4(%rbp)
+	jmp	.L30
+.L31:
+	sall	-4(%rbp)
+.L30:
+	movl	-4(%rbp), %eax
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE5:
+	.size	short_if, .-short_if
 	.ident	"GCC: (GNU) 6.3.1 20170306"
 	.section	.note.GNU-stack,"",@progbits
