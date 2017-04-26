@@ -5,6 +5,6 @@ int main (){
         int foo;
         char a,b;
     } foo;
-
-    printf("sizeof(foo) = %u \n",sizeof(foo));
+    
+    printf("sizeof(foo) = %u \n",(unsigned int)sizeof(foo));
 }
