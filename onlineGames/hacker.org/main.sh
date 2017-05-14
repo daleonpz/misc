@@ -9,3 +9,7 @@ gzip -cd fl.bin
 # tr: change ' ' to '\n'
 # awk is to get the row in which the first column == 1
 cat lorem.txt | sed 's/[,.\r]//g' | tr ' ' '\n'  | sort | uniq -c | awk '$1==1'
+
+
+# Challenge 'I'm So Special' [Web]
+curl ifconfig.me
