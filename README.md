@@ -1,20 +1,19 @@
-# M I S C
-
+---
 Nothing special. 
-
-## BOOKS: 
+---
+# BOOKS: 
 You will find code I used to test concepts I learned in books
 
-## C/ Cpp/ Python
+# C/ Cpp/ Python
 Learning code or code I made just for fun
 
-## COURSERA
+# COURSERA
 Code I made during some coursera clases
 
-## onlineTutorials
+# onlineTutorials
 tutorials I followed in some point in the past
 
-## onlineGames
+# onlineGames
 code games I played or I am playing
 
 
