@@ -1,13 +1,20 @@
-# training
+---
+Nothing special. 
+---
+# BOOKS: 
+You will find code I used to test concepts I learned in books
 
-This is a personal repo for training purposes on different technologies or packages
+# C/ Cpp/ Python
+Learning code or code I made just for fun
 
-CheckPoints:
+# COURSERA
+Code I made during some coursera clases
 
-1) I have learning the basic functionality of sphinx 
+# onlineTutorials
+tutorials I followed in some point in the past
 
-2) Now I am working on learning how to use the ALSA API 
+# onlineGames
+code games I played or I am playing
 
 
-TODO:
-- Learn how to use my laptop mic 
+
