@@ -31,10 +31,6 @@ static void saved(int sig, siginfo_t *dont_care, void *dont_care_either)
 }
 
 
-static void show(int n){
-    puts("no error test");
-}
-
 static void *Signal (int signum, handler_t* handler){
     struct sigaction action, old_action;
 
@@ -54,13 +50,12 @@ int main ( int argc, char ** argv){
     switch (a){
         case 's':
             puts("SIGSEGV test");
-//             Signal ( SIGSEGV , segmentation_fault );
-            Signal ( SIGSEGV , show );
-//             segmentation_fault(0);
+            Signal ( SIGSEGV , segmentation_fault );
             break;
         case 'b':
             puts("SIGBUS test");
             Signal( SIGBUS, bus_error );
+            break;
     }
 
     if( setjmp(buf) == 1) fprintf(stderr, "done\n");
