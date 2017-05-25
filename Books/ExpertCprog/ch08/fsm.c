@@ -9,8 +9,6 @@
 #define MAXTOKENS 100
 #define MAXTOKENLEN 64
 
-void (*nextstate)(); 
-
 enum type_tag { IDENTIFIER, QUALIFIER, TYPE};
 
 struct token { 
@@ -33,16 +31,11 @@ struct token this;
 /********************************/
 /*   Utility routines    */
 /********************************/
-
-/* classify_string
-look at the current token and
-return a value of "type" "qualifier" or "identifier"
-in this.typei */
 enum type_tag classify_string(void){
     char *s = this.string;
     
     if (!strcmp(s,"const")) {
-        strcpy(s,"read-only");
+        strcpy(s,"read-only ");
         return QUALIFIER;
     }
 
@@ -100,6 +93,8 @@ void gettoken(void){
 /********************************/
 /*   parsing routines    */
 /********************************/
+void (*nextstate)(); 
+
 void read_identifier(void);
 void deal_with_declarator(void);
 void deal_with_function_args(void);
@@ -132,6 +127,8 @@ void deal_with_declarator(void){
         nextstate = deal_with_arrays;
     else if (this.type == '(')
         nextstate = deal_with_function_args;
+    else 
+        nextstate = deal_with_any_pointers;
 }
 
 
@@ -175,7 +172,7 @@ void deal_with_any_pointers(void){
 }
 
 void deal_with_qualifiers(void){
-    while( top != -1){
+    if( top != -1){
         if (stack[top].type == '('){
                     top--;
                 // 4th state
@@ -186,8 +183,8 @@ void deal_with_qualifiers(void){
                 // 5th state
                 printf("%s",pop.string);
     }
-
-    nextstate = NULL;
+    else
+        nextstate = NULL;
 }
 
 /********************************/
