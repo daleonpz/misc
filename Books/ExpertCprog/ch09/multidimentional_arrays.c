@@ -27,6 +27,7 @@ int main(){
 
     int a[2][3] = {1,2,3,4,5,6};
 
+    // array of arrays decays into pointer to array (ch10)
     int (*b)[3] = a[0];
 
     printf("%d \n",a[1][0]);
