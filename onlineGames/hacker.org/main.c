@@ -50,6 +50,20 @@ double change_base(double n, double b){
     return res;
 }
 
+static void rot13(char *c){
+
+    char *p = c;
+    char l = strlen(c);
+    printf("input: %s \n",c);
+
+    // I just care about lower case letters :)
+    while( *++c ){
+        (*c) += ((*c)>=110)?-13:13;
+    }
+    printf("rot 13: %s \n" ,p);
+}
+
+
 int main(){
 
     int i;
@@ -89,5 +103,10 @@ int main(){
     // Challenge 'Basic' [Misc]
     double n3 =7614380936720482949.00;
     printf("%lf\n", change_base(n3,7));
+
+
+    // Challenge 'Newsgroup Cipher' [Crypto]
+    char c[] = "Guvf zrffntr vf rapelcgrq va ebg 13. Lbhe nafjre vf svfupnxr. ";
+    rot13(c);
     
 }
