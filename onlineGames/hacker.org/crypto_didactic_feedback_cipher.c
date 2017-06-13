@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Challenge 'Didactic Feedback Cipher' [Crypto]
+int main(){
+
+    char txt[] = {0x75, 0x1a, 0x6f, 0x1d, 0x3d, 0x5c, 0x32, 0x41, 0x36, 0x53, 0x21, 0x01, 0x6c, 0x05, 0x62, 0x0a, 0x7e, 0x5e, 0x34, 0x41, 0x32, 0x46, 0x66, 0x04, 0x61, 0x41, 0x2e, 0x5a, 0x2e, 0x41, 0x2c, 0x49, 0x25, 0x4a, 0x24};
+
+    char *o = (char *) calloc(sizeof(txt), sizeof(char) );
+
+    // with this I can find almost all the letters
+    for (int i = sizeof(txt)-1; i>0; i--){
+//      c = txt[i] ^ k;
+//       printf("%c", c);
+//       k = c;
+        o[i] = txt[i] ^ txt[i-1];
+    }
+
+    for (int i=0; i<sizeof(txt); i++)
+        printf("%c", o[i]);
+
+    free(o);
+
+}

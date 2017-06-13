@@ -5,8 +5,10 @@
 
 a="TNAIDDNHBWVEWIAAZECAGINCNMDNJJWIESCCNHDGAGGADTNBNCFCACOKAOKAAKECTHCAHWYGNHDDCKOKAVACWVEWIBMSCDCICAASCHLAANCLDCKNYFNDCMNCWVGMIG"
 
-echo $a |sed -r 's/(.{3})/\1 /g'
+echo $a |sed -r 's/(.{2}).{1}/\1 /g'
+#echo $a |sed -r 's/(.{3})/\1 /g'
 
+echo $a |sed -r 's/(.{21})/\1\n/g'
 # TNA IDD NHB WVE WIA AZE CAG INC NMD NJJ WIE SCC NHD GAG GAD TNB NCF CAC OKA OKA AKE CTH CAH WYG 
 # NHD DCK OKA VAC WVE WIB MSC DCI CAA SCH LAA NCL DCK NYF NDC MNC WVG MIG
 
@@ -16,17 +18,66 @@ c="43A 13D 30b 49e 50a 03e 05g 15c 32d 31j 50e 41c 30d 11g 11d 43b 34f 05c 37a 3
 
 d="17A 13D 04b 23e 24a 03e 05g 15c 06d 05j 24e 15c 04d 11g 11d 17b 08f 05c 11a 11a 02e 07h 05h 25g 04d 09k 11a 21c 23e 24b 25c 09i 05a 15h 19a 08l 09k 07f 08c 24c 23g 23G "
 
-d="17n 13D 04o 23r 24n 03e 05g 15c 06q 05w 24r 15p 04q 11g 11d 17o 08s 05c 11n 11n 02e 07h 05h 25t 04q 09k 11n 21p 23r 24o 25p 09i 05a 15u 19a 08y 09k 07s 08p 24c 23g 23G "
+#  original letters
+# vqhcdegsjidthmmvlgoocjgehjozcdcjfthllknbca 
+# adbeaegcdjecdgdbfcaaehhgdkacebciahalkfncgg 
 
-# e="  e   q   s   o   l   h   l   r   w   b   p   e   u   r   o   "
+# second option
+# rnexydfpgfypellrifllchfzejlvxyzjfphijdiyxx
+# adbeaegcdjecdgdbfcaaehhgdkacebciahalkfncgg   
+
+d="17n 13D 04o 23r 24n 03e 05g 15c 06q 05w 24r 15p 04q 11g 11d 17o 08s 05c 11n 11n 02e 07h 05h 25t 04q 09k 11n 21p 23r 24o 25p 09i 05a 15u 19a 08y 09k 07s 08p 24c 23g 23G "
 
 ## the message only uses letters [a-l]
 ## cipher alphabet = 12
 ## true alphabet 26
 ## number of states 51
+## number of elements 42
+# AK AZ CA CT DC GA ID IN LA MI MN MS NC ND NH NJ NM NY OK SC TN VA WI WV WY
+# 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+#  a  b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x  y
 
-c="adbeaegcdjecdghbfcaaehhgdkacebciahalkfccgg"
-echo $c | sed 's/\(.\)/\1\n/g'  | sort | uniq -c 
+rot(){
+    dual=abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz
+    phrase=$2 
+    rotat=$(echo $1 | sed 's/0//g')
+    newphrase=$(echo $phrase | tr "${dual:0:26}" "${dual:${rotat}:26}")
+    echo ${newphrase}
+}
 
 
+# "TNA IDD NHB WVE WIA AZE CAG INC NMD NJJ WIE SCC NHD GAG GAD TNB NCF CAC OKA OKA AKE CTH CAH WYG NHD DCK OKA VAC WVE WIB MSC DCI CAA SCH LAA NCL DCK NYF NDC MNC WVG MIG" | 
 
+c="21a 07d 15b 24e 23a 02e 03g 08c 17d 16j 23e 20c 15d 06g 06d 21b 13f 03c 19a 19a 01e 04h 03h 25g 15d 05k 19a 22c 24e 23b 12c 05i 03a 20h 09a 13l 05k 18f 14n 11c 24g 10g"
+
+echo $c |sed -r 's/.{2}(.{1}).{1}/\1/g'
+
+# assuming rotation if n>13
+# vdqcxegcuzbesgdwfcttehhfsktycyciajalkxbceg
+# basic letters
+# adbeaegcdjecdgdbfcaaehhgdkacebciahalkfncgg
+# if states were alphabet positions
+# ugoxwbchqpwtoffumcssadcyoesvxwlectimernkxj  
+# rotate
+# vkqcxgjkuzbesmjwsfttflkfsptycyondjjypxbneh
+
+dd="ugoxwbchqpwtoffumcssadcyoesvxwlectimernkxj"  
+
+echo $dd
+echo $dd | tr 'ug' 'TH'
+
+#| sed -r 's/(.{7})/\1\n/g'
+
+# adbeaegcdjecdgdbfcaaehhgdkacebciahalkfncgg
+# ugoxwbchqpwtoffumcssadcyoesvxwlectimernkxj  
+
+
+dd=$(for i in $c
+do
+   rot ${i:0:2} ${i:2:3}
+done)
+
+# echo $dd | sed 's/ //g'
+
+
+# need to try as the statse were a unsorted alphabet 
