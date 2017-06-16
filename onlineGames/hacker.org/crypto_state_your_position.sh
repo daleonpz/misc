@@ -5,10 +5,37 @@
 
 a="TNAIDDNHBWVEWIAAZECAGINCNMDNJJWIESCCNHDGAGGADTNBNCFCACOKAOKAAKECTHCAHWYGNHDDCKOKAVACWVEWIBMSCDCICAASCHLAANCLDCKNYFNDCMNCWVGMIG"
 
-echo $a |sed -r 's/(.{2}).{1}/\1 /g'
+cc=$(echo $a |sed -r 's/(.{3})/\1\n/g')
+
+dd=$(for i in $cc
+do
+    echo $i | sed -r 's/(.{2})/\1 /g'
+done)
+
+# alpha='"A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L"'
+# for i in $alpha
+# do
+#     echo $dd |sed -r 's/(.{5})/\1\n/g' | awk $2==$i | tr '\n' ' ' && echo 
+# done
+# 
+echo $dd |sed -r 's/(.{5})/\1\n/g' | awk '$2=="A"' | tr '\n' ' ' && echo 
+echo $dd |sed -r 's/(.{5})/\1\n/g' | awk '$2=="B"'  | tr '\n' ' ' && echo 
+echo $dd |sed -r 's/(.{5})/\1\n/g' | awk '$2=="C"' | tr '\n' ' ' && echo 
+echo $dd |sed -r 's/(.{5})/\1\n/g' | awk '$2=="D"' | tr '\n' ' ' && echo 
+echo $dd |sed -r 's/(.{5})/\1\n/g' | awk '$2=="E"' | tr '\n' ' ' && echo 
+echo $dd |sed -r 's/(.{5})/\1\n/g' | awk '$2=="F"' | tr '\n' ' ' && echo 
+echo $dd |sed -r 's/(.{5})/\1\n/g' | awk '$2=="G"' | tr '\n' ' ' && echo 
+echo $dd |sed -r 's/(.{5})/\1\n/g' | awk '$2=="H"' | tr '\n' ' ' && echo 
+echo $dd |sed -r 's/(.{5})/\1\n/g' | awk '$2=="I"' | tr '\n' ' ' && echo 
+echo $dd |sed -r 's/(.{5})/\1\n/g' | awk '$2=="J"' | tr '\n' ' ' && echo 
+echo $dd |sed -r 's/(.{5})/\1\n/g' | awk '$2=="K"' | tr '\n' ' ' && echo 
+echo $dd |sed -r 's/(.{5})/\1\n/g' | awk '$2=="L"' | tr '\n' ' ' && echo 
+
+
+# echo $a |sed -r 's/(.{2}).{1}/\1 /g'
 #echo $a |sed -r 's/(.{3})/\1 /g'
 
-echo $a |sed -r 's/(.{21})/\1\n/g'
+# echo $a |sed -r 's/(.{21})/\1\n/g'
 # TNA IDD NHB WVE WIA AZE CAG INC NMD NJJ WIE SCC NHD GAG GAD TNB NCF CAC OKA OKA AKE CTH CAH WYG 
 # NHD DCK OKA VAC WVE WIB MSC DCI CAA SCH LAA NCL DCK NYF NDC MNC WVG MIG
 
@@ -21,10 +48,10 @@ d="17A 13D 04b 23e 24a 03e 05g 15c 06d 05j 24e 15c 04d 11g 11d 17b 08f 05c 11a 1
 #  original letters
 # vqhcdegsjidthmmvlgoocjgehjozcdcjfthllknbca 
 # adbeaegcdjecdgdbfcaaehhgdkacebciahalkfncgg 
-
 # second option
 # rnexydfpgfypellrifllchfzejlvxyzjfphijdiyxx
 # adbeaegcdjecdgdbfcaaehhgdkacebciahalkfncgg   
+
 
 d="17n 13D 04o 23r 24n 03e 05g 15c 06q 05w 24r 15p 04q 11g 11d 17o 08s 05c 11n 11n 02e 07h 05h 25t 04q 09k 11n 21p 23r 24o 25p 09i 05a 15u 19a 08y 09k 07s 08p 24c 23g 23G "
 
@@ -61,23 +88,43 @@ echo $c |sed -r 's/.{2}(.{1}).{1}/\1/g'
 # rotate
 # vkqcxgjkuzbesmjwsfttflkfsptycyondjjypxbneh
 
-dd="ugoxwbchqpwtoffumcssadcyoesvxwlectimernkxj"  
-
-echo $dd
-echo $dd | tr 'ug' 'TH'
-
-#| sed -r 's/(.{7})/\1\n/g'
+echo "ugoxwbchqpwtoffumcssadcyoesvxwlectimernkxj"  
 
 # adbeaegcdjecdgdbfcaaehhgdkacebciahalkfncgg
 # ugoxwbchqpwtoffumcssadcyoesvxwlectimernkxj  
 
-
-dd=$(for i in $c
-do
-   rot ${i:0:2} ${i:2:3}
-done)
+# a b c d e f g h i j  k  l 
+# 1 2 3 4 5 6 7 8 9 10 11 12
+# dd=$(for i in $c
+# do
+#    rot ${i:0:2} ${i:2:3}
+# done)
 
 # echo $dd | sed 's/ //g'
 
 
 # need to try as the statse were a unsorted alphabet 
+
+
+# TH  VbcgRpwtPgGumcRRadcyPkRvxwleBtHmernkxj
+# TH  V   R   P G   RR    P R     B H
+# ugoxwbchqpwtoffumcssadcyoesvxwlectimernkxj
+# adbeaegcdjecdgdbfcaaehhgdkacebciahalkfncgg
+
+
+
+    AK AZ CA CT DC GA ID IN LA MI MN MS NC ND NH NJ NM NY OK SC TN VA WI WV WY
+A          1                 1                             3     1     1     
+B                                              1                 1     1    
+C          1              1        1  1     1                 1     1        
+D                   1  1                       2     1                       
+E    1  1                                                              1  2  
+F                                        1              1                    
+G          1        1           1                                         1  1 
+H          1  1                                               1              
+I                1                                                           
+J                                                 1                          
+K                2                                                           
+L                                        1                                   
+
+
