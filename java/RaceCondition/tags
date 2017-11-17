@@ -1,0 +1,34 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+E41_RaceCondition	E41_RaceCondition.java	/^public class E41_RaceCondition {$/;"	c
+RaceCondition_volatile	RaceCondition_volatile.java	/^public class RaceCondition_volatile{$/;"	c
+decvalue	E41_RaceCondition.java	/^		synchronized public void decvalue() {$/;"	m	class:E41_RaceCondition.singleton
+getInstance	E41_RaceCondition.java	/^		public static singleton getInstance() {$/;"	m	class:E41_RaceCondition.singleton
+getInstance	RaceCondition_volatile.java	/^		public static singleton getInstance() {$/;"	m	class:RaceCondition_volatile.singleton
+getvalue	E41_RaceCondition.java	/^		public int getvalue() {$/;"	m	class:E41_RaceCondition.singleton
+getvalue	RaceCondition_volatile.java	/^		public int getvalue() {$/;"	m	class:RaceCondition_volatile.singleton
+i	E41_RaceCondition.java	/^		private int i = 0;$/;"	f	class:E41_RaceCondition.singleton	file:
+i	RaceCondition_volatile.java	/^		private volatile int i = 0;$/;"	f	class:RaceCondition_volatile.singleton	file:
+incvalue	E41_RaceCondition.java	/^		synchronized public void incvalue() {$/;"	m	class:E41_RaceCondition.singleton
+instance	E41_RaceCondition.java	/^		private static singleton instance = null;$/;"	f	class:E41_RaceCondition.singleton	file:
+instance	RaceCondition_volatile.java	/^		private static singleton instance = null;$/;"	f	class:RaceCondition_volatile.singleton	file:
+main	E41_RaceCondition.java	/^	public static void main(final String[] args) {$/;"	m	class:E41_RaceCondition
+main	RaceCondition_volatile.java	/^	public static void main(final String[] args) {$/;"	m	class:RaceCondition_volatile
+rdec	E41_RaceCondition.java	/^	static class rdec implements Runnable {$/;"	c	class:E41_RaceCondition
+rdec	RaceCondition_volatile.java	/^	static class rdec implements Runnable {$/;"	c	class:RaceCondition_volatile
+rinc	E41_RaceCondition.java	/^	static class rinc implements Runnable {$/;"	c	class:E41_RaceCondition
+rinc	RaceCondition_volatile.java	/^	static class rinc implements Runnable {$/;"	c	class:RaceCondition_volatile
+run	E41_RaceCondition.java	/^		public void run() {$/;"	m	class:E41_RaceCondition.rdec
+run	E41_RaceCondition.java	/^		public void run() {$/;"	m	class:E41_RaceCondition.rinc
+run	RaceCondition_volatile.java	/^		public void run() {$/;"	m	class:RaceCondition_volatile.rdec
+run	RaceCondition_volatile.java	/^		public void run() {$/;"	m	class:RaceCondition_volatile.rinc
+setsingleton	E41_RaceCondition.java	/^		public static void setsingleton() {$/;"	m	class:E41_RaceCondition.singleton
+setsingleton	RaceCondition_volatile.java	/^		public static void setsingleton() {$/;"	m	class:RaceCondition_volatile.singleton
+singleton	E41_RaceCondition.java	/^		protected singleton() {$/;"	m	class:E41_RaceCondition.singleton
+singleton	E41_RaceCondition.java	/^	public static class singleton {$/;"	c	class:E41_RaceCondition
+singleton	RaceCondition_volatile.java	/^		protected singleton() {$/;"	m	class:RaceCondition_volatile.singleton
+singleton	RaceCondition_volatile.java	/^	public static class singleton {$/;"	c	class:RaceCondition_volatile
