@@ -1,0 +1,19 @@
+V "GNAT Lib v2017"
+A -mcpu=cortex-m0
+A -mthumb
+A -mfloat-abi=soft
+P ZX
+
+RN
+
+U program%b		program.adb		4de9278b NE OO PK
+
+U program%s		program.ads		aea7b72e EE NE OO PK
+
+D program.ads		20171222181536 aea7b72e program%s
+D program.adb		20171222181619 e34e90a5 program%b
+D system.ads		20171222191026 f7820325 system%s
+X 1 program.ads
+1K9*Program 6l5 6e12 2|1b14 10l5 10t12
+3U14*Run 4i<c,run>22 2|3b14 8l8 8t11
+
