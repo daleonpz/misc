@@ -1,0 +1,227 @@
+\documentclass[]{llncs}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+% use upquote if available, for straight quotes in verbatim environments
+
+% lncs 
+\usepackage{makeidx}
+\institute{FH Dortmund, \\ \texttt{}}
+
+
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={Daniel Paredes},
+            pdftitle={The power of dark silicon},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{5}
+
+\title{The power of dark silicon}
+\author{Daniel Paredes}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Sit amet mauris. Curabitur a quam. Aliquam neque. Nam nunc nunc, lacinia
+sed, varius quis, iaculis eget, ante. Nulla dictum justo eu lacus.
+Phasellus sit amet quam. Nullam sodales. Cras non magna eu est
+consectetuer faucibus. Donec tempor lobortis turpis. Sed tellus velit,
+ullamcorper ac, fringilla vitae, sodales nec, purus. Morbi aliquet risus
+in mi.
+
+% lncs keyword extension 
+\keywords{hope, luke, ewoks}
+
+\end{abstract}
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+I need an introduction\ldots{}
+
+\hypertarget{using-argumentation-to-explain-ambiguity-in-requirements-elicitation-interviews}{%
+\section{Using Argumentation to Explain Ambiguity in Requirements
+Elicitation
+Interviews}\label{using-argumentation-to-explain-ambiguity-in-requirements-elicitation-interviews}}
+
+One of the major causes of ambiguities in elicitation interviews is the
+prescense of tacit knowlegde. In some cases ambiguities can't be always
+be explained as separated term, sometimes it is required to have a
+context. Even under these circunstances, the analyst must be able to
+identify and alleviate them in order to elicitate relevant information
+of the system. For this purpose it is necessary to provide the analyst
+with proper tools. In this paper Yehia Elrakaiby et al. {[}1{]} proposed
+a theorical framework to overcome ambiguity during interviews in the
+elicitation phase. The framework is based on the ``Argumentation
+theory''.
+
+In that sense, Elrakaiby et al.~focus on one type of ambiguities, the
+``acceptance unclarity''. An acceptance unclarity occurs everytime the
+analyst is able to assign an interpretation or meaning to the speech
+fragment of the stakeholder, the interpretation matches the intended
+meaning of the stakeholder, but the interpretation is not acceptable or
+justified. It could be either because it seems to be inaccurate to
+comprehend the problem, or analysts identify inconsistencies with their
+current understanding of the problem or domain knowlegde. By using
+argumentation theory framework, statements and ambiguities can be
+characterized as ``arguments'' and ``attacks'' respectevely.
+
+Argumentation theory models a type of human dialog based on arguments
+and conclusions. It makes explicit attacks between arguments and the
+argumentation flow that leads to conclusions. A basic model in this
+framework is a pair \((A,D)\), where \(A\) is a set of arguments and
+\(D\) is a set of attacks among those arguments. For example, a set
+\(A\) is defined as \(A = \{A1,A2,A3\}\), and a possible set of attacks
+could be \(D = \{(A1,A3)\}\). Which means that if A1 is realizable then
+A3 can't be realizable.
+
+In the paper, Elrakaiby et al.~models statements given by the
+stakeholders, analysts domain knowlegde and analysts inferences as
+arguments, and ambiguities between them as attacks. For example, let say
+the analyst listens the following statement \emph{the professor will
+upload the task description within three days} (A1), but the analyst
+know (domain knowlegde) that \emph{the professor may be on a business
+meeting} (A2), so the analyst think (inference) that \emph{it may be
+possible that it will be take longer to upload the task description}
+(A3). In this scenario the set of attacks \(D\) is given by
+\(D = \{(A1,A3)\}\). Thus, since there is an attack it is possible to
+ask for clarifications or details.
+
+The theorical framework proposed by Elrakaiby et al.~allows analysts to
+detect and minimize ambiguities during elicitation interviews, while
+most of the methods that focus on ambiguities analyze written texts. On
+the other hand, this framework focuses in more complex ambiguities that
+cannot be view as single terms.
+
+\hypertarget{conclusion}{%
+\subsection{Conclusion}\label{conclusion}}
+
+\begin{itemize}
+\tightlist
+\item
+  oral communication (they think it is more important than written
+  texts)
+\end{itemize}
+
+\hypertarget{final-words}{%
+\section{Final Words}\label{final-words}}
+
+Nec, sodales vitae, vehicula eget, ipsum. Sed nec tortor. Aenean
+malesuada. Nunc convallis, massa eu vestibulum commodo, quam mauris
+interdum arcu, at pellentesque diam metus ut nulla. Vestibulum eu dolor
+sit amet lacus varius fermentum. Morbi dolor enim, pulvinar eget,
+lobortis ac, fringilla ac, turpis. Duis ac erat. Etiam consequat.
+Integer sed est eu elit pellentesque dapibus. Duis venenatis magna
+feugiat nisi. Vestibulum et turpis. Maecenas a enim. Suspendisse
+ultricies ornare justo. Fusce sit amet nisi sed arcu condimentum
+venenatis. Vivamus dui. Nunc accumsan, quam a fermentum mattis, magna
+sapien iaculis pede, at porttitor quam odio at est.
+
+\hypertarget{what-i-ll-focus}{%
+\section{What i ll focus}\label{what-i-ll-focus}}
+
+\begin{itemize}
+\tightlist
+\item
+  Explain acceptance unclarity
+\item
+  Explain Dung's framework
+\item
+  Explain ASPIC+
+\item
+  Inconsistencies
+\item
+  It's higly influenced by the domain knowledge of the analyst
+\end{itemize}
+
+\hypertarget{my-idea}{%
+\subsection{My idea}\label{my-idea}}
+
+\begin{itemize}
+\item
+  knowledge domain has influence
+\item
+  analyst domain knowledge is statiscally relevant
+\item
+  analyst training is even more relevant
+\item
+  influence of tacit knowlegde in interviews
+\item
+  ambiguity in interviews - focus on interviewer must have domain
+  knowledge
+\item
+  what i want to do is : possible beneficts in requirement elicitaiton
+  is usings two techniques based on the domain knowledge of the analyst,
+  sometimes it is good to have an expert and an ignorant of a topic .
+\item
+  limitations of the technique based on domain knowlegde and tacit
+  knowlegde.
+\item
+  how types of tacit knowlegde may influence in the proposal theory
+\item
+  how domain knowlegde may influence in the proposal theory
+\item
+  As an intro:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    analyst domain knowledge is statiscally relevant
+  \item
+    analyst training is even more relevant
+  \end{itemize}
+\item
+  focus on the technique from the perspective of knowlegde and technique
+\item
+  future of that technique to solve more complex problems, from the
+  prospective of knowlegde and technique
+\end{itemize}
+
+\newpage
+
+\hypertarget{references}{%
+\section*{References}\label{references}}
+\addcontentsline{toc}{section}{References}
+
+\hypertarget{refs}{}
+\leavevmode\hypertarget{ref-elrakaiby2017using}{}%
+{[}1{]} Y. Elrakaiby, A. Ferrari, P. Spoletini, S. Gnesi, and B.
+Nuseibeh, ``Using argumentation to explain ambiguity in requirements
+elicitation interviews,'' in \emph{Requirements engineering conference
+(re), 2017 ieee 25th international}, 2017, pp. 51--60.
+
+\end{document}
