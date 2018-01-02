@@ -45,31 +45,59 @@ The theorical framework proposed by Elrakaiby et al. allows analysts to detect a
 On the other hand, this framework focuses in more complex ambiguities that cannot be view as single terms.
 
 
-# What i ll focus
-- Explain acceptance unclarity
-- Explain Dung's framework
-- Explain ASPIC+
-- Inconsistencies
-- It's higly influenced by the domain knowledge of the analyst
+# Effect of Domain Knowledge on Elicitation Effectiveness: An Internally Replicated Controlled Experiment 
+The effectiveness of elicitation interviews may be influenced by analyst skills or characteristics. 
+In these high intensive oral communication scenario the analyst must be able to draw out  relevant information and needs from the stakeholders.
+It has been reported that the effectiveness of the interviews has a direct relation with the domain knowlegde of the analyst. 
+However, there are also studies suggesting that in somecases the domain knowlegde have negatives effects in the effectiveness of interviews.
+
+In this paper [@aranda2016effect], Aranda et al. studied the influence of the analyst domain knowlegde on the effectiveness of elicitation interviews.
+The main question they tried to answer was 
+
+_Does analyst domain knowledge influence (either positively or negatively) the effectiveness of the requirements elicitation activity?_
+
+
+For this purpose, the authors performed the study in two stages. They performed an initial baseline experiment with two domain problems, and then  they performed an internal replication with two other domain problems. 
+Furthermore, the authors divided the elicitation process in two phases. 
+The elication phase which is the actual interview with the stakeholder, and the reporting phase in which the analyst understands and documents the information gathered in the elication phase. 
+
+One remark of the study is that the authors chose students because of their lack of experience in eliciation interviews, isolation of the domain knowledge,  and to analyze, in the internal replication, the influence of the training in requirements engineering in eliciation interviews. 
+In the study participated post-graduated students as interviewers and two professors as interviewees. 
+The students should make open interviews and elicitate the information afterwards.
+Moreover, for each domain problem the students were separeted in two groups based on their level of domain knowlegde,  _domain-aware_ and _domain-ignorant_. 
+On the other hand, the effectiveness of the elicitations was based on the comparison between the number of concepts, processes and requirements elicitated by the students and the benchmarks.
+
+The results of the baseline experiment suggest that the domain knowlegde of the analysts has no significant influence in the effectiveness  of the elicitation interviews.
+However, the results also suggest that the domain knowlegde of the interviewees has statistically significant influence.
+Supplementary, the results of the internal replication also  suggest that the domain knowlegde of the stakeholders is more relevant than the analysts', in term of effectiveness of the elicitation interviews. 
+Nevertheless, these results also show that the possitive effects of the training in requirements engineering of the interviewers, with these effects beiang as relevant as interviwees' domain knowlegde. 
+
+
+# What i'll do 
+ Explain acceptance unclarity
+ Explain Dung's framework
+ Explain ASPIC+
+ Inconsistencies
+ It's higly influenced by the domain knowledge of the analyst
 
 ## My idea
-- knowledge domain has influence
-- analyst domain knowledge is statiscally relevant
-- analyst training is even more relevant
-- influence of tacit knowlegde in interviews
+ knowledge domain has influence
+ analyst domain knowledge is statiscally relevant
+ analyst training is even more relevant
+ influence of tacit knowlegde in interviews
 
-- ambiguity in interviews - focus on interviewer must have domain knowledge 
-- what i want to do is : possible beneficts in requirement elicitaiton is usings two techniques based on the domain knowledge of the analyst, sometimes it is good to have an expert and an ignorant of a topic .
+ ambiguity in interviews - focus on interviewer must have domain knowledge 
+ what i want to do is : possible beneficts in requirement elicitaiton is usings two techniques based on the domain knowledge of the analyst, sometimes it is good to have an expert and an ignorant of a topic .
 
-- limitations of the technique based on domain knowlegde and tacit knowlegde. 
-- how types of tacit knowlegde may influence in the proposal theory
-- how domain knowlegde may influence in the proposal theory
+ limitations of the technique based on domain knowlegde and tacit knowlegde. 
+ how types of tacit knowlegde may influence in the proposal theory
+ how domain knowlegde may influence in the proposal theory
 
-- As an intro:
-    - analyst domain knowledge is statiscally relevant
-    - analyst training is even more relevant
-- focus on the technique from the perspective of knowlegde and technique
-- future of that technique to solve more complex problems, from the prospective of knowlegde and technique
+ As an intro:
+    analyst domain knowledge is statiscally relevant
+    analyst training is even more relevant
+ focus on the technique from the perspective of knowlegde and technique
+ future of that technique to solve more complex problems, from the prospective of knowlegde and technique
 
 <!-- just raw latex --->
 \newpage

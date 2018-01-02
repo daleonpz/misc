@@ -1,4 +1,4 @@
-PWD /home/dnl/Documents/localStuff/fh-dortmund/01/ReqEng/PositionPaper/lncs-pandoc-master
+PWD /home/dnl/Documents/gitStuff/misc/toDelete/PositionPaper/lncs-pandoc-master
 INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
 INPUT paper.tex
