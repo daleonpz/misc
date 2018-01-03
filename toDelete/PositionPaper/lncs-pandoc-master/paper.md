@@ -18,17 +18,17 @@ abstract: |
 I need an introduction...
 
 # Using Argumentation to Explain Ambiguity in Requirements Elicitation Interviews
-One of the major causes of ambiguities in elicitation interviews is the prescense of tacit knowlegde.
+One of the major causes of ambiguities in elicitation interviews is the presence of tacit knowledge.
 In some cases ambiguities can't be always be explained as separated term, sometimes it is required to have a context. 
-Even under these circunstances, the analyst must be able to identify and alleviate them in order to elicitate relevant information of the system. 
+Even under these circumstances, the analyst must be able to identify and alleviate them in order to elicit relevant information of the system. 
 For this purpose it is necessary to provide the analyst with proper tools.
-In this paper Yehia Elrakaiby et al. [@elrakaiby2017using] proposed a theorical framework to overcome ambiguity during interviews in the elicitation phase.
+In this paper Yehia Elrakaiby et al. [@elrakaiby2017using] proposed a theoretical framework to overcome ambiguity during interviews in the elicitation phase.
 The framework is based on the "Argumentation theory". 
 
 In that sense, Elrakaiby et al. focus on one type of ambiguities, the "acceptance unclarity". 
-An acceptance unclarity occurs everytime the analyst is able to assign an interpretation or meaning to the speech fragment of the stakeholder, the interpretation matches the intended meaning of the stakeholder, but the interpretation is not acceptable or justified. 
-It could be either because it seems to be inaccurate to comprehend the problem, or analysts identify inconsistencies with their current understanding of the problem or domain knowlegde. 
-By using argumentation theory framework, statements and  ambiguities can be characterized as "arguments" and  "attacks" respectevely.
+An acceptance unclarity occurs every time the analyst is able to assign an interpretation or meaning to the speech fragment of the stakeholder, the interpretation matches the intended meaning of the stakeholder, but the interpretation is not acceptable or justified. 
+It could be either because it seems to be inaccurate to comprehend the problem, or analysts identify inconsistencies with their current understanding of the problem or domain knowledge. 
+By using argumentation theory framework, statements and  ambiguities can be characterized as "arguments" and  "attacks" respectively.
 
 Argumentation theory models a type of human dialog based on arguments and conclusions.
 It makes explicit attacks between arguments and the argumentation flow that leads to conclusions.
@@ -36,22 +36,22 @@ A basic model in this framework is a pair $(A,D)$, where $A$ is a set of argumen
 For example, a set $A$ is defined as $A = \{A1,A2,A3\}$, and a possible set of attacks could be $D = \{(A1,A3)\}$. 
 Which means that if A1 is realizable then A3 can't be realizable.
 
-In the paper, Elrakaiby et al. models statements given by the stakeholders, analysts domain knowlegde and analysts inferences as arguments, and ambiguities between them as attacks.
-For example, let say the analyst listens the following statement  _the professor will upload the task description within three days_ (A1), but the analyst know (domain knowlegde) that _the professor may be on a business meeting_ (A2), so the analyst think (inference) that _it may be possible that it will be take longer to upload the task description_ (A3). 
+In the paper, Elrakaiby et al. models statements given by the stakeholders, analysts domain knowledge and analysts inferences as arguments, and ambiguities between them as attacks.
+For example, let say the analyst listens the following statement  _the professor will upload the task description within three days_ (A1), but the analyst know (domain knowledge) that _the professor may be on a business meeting_ (A2), so the analyst think (inference) that _it may be possible that it will be take longer to upload the task description_ (A3). 
 In this scenario the set of attacks $D$ is given by $D = \{(A1,A3)\}$.
 Thus, since there is an attack it is possible to ask for clarifications or details.
 
-The theorical framework proposed by Elrakaiby et al. allows analysts to detect and  minimize ambiguities during elicitation interviews, while most of the methods that focus on  ambiguities analyze written texts. 
+The theoretical framework proposed by Elrakaiby et al. allows analysts to detect and  minimize ambiguities during elicitation interviews, while most of the methods that focus on  ambiguities analyze written texts. 
 On the other hand, this framework focuses in more complex ambiguities that cannot be view as single terms.
 
 
 # Effect of Domain Knowledge on Elicitation Effectiveness: An Internally Replicated Controlled Experiment 
 The effectiveness of elicitation interviews may be influenced by analyst skills or characteristics. 
 In these high intensive oral communication scenario the analyst must be able to draw out  relevant information and needs from the stakeholders.
-It has been reported that the effectiveness of the interviews has a direct relation with the domain knowlegde of the analyst. 
-However, there are also studies suggesting that in somecases the domain knowlegde have negatives effects in the effectiveness of interviews.
+It has been reported that the effectiveness of the interviews has a direct relation with the domain knowledge of the analyst. 
+However, there are also studies suggesting that in some cases the domain knowledge have negatives effects in the effectiveness of interviews.
 
-In this paper [@aranda2016effect], Aranda et al. studied the influence of the analyst domain knowlegde on the effectiveness of elicitation interviews.
+In this paper [@aranda2016effect], Aranda et al. studied the influence of the analyst domain knowledge on the effectiveness of elicitation interviews.
 The main question they tried to answer was 
 
 _Does analyst domain knowledge influence (either positively or negatively) the effectiveness of the requirements elicitation activity?_
@@ -59,25 +59,25 @@ _Does analyst domain knowledge influence (either positively or negatively) the e
 
 For this purpose, the authors performed the study in two stages. They performed an initial baseline experiment with two domain problems, and then  they performed an internal replication with two other domain problems. 
 Furthermore, the authors divided the elicitation process in two phases. 
-The elication phase which is the actual interview with the stakeholder, and the reporting phase in which the analyst understands and documents the information gathered in the elication phase. 
+The elicitation phase which is the actual interview with the stakeholder, and the reporting phase in which the analyst understands and documents the information gathered in the elicitation phase. 
 
-One remark of the study is that the authors chose students because of their lack of experience in eliciation interviews, isolation of the domain knowledge,  and to analyze, in the internal replication, the influence of the training in requirements engineering in eliciation interviews. 
+One remark of the study is that the authors chose students because of their lack of experience in elicitation interviews, isolation of the domain knowledge,  and to analyze, in the internal replication, the influence of the training in requirements engineering in elicitation interviews. 
 In the study participated post-graduated students as interviewers and two professors as interviewees. 
-The students should make open interviews and elicitate the information afterwards.
-Moreover, for each domain problem the students were separeted in two groups based on their level of domain knowlegde,  _domain-aware_ and _domain-ignorant_. 
-On the other hand, the effectiveness of the elicitations was based on the comparison between the number of concepts, processes and requirements elicitated by the students and the benchmarks.
+The students should make open interviews and elicit the information afterwards.
+Moreover, for each domain problem the students were separated in two groups based on their level of domain knowledge,  _domain-aware_ and _domain-ignorant_. 
+On the other hand, the effectiveness of the elicitation's was based on the comparison between the number of concepts, processes and requirements elicited by the students and the benchmarks.
 
-The results of the baseline experiment suggest that the domain knowlegde of the analysts has no significant influence in the effectiveness  of the elicitation interviews.
-However, the results also suggest that the domain knowlegde of the interviewees has statistically significant influence.
-Supplementary, the results of the internal replication also  suggest that the domain knowlegde of the stakeholders is more relevant than the analysts', in term of effectiveness of the elicitation interviews. 
-Nevertheless, these results also show that the possitive effects of the training in requirements engineering of the interviewers, with these effects beiang as relevant as interviwees' domain knowlegde. 
+The results of the baseline experiment suggest that the domain knowledge of the analysts has no significant influence in the effectiveness  of the elicitation interviews.
+However, the results also suggest that the domain knowledge of the interviewees has statistically significant influence.
+Supplementary, the results of the internal replication also  suggest that the domain knowledge of the stakeholders is more relevant than the analysts', in term of effectiveness of the elicitation interviews. 
+Nevertheless, these results also show that the positive effects of the training in requirements engineering of the interviewers, with these effects being as relevant as interviewees' domain knowledge. 
 
 
 # Requirements elicitation: Towards the Unknown Unknowns 
 Elicitation in requirements engineering
  
 --- 
-Abstract—Requirements elicitation research is reviewed using a framework categorising the relative ‘knowness’ of requirements specification and Common Ground discourse theory. 
+Abstract—Requirements elicitation research is reviewed using a framework categorizing the relative ‘knowness’ of requirements specification and Common Ground discourse theory. 
 The main contribution of this survey is to review requirements elicitation from the perspective of this framework and propose a road map of research to tackle outstanding elicitation problems involving tacit knowledge. 
 The paper concludes with remarks on the possibility of elicitation tackling the most difficult question of ‘unknown unknown’ requirements. 
 
@@ -85,7 +85,7 @@ However, elicitation still remains problematic; missing or mistaken requirements
 in this paper we set out to explore the field from the perspective made famous from Donald Rumsfeld’s quote of the “known knowns, the known unknowns, and unknown unknowns”. This perspective poses challenges to requirements elicitation since it probes the boundaries of knowledge and who possesses it, thereby creating a useful stress test for requirements elicitation techniques, methods and tools.
 
 Elicitation review framework (ERF).
-Tacit knowledge taxonomy based on the properties of _expressible_ (know knowledge), _articulated_ (documented domain knowledge), _accesible_ (need memory recall), _relevant_ to the project:
+Tacit knowledge taxonomy based on the properties of _expressible_ (know knowledge), _articulated_ (documented domain knowledge), _accessible_ (need memory recall), _relevant_ to the project:
 • Known knowns: expressible, articulated, and relevant. 
 • Known unknowns: not expressible or articulated, but accessible and potentially relevant. 
 • Unknown knowns: potentially accessible but not articulated. 
@@ -93,9 +93,9 @@ Tacit knowledge taxonomy based on the properties of _expressible_ (know knowledg
 
 From the perspective of the analyst/ stakeholder:
 - Known knowns: not a problem
-- known unknowns: the analyst has a domain knowlegde but the stakeholder may forgot or be unaware 
-- Unknown knowns: the stakeholder holds a knowlegde but it is not articulated, so the analyst has to discover this tacit knowlegde and elicitate it. Once the stakeholder shows a glimpse of his knowlegde the analyst realize that there is something and the problem into known unknowns.
-- Unknown unknowns: the analist and the stakeholder are unaware of what's missing, but it has the potential to be relevant information.
+- known unknowns: the analyst has a domain knowledge but the stakeholder may forgot or be unaware 
+- Unknown knowns: the stakeholder holds a knowledge but it is not articulated, so the analyst has to discover this tacit knowledge and elicit it. Once the stakeholder shows a glimpse of his knowledge the analyst realize that there is something and the problem into known unknowns.
+- Unknown unknowns: the analyst and the stakeholder are unaware of what's missing, but it has the potential to be relevant information.
 
 
 The Tacit Knowledge Framework [14] poses three challenges: 
@@ -108,14 +108,14 @@ The goal is to convert the unknown unknowns into known knowns.
 
 Common ground theory explains how meaning is constructed by conversation and action, which progresses towards a mutually agreed goal.
 
-Action Ladder and Project: Meaning in conversations has different layers: the surface of explicit expression, tacit knowlegde and linguistic interpretation. 
+Action Ladder and Project: Meaning in conversations has different layers: the surface of explicit expression, tacit knowledge and linguistic interpretation. 
 Setting: where the conversation takes place (time, location, domain knowledge) 
 Arena:  shared knowledge about the culture, norms, history and assumptions which allow dialogue between people to be interpreted in their context.
 
 For our purposes, Common Ground contributes ‘tools for thought’ which can address the unknowns problems. For example the Arena suggests questions to discover more detail of the users’ background which may uncover unknown concerns (viz cultural, political issues); 
 
  For many techniques the ability to detect the known unknowns depends on the analyst’s plan and the sampling strategy. 
-In the case of interviews the ability to dectect unknown unknowns depends on the follow-up questions and sample size.
+In the case of interviews the ability to detect unknown unknowns depends on the follow-up questions and sample size.
 Also interviews since they depends on natural language communication there is always the possibility of ambiguous interpretations.
 
 Interviews approach natural human conversation so they support the dynamic construction of understanding and exploration of the Arena and Setting of the dialogue by explicit questions and observation. However, interviews are weaker for reflection(reflection as an intentional, active progression of learning), where the analyst has to rely on notes and recordings.
@@ -131,7 +131,7 @@ Design discovery. This is a variant of known unknowns where the challenge is to 
 
 Unknown unknowns. Two approaches could address elicitation  of ‘over-the-horizon’ knowledge. First, creative RE, which is already established [55], needs to be integrated with social media, so that collaborative creative RE is empowered. This could involve designing socio- technical elicitation systems, as e-communities, communities of practice with global distributions for the increasing number of Internet applications. Secondly, the use of analogies and examples, and also counter examples, can challenge the boundaries of the possible to develop new design ideas.  
  
- Known unknowns imply the need for exploration of the problem and solution spaces; (e.g.) using a combination of obstacle anaylsis and prototyping.
+ Known unknowns imply the need for exploration of the problem and solution spaces; (e.g.) using a combination of obstacle analysis and prototyping.
 
 
 
@@ -142,26 +142,26 @@ Unknown unknowns. Two approaches could address elicitation  of ‘over-the-horiz
  Explain Dung's framework
  Explain ASPIC+
  Inconsistencies
- It's higly influenced by the domain knowledge of the analyst
+ It's highly influenced by the domain knowledge of the analyst
 
 ## My idea
  knowledge domain has influence
- analyst domain knowledge is statiscally relevant
+ analyst domain knowledge is statistically relevant
  analyst training is even more relevant
- influence of tacit knowlegde in interviews
+ influence of tacit knowledge in interviews
 
  ambiguity in interviews - focus on interviewer must have domain knowledge 
- what i want to do is : possible beneficts in requirement elicitaiton is usings two techniques based on the domain knowledge of the analyst, sometimes it is good to have an expert and an ignorant of a topic .
+ what i want to do is : possible benefits in requirement elicitation is using two techniques based on the domain knowledge of the analyst, sometimes it is good to have an expert and an ignorant of a topic .
 
- limitations of the technique based on domain knowlegde and tacit knowlegde. 
- how types of tacit knowlegde may influence in the proposal theory
- how domain knowlegde may influence in the proposal theory
+ limitations of the technique based on domain knowledge and tacit knowledge. 
+ how types of tacit knowledge may influence in the proposal theory
+ how domain knowledge may influence in the proposal theory
 
  As an intro:
-    analyst domain knowledge is statiscally relevant
+    analyst domain knowledge is statistically relevant
     analyst training is even more relevant
- focus on the technique from the perspective of knowlegde and technique
- future of that technique to solve more complex problems, from the prospective of knowlegde and technique
+ focus on the technique from the perspective of knowledge and technique
+ future of that technique to solve more complex problems, from the prospective of knowledge and technique
 
 <!-- just raw latex --->
 \newpage
