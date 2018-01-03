@@ -74,69 +74,37 @@ Nevertheless, these results also show that the positive effects of the training 
 
 
 # Requirements elicitation: Towards the Unknown Unknowns 
-Elicitation in requirements engineering
+Elicitation in requirements engineering is still problematic because missing or mistaken requirements are hard to elicit, and this produce projects delays and have financial implications. 
+In this paper, the authors propose an elicitation review framework (ERF) in order to explore the different challenges related to the "unknowness" of the domain knowledge.
+Therefore, proposing a road map of research to tackle the different levels of the "unknowness".
+
+The authors made use of the properties of _expressible_ (known knowledge), _articulated_ (documented domain knowledge), _accessible_ (need memory recall), _relevant_ (to the project).
+With these four properties, authors defined  the following levels of unknowness in domain knowledge.
+
+  * Known knowns: knowledge that is expressible, articulated, and relevant. 
+  * Known unknowns: knowledge that is not expressible or articulated, but accessible and potentially relevant. 
+  * Unknown knowns: knowledge that is potentially accessible but not articulated. 
+  * Unknown unknowns: knowledge that is not expressible, articulated nor accessible but may be relevant.  
+
+This levels of knowledge implies problems of different perspective of the elicitation process that involves analysts and stakeholders. 
+The _known knowns_ is a simple scenario  since the counterparts are aware of the domain problem which is expressible and  articulated. 
+In the case of the  _known unknowns_, the analysts has a domain knowledge and they  should be able draw out the information from the stakeholders that they might be unaware of.
+In contrast, in the _unknown knowns_ scenario the stakeholders are the ones that are aware of the domain knowledge but for some reason it is no articulated, and therefore, the analysts once they notice any glimpse of the stakeholders information they should able to discover and elicit that.
+On the other hand, in the case of _unknown unknowns_ both counterparts are unaware of the missing information that might be relevant to the system. 
+
+
+Based on the perspectives described before, the authors identified three challenges to requirement elicitation. The first one is to identifying tacit knowledge (unknown knowns),  even in the case the analyst presume it exist (known unknowns).
+The second challenge is that the analyst should know what is relevant and should be articulated.
+And the last one is the articulation of the knowledge.
+Thus, in the worst case scenario the goal is go from the unknown unknowns perspective to known knowns.
+
+Finally, the authors suggest four research directions to deal with the unknowness problem. 
+Starting with the known unknown in which the analyst should challenging assumptions, implications, and relaxing domain constrains in order to increase the probability to elicit the unaware knowledge of the stakeholders.
+In the same direction, in the design discovery, which is a variant of the latter case, the analyst should deal with the the following statement "I'll know what I want when I see it". Thus, there is a need of prototyping or simulations as part of the elicitation process. 
+In the case of the unknown knowns in which the analyst can elicit tacit knowledge by taking into account the background (political, cultural, emotional) of stakeholders, and use that background as an "emotional guidance" in order to draw out the relevant information.
+Finally, in the case of unknown unknowns the authors suggest to main approaches. The first one is based on the "over-the-horizon" knowledge, in which authors proposed a socio-technical approach based on social media and e-communities. And the other one is using counter examples that can challenges the boundaries of the idea under development. 
+
  
---- 
-Abstract—Requirements elicitation research is reviewed using a framework categorizing the relative ‘knowness’ of requirements specification and Common Ground discourse theory. 
-The main contribution of this survey is to review requirements elicitation from the perspective of this framework and propose a road map of research to tackle outstanding elicitation problems involving tacit knowledge. 
-The paper concludes with remarks on the possibility of elicitation tackling the most difficult question of ‘unknown unknown’ requirements. 
-
-However, elicitation still remains problematic; missing or mistaken requirements still delay projects and cause cost overruns
-in this paper we set out to explore the field from the perspective made famous from Donald Rumsfeld’s quote of the “known knowns, the known unknowns, and unknown unknowns”. This perspective poses challenges to requirements elicitation since it probes the boundaries of knowledge and who possesses it, thereby creating a useful stress test for requirements elicitation techniques, methods and tools.
-
-Elicitation review framework (ERF).
-Tacit knowledge taxonomy based on the properties of _expressible_ (know knowledge), _articulated_ (documented domain knowledge), _accessible_ (need memory recall), _relevant_ to the project:
-• Known knowns: expressible, articulated, and relevant. 
-• Known unknowns: not expressible or articulated, but accessible and potentially relevant. 
-• Unknown knowns: potentially accessible but not articulated. 
-• Unknown unknowns: not expressible, articulated or accessible but still potentially relevant.  
-
-From the perspective of the analyst/ stakeholder:
-- Known knowns: not a problem
-- known unknowns: the analyst has a domain knowledge but the stakeholder may forgot or be unaware 
-- Unknown knowns: the stakeholder holds a knowledge but it is not articulated, so the analyst has to discover this tacit knowledge and elicit it. Once the stakeholder shows a glimpse of his knowledge the analyst realize that there is something and the problem into known unknowns.
-- Unknown unknowns: the analyst and the stakeholder are unaware of what's missing, but it has the potential to be relevant information.
-
-
-The Tacit Knowledge Framework [14] poses three challenges: 
-(i) Identifying tacit knowledge: the unknown knowns; even when the analyst suspects they exist (known unknowns), making tacit knowledge accessible may not be easy. 
-(ii) Knowing what is relevant and should be articulated from the analyst’s perspective: the necessary detail problem. 
-(iii) Articulating the knowledge where it is needed, in the correct context, so it can be understood by all stakeholders. 
-
-The first step to solve the problem of unknown unknowns is to assume that may exist a missing knowledge, and being prepared to invest in order to find it. 
-The goal is to convert the unknown unknowns into known knowns.
-
-Common ground theory explains how meaning is constructed by conversation and action, which progresses towards a mutually agreed goal.
-
-Action Ladder and Project: Meaning in conversations has different layers: the surface of explicit expression, tacit knowledge and linguistic interpretation. 
-Setting: where the conversation takes place (time, location, domain knowledge) 
-Arena:  shared knowledge about the culture, norms, history and assumptions which allow dialogue between people to be interpreted in their context.
-
-For our purposes, Common Ground contributes ‘tools for thought’ which can address the unknowns problems. For example the Arena suggests questions to discover more detail of the users’ background which may uncover unknown concerns (viz cultural, political issues); 
-
- For many techniques the ability to detect the known unknowns depends on the analyst’s plan and the sampling strategy. 
-In the case of interviews the ability to detect unknown unknowns depends on the follow-up questions and sample size.
-Also interviews since they depends on natural language communication there is always the possibility of ambiguous interpretations.
-
-Interviews approach natural human conversation so they support the dynamic construction of understanding and exploration of the Arena and Setting of the dialogue by explicit questions and observation. However, interviews are weaker for reflection(reflection as an intentional, active progression of learning), where the analyst has to rely on notes and recordings.
-Furthermore, eliciting tacit knowledge depends on the analysts’ questioning skills interaction. Hence a combination of techniques rather than structured interviews per se is probably the most effective approach. .
-
-There are four research directions to push the boundaries of the unknown:
-Unknown knowns. The problem for the analyst is discovering what the stakeholder knows but does not articulate. Sensitivity to political issues, user values and emotions needs to be researched in depth to provide ‘emotional intelligence’ guidance for analysts so they can anticipate these unknowns and elicit sensitive tacit knowledge. The Common Ground quest is to be more sensitive to the stakeholder’s Setting, feelings, norms and culture
-
-Known unknowns. In this case the analyst has some awareness of the necessary knowledge, so an agenda for elicitation can be set. Most techniques involve exploring the implications of the system-domain boundary. Challenging assumptions, reasoning about the implications of obstacles, and relaxing domain constraints need further research towards not only hard influences, but also soft, probabilistic implications.
-
-Design discovery. This is a variant of known unknowns where the challenge is to solve the “I’ll know what I want when I see it” problem. Much progress has been made in this area with prototypes, storyboards and mock-ups; however, simulations and virtual worlds may have further potential.
-
-
-Unknown unknowns. Two approaches could address elicitation  of ‘over-the-horizon’ knowledge. First, creative RE, which is already established [55], needs to be integrated with social media, so that collaborative creative RE is empowered. This could involve designing socio- technical elicitation systems, as e-communities, communities of practice with global distributions for the increasing number of Internet applications. Secondly, the use of analogies and examples, and also counter examples, can challenge the boundaries of the possible to develop new design ideas.  
- 
- Known unknowns imply the need for exploration of the problem and solution spaces; (e.g.) using a combination of obstacle analysis and prototyping.
-
-
-
-
-
 # What i'll do 
  Explain acceptance unclarity
  Explain Dung's framework
