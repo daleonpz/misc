@@ -27,6 +27,7 @@
 \fi
 % use microtype if available
 \IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage{longtable,booktabs}
 \ifxetex
   \usepackage[setpagesize=false, % page size defined by xetex
               unicode=false, % unicode breaks when used with xetex
@@ -125,10 +126,10 @@ of the analyst is used to detect inconsistencies (attacks), because the
 stakeholder didn't take into account relevant information about domain
 application (location of trash bins).
 
-A customers wants a recycling-support system and one of the goals is
+A customers wanted a recycling-support system and one of the goals was
 \emph{to avoid fines from the municipality for incorrect recycling}.
 According to the domain knowledge of the analyst, \emph{trash bins are
-placed along the streets}. Thus, the goal is inconsistent with the
+placed along the streets}. Thus, the goal was inconsistent with the
 domain knowledge of the analyst because \emph{there is no way to trace
 back person who brakes the recycling rule}. This scenario can be modeled
 using arguments and attacks as follows:
@@ -142,17 +143,17 @@ back to their owners.
 Attacks: A2 attacks B1, and viceversa.
 
 \textbf{unknown knowns}: In the following example analyst challenges the
-stakeholder statement by using a question, as a result the stakeholder
-reveals new information (reply).
+stakeholder statement, as a result the stakeholder reveals new
+information (reply).
 
 A customers wants to develop a system to allow patients to measure the
 amount of glucose in their blood, and then send the result to their
 general practitioner. If the glucose level is above a certain threshold,
-the practitioner pays a visit to the patient. The customer says:
-\emph{In one-two days the doctor sees the notification in the system}.
-Then analyst asks: \emph{What happens if the doctor is not available for
-any reason?}. The customer replies: \emph{The general practitioner is
-substituted by another doctor who accesses the same system}.
+the practitioner pays a visit to the patient. The customer said:
+\emph{in one-two days the doctor sees the notification in the system}.
+Then analyst asked: \emph{What happens if the doctor is not available
+for any reason?}. The customer replied: \emph{The general practitioner
+is substituted by another doctor who accesses the same system}.
 
 The arguments: (A1)in one-two days the doctor sees the
 notification,(B1)the doctor might be unavailable,(B2)since the the
@@ -166,14 +167,14 @@ did and asked for clarification. However, the stakeholder couldn't give
 an answers due to his ignorance.
 
 One of the customers wants to develop an app to manage medical-related
-reservation in Tuscani. The costumer mentions that the \emph{current
+reservation in Tuscani. The costumer mentioned that the \emph{current
 reservation system, based on phone calls, was centralised}. During the
-interview, the customer says that \emph{depending on where the
+interview, the customer said that \emph{depending on where the
 examination/visit will be, the patient has to call Nottola or Siena}.
 The analyst could not understand how this realization was possible since
-it means that the reservation system is not centralized. So the analyst
-asks for clarification and the stakeholder cannot give any acceptable
-answer.
+it means the reservation system is not centralized. Therefore the
+analyst asked for clarification and the stakeholder couldn't give any
+acceptable answer.
 
 The arguments: (A1)the current reservation is centralized, (B1)depending
 on where the examination/visit will be (B2)the patience has to call
@@ -186,119 +187,59 @@ The attacks: A1 attacks B3, and viceversa
 \subsection{Limits of elicited
 knowledge}\label{limits-of-elicited-knowledge}}
 
-aeu
+In the last section we present how to use a theoretical framework based
+on arguments and attacks to addresed the different levels of tacit
+knowledge. In this section we will compare in which scenario of tacit
+knowledge the elicitation interview is more effective based on Aranda et
+al.~work {[}4{]} about the effect of domain knowledge on elicitation
+process.\\
+Effectiveness is described in {[}4{]} as the total percentage of problem
+domain elements identified compared to a benchmark. However, since we
+have no accesse to any requirement data, we will use the conclusions of
+{[}4{]} to compare the different scenarios of tacit knowledge (known
+unknowns, unknown knowns and unknowns unknowns).
 
-\hypertarget{using-argumentation-to-explain-ambiguity-in-requirements-elicitation-interviews}{%
-\section{Using Argumentation to Explain Ambiguity in Requirements
-Elicitation
-Interviews}\label{using-argumentation-to-explain-ambiguity-in-requirements-elicitation-interviews}}
+The works presented in {[}4{]} concludes that: (1)analyst's domain
+knowledge(ADK) has small but statisticall significant effect on the
+effectiveness, (2)stakeholders' domain knowledge(SDK) has a big positive
+and significant influence and (3)analyst's interviewing skill and
+general training in requirement activities have also a big positive and
+significant influence. In this paper, we will focus only in comparing
+based on the domain knowledge holder since that knowledge can be
+measured.
 
-One of the major causes of ambiguities in elicitation interviews is the
-presence of tacit knowledge. In some cases ambiguities can't be always
-be explained as separated term, sometimes it is required to have a
-context. Even under these circumstances, the analyst must be able to
-identify and alleviate them in order to elicit relevant information of
-the system. For this purpose it is necessary to provide the analyst with
-proper tools. In this paper Yehia Elrakaiby et al. {[}3{]} proposed a
-theoretical framework to overcome ambiguity during interviews in the
-elicitation phase. The framework is based on the ``Argumentation
-theory''.
+\begin{longtable}[]{@{}lcc@{}}
+\caption{Influence of domain knowledge in the different tacit knowledge
+scenarios}\tabularnewline
+\toprule
+scenario & ADK & SDK\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+scenario & ADK & SDK\tabularnewline
+\midrule
+\endhead
+known unknowns & \(+\) & 0\tabularnewline
+unknown knowns & 0 & \(++\)\tabularnewline
+unknown unknowns & 0 & 0\tabularnewline
+\bottomrule
+\end{longtable}
 
-In that sense, Elrakaiby et al.~focus on one type of ambiguities, the
-``acceptance unclarity''. An acceptance unclarity occurs every time the
-analyst is able to assign an interpretation or meaning to the speech
-fragment of the stakeholder, the interpretation matches the intended
-meaning of the stakeholder, but the interpretation is not acceptable or
-justified. It could be either because it seems to be inaccurate to
-comprehend the problem, or analysts identify inconsistencies with their
-current understanding of the problem or domain knowledge. By using
-argumentation theory framework, statements and ambiguities can be
-characterized as ``arguments'' and ``attacks'' respectively.
+We can observed in Table 1 that it is more likely to be effective in the
+scenario of \emph{unknown knowns} because the stakeholders' domain
+knowledge have more influence than analyst's domain knowledge. On the
+other hand, the analyst's interviewing skills will have different
+approaches in the case of \emph{known unknowns} and \emph{unknown
+knowns}. In the first case, the interview will be more focused on
+challenging assumptions and implications, and in the latter case on
+spoting glympses of stakeholders' hidden knowledge.
 
-Argumentation theory models a type of human dialog based on arguments
-and conclusions. It makes explicit attacks between arguments and the
-argumentation flow that leads to conclusions. A basic model in this
-framework is a pair \((A,D)\), where \(A\) is a set of arguments and
-\(D\) is a set of attacks among those arguments. For example, a set
-\(A\) is defined as \(A = \{A1,A2,A3\}\), and a possible set of attacks
-could be \(D = \{(A1,A3)\}\). Which means that if A1 is realizable then
-A3 can't be realizable.
+\hypertarget{papers-summary}{%
+\section{Papers summary}\label{papers-summary}}
 
-In the paper, Elrakaiby et al.~models statements given by the
-stakeholders, analysts domain knowledge and analysts inferences as
-arguments, and ambiguities between them as attacks. For example, let say
-the analyst listens the following statement \emph{the professor will
-upload the task description within three days} (A1), but the analyst
-know (domain knowledge) that \emph{the professor may be on a business
-meeting} (A2), so the analyst think (inference) that \emph{it may be
-possible that it will be take longer to upload the task description}
-(A3). In this scenario the set of attacks \(D\) is given by
-\(D = \{(A1,A3)\}\). Thus, since there is an attack it is possible to
-ask for clarifications or details.
-
-The theoretical framework proposed by Elrakaiby et al.~allows analysts
-to detect and minimize ambiguities during elicitation interviews, while
-most of the methods that focus on ambiguities analyze written texts. On
-the other hand, this framework focuses in more complex ambiguities that
-cannot be view as single terms.
-
-\hypertarget{effect-of-domain-knowledge-on-elicitation-effectiveness-an-internally-replicated-controlled-experiment}{%
-\section{Effect of Domain Knowledge on Elicitation Effectiveness: An
-Internally Replicated Controlled
-Experiment}\label{effect-of-domain-knowledge-on-elicitation-effectiveness-an-internally-replicated-controlled-experiment}}
-
-The effectiveness of elicitation interviews may be influenced by analyst
-skills or characteristics. In these high intensive oral communication
-scenario the analyst must be able to draw out relevant information and
-needs from the stakeholders. It has been reported that the effectiveness
-of the interviews has a direct relation with the domain knowledge of the
-analyst. However, there are also studies suggesting that in some cases
-the domain knowledge have negatives effects in the effectiveness of
-interviews.
-
-In this paper {[}4{]}, Aranda et al.~studied the influence of the
-analyst domain knowledge on the effectiveness of elicitation interviews.
-The main question they tried to answer was
-
-\emph{Does analyst domain knowledge influence (either positively or
-negatively) the effectiveness of the requirements elicitation activity?}
-
-For this purpose, the authors performed the study in two stages. They
-performed an initial baseline experiment with two domain problems, and
-then they performed an internal replication with two other domain
-problems. Furthermore, the authors divided the elicitation process in
-two phases. The elicitation phase which is the actual interview with the
-stakeholder, and the reporting phase in which the analyst understands
-and documents the information gathered in the elicitation phase.
-
-One remark of the study is that the authors chose students because of
-their lack of experience in elicitation interviews, isolation of the
-domain knowledge, and to analyze, in the internal replication, the
-influence of the training in requirements engineering in elicitation
-interviews. In the study participated post-graduated students as
-interviewers and two professors as interviewees. The students should
-make open interviews and elicit the information afterwards. Moreover,
-for each domain problem the students were separated in two groups based
-on their level of domain knowledge, \emph{domain-aware} and
-\emph{domain-ignorant}. On the other hand, the effectiveness of the
-elicitation's was based on the comparison between the number of
-concepts, processes and requirements elicited by the students and the
-benchmarks.
-
-The results of the baseline experiment suggest that the domain knowledge
-of the analysts has no significant influence in the effectiveness of the
-elicitation interviews. However, the results also suggest that the
-domain knowledge of the interviewees has statistically significant
-influence. Supplementary, the results of the internal replication also
-suggest that the domain knowledge of the stakeholders is more relevant
-than the analysts', in term of effectiveness of the elicitation
-interviews. Nevertheless, these results also show that the positive
-effects of the training in requirements engineering of the interviewers,
-with these effects being as relevant as interviewees' domain knowledge.
-
-\hypertarget{requirements-elicitation-towards-the-unknown-unknowns}{%
-\section{Requirements elicitation: Towards the Unknown
-Unknowns}\label{requirements-elicitation-towards-the-unknown-unknowns}}
+\hypertarget{requirements-elicitation-towards-the-unknown-unknowns-sutcliffe2013requirements}{%
+\subsection{Requirements elicitation: Towards the Unknown Unknowns
+{[}2{]}}\label{requirements-elicitation-towards-the-unknown-unknowns-sutcliffe2013requirements}}
 
 Elicitation in requirements engineering is still problematic because
 missing or mistaken requirements are hard to elicit, and this produce
@@ -370,6 +311,116 @@ authors suggest to main approaches. The first one is based on the
 socio-technical approach based on social media and e-communities. And
 the other one is using counter examples that can challenges the
 boundaries of the idea under development.
+
+\hypertarget{using-argumentation-to-explain-ambiguity-in-requirements-elicitation-interviews-elrakaiby2017using}{%
+\subsection{Using Argumentation to Explain Ambiguity in Requirements
+Elicitation Interviews
+{[}3{]}}\label{using-argumentation-to-explain-ambiguity-in-requirements-elicitation-interviews-elrakaiby2017using}}
+
+One of the major causes of ambiguities in elicitation interviews is the
+presence of tacit knowledge. In some cases ambiguities can't be always
+be explained as separated term, sometimes it is required to have a
+context. Even under these circumstances, the analyst must be able to
+identify and alleviate them in order to elicit relevant information of
+the system. For this purpose it is necessary to provide the analyst with
+proper tools. In this paper Yehia Elrakaiby et al.~proposed a
+theoretical framework to overcome ambiguity during interviews in the
+elicitation phase. The framework is based on the ``Argumentation
+theory''.
+
+In that sense, Elrakaiby et al.~focus on one type of ambiguities, the
+``acceptance unclarity''. An acceptance unclarity occurs every time the
+analyst is able to assign an interpretation or meaning to the speech
+fragment of the stakeholder, the interpretation matches the intended
+meaning of the stakeholder, but the interpretation is not acceptable or
+justified. It could be either because it seems to be inaccurate to
+comprehend the problem, or analysts identify inconsistencies with their
+current understanding of the problem or domain knowledge. By using
+argumentation theory framework, statements and ambiguities can be
+characterized as ``arguments'' and ``attacks'' respectively.
+
+Argumentation theory models a type of human dialog based on arguments
+and conclusions. It makes explicit attacks between arguments and the
+argumentation flow that leads to conclusions. A basic model in this
+framework is a pair \((A,D)\), where \(A\) is a set of arguments and
+\(D\) is a set of attacks among those arguments. For example, a set
+\(A\) is defined as \(A = \{A1,A2,A3\}\), and a possible set of attacks
+could be \(D = \{(A1,A3)\}\). Which means that if A1 is realizable then
+A3 can't be realizable.
+
+In the paper, Elrakaiby et al.~models statements given by the
+stakeholders, analysts domain knowledge and analysts inferences as
+arguments, and ambiguities between them as attacks. For example, let say
+the analyst listens the following statement \emph{the professor will
+upload the task description within three days} (A1), but the analyst
+know (domain knowledge) that \emph{the professor may be on a business
+meeting} (A2), so the analyst think (inference) that \emph{it may be
+possible that it will be take longer to upload the task description}
+(A3). In this scenario the set of attacks \(D\) is given by
+\(D = \{(A1,A3)\}\). Thus, since there is an attack it is possible to
+ask for clarifications or details.
+
+The theoretical framework proposed by Elrakaiby et al.~allows analysts
+to detect and minimize ambiguities during elicitation interviews, while
+most of the methods that focus on ambiguities analyze written texts. On
+the other hand, this framework focuses in more complex ambiguities that
+cannot be view as single terms.
+
+\hypertarget{effect-of-domain-knowledge-on-elicitation-effectiveness-an-internally-replicated-controlled-experiment-aranda2016effect}{%
+\subsection{Effect of Domain Knowledge on Elicitation Effectiveness: An
+Internally Replicated Controlled Experiment
+{[}4{]}}\label{effect-of-domain-knowledge-on-elicitation-effectiveness-an-internally-replicated-controlled-experiment-aranda2016effect}}
+
+The effectiveness of elicitation interviews may be influenced by analyst
+skills or characteristics. In these high intensive oral communication
+scenario the analyst must be able to draw out relevant information and
+needs from the stakeholders. It has been reported that the effectiveness
+of the interviews has a direct relation with the domain knowledge of the
+analyst. However, there are also studies suggesting that in some cases
+the domain knowledge have negatives effects in the effectiveness of
+interviews.
+
+In this paper Aranda et al.~studied the influence of the analyst domain
+knowledge on the effectiveness of elicitation interviews. The main
+question they tried to answer was
+
+\begin{quote}
+\emph{Does analyst domain knowledge influence (either positively or
+negatively) the effectiveness of the requirements elicitation activity?}
+\end{quote}
+
+For this purpose, the authors performed the study in two stages. They
+performed an initial baseline experiment with two domain problems, and
+then they performed an internal replication with two other domain
+problems. Furthermore, the authors divided the elicitation process in
+two phases. The elicitation phase which is the actual interview with the
+stakeholder, and the reporting phase in which the analyst understands
+and documents the information gathered in the elicitation phase.
+
+One remark of the study is that the authors chose students because of
+their lack of experience in elicitation interviews, isolation of the
+domain knowledge, and to analyze, in the internal replication, the
+influence of the training in requirements engineering in elicitation
+interviews. In the study participated post-graduated students as
+interviewers and two professors as interviewees. The students should
+make open interviews and elicit the information afterwards. Moreover,
+for each domain problem the students were separated in two groups based
+on their level of domain knowledge, \emph{domain-aware} and
+\emph{domain-ignorant}. On the other hand, the effectiveness of the
+elicitation's was based on the comparison between the number of
+concepts, processes and requirements elicited by the students and the
+benchmarks.
+
+The results of the baseline experiment suggest that the domain knowledge
+of the analysts has no significant influence in the effectiveness of the
+elicitation interviews. However, the results also suggest that the
+domain knowledge of the interviewees has statistically significant
+influence. Supplementary, the results of the internal replication also
+suggest that the domain knowledge of the stakeholders is more relevant
+than the analysts', in term of effectiveness of the elicitation
+interviews. Nevertheless, these results also show that the positive
+effects of the training in requirements engineering of the interviewers,
+with these effects being as relevant as interviewees' domain knowledge.
 
 \hypertarget{conclusions}{%
 \section{Conclusions}\label{conclusions}}

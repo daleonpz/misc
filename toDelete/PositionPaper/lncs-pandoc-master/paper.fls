@@ -74,6 +74,10 @@ INPUT /usr/share/texmf-dist/tex/latex/microtype/microtype-pdftex.def
 INPUT /usr/share/texmf-dist/tex/latex/microtype/microtype.cfg
 INPUT /usr/share/texmf-dist/tex/latex/microtype/microtype.cfg
 INPUT /usr/share/texmf-dist/tex/latex/microtype/microtype.cfg
+INPUT /usr/share/texmf-dist/tex/latex/tools/longtable.sty
+INPUT /usr/share/texmf-dist/tex/latex/tools/longtable.sty
+INPUT /usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty
+INPUT /usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty
 INPUT /usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT /usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT /usr/share/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
