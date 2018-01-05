@@ -1,21 +1,32 @@
 ---
 documentclass: llncs
-title: The power of dark silicon
+title: I need a title 
 author: Daniel Paredes
 institute: FH Dortmund
-keywords: hope, luke, ewoks
-abstract: | 
-    Sit amet mauris. Curabitur a quam. Aliquam neque. Nam nunc nunc,
-    lacinia sed, varius quis, iaculis eget, ante. Nulla dictum justo eu lacus.
-    Phasellus sit amet quam. Nullam sodales. Cras non magna eu est consectetuer
-    faucibus. Donec tempor lobortis turpis. Sed tellus velit, ullamcorper ac,
-    fringilla vitae, sodales nec, purus. Morbi aliquet risus in mi.
+keywords: I, need, keywords
+abstract: |
+    I need an abstract 
 
 ...
 
 
 # Introduction
 I need an introduction...
+
+# Unknowness
+Requirements elicitation is the process of finding and formulation requirements, and this process has many barriers due to stakeholders are not able to express their needs, explain what they do and why, conflicting demands, or new demands once other are met[@lauesen2001softwarereq], just to mention some examples.
+Many analyst consider interviews the most important elicitation technique, and usually elicitation process starts with interviewing the stakeholders. 
+Interviews allow analysts to check their understanding about the problem domain inmediately and ask for clarifications.
+Moreover, this technique is versatile in the sense of it is possible that new and unexpected issues come up and they can be attacked at that moment.
+
+However, elicit tacit knowledge in interviews is still a hard task to do. 
+This tacit knowledge  can be classified in four groups as describe in [@sutcliffe2013requirements].
+The **known knowns**, **known unknowns**, **unknown knowns** and **unknown unknowns**.
+The  known knowns is the knowledge that is documented, expressible, and relevant to the system. In order words, is the scenario in which it is possible to elicit since the beginning all the requirements, there is no tacit knowledge.
+The known unknowns is the knowledge that cannot be expressible because the stakeholders are not aware of their lack of domain knowledge,  their might forget it. In this case analyst are aware of the domain knowledge and therefore, their job is to challenge assumptions or implications.
+The unknown knowns is the knowledge that stakeholders hold but it is not documented by some reason.  Thus, analysts should use their interviewing skill to elicit when they spot any glimpse of that knowledge.
+The unknown unknowns is the knowledge that neither the analysts nor stakeholders are aware. 
+
 
 # Using Argumentation to Explain Ambiguity in Requirements Elicitation Interviews
 One of the major causes of ambiguities in elicitation interviews is the presence of tacit knowledge.
@@ -104,32 +115,18 @@ In the same direction, in the design discovery, which is a variant of the latter
 In the case of the unknown knowns in which the analyst can elicit tacit knowledge by taking into account the background (political, cultural, emotional) of stakeholders, and use that background as an "emotional guidance" in order to draw out the relevant information.
 Finally, in the case of unknown unknowns the authors suggest to main approaches. The first one is based on the "over-the-horizon" knowledge, in which authors proposed a socio-technical approach based on social media and e-communities. And the other one is using counter examples that can challenges the boundaries of the idea under development. 
 
+
+# Conclusions
+I need some conclusions
  
 # What i'll do 
+Explain tacit knowledge
+explain domain knowledge
  Explain acceptance unclarity
  Explain Dung's framework
  Explain ASPIC+
  Inconsistencies
  It's highly influenced by the domain knowledge of the analyst
-
-## My idea
- knowledge domain has influence
- analyst domain knowledge is statistically relevant
- analyst training is even more relevant
- influence of tacit knowledge in interviews
-
- ambiguity in interviews - focus on interviewer must have domain knowledge 
- what i want to do is : possible benefits in requirement elicitation is using two techniques based on the domain knowledge of the analyst, sometimes it is good to have an expert and an ignorant of a topic .
-
- limitations of the technique based on domain knowledge and tacit knowledge. 
- how types of tacit knowledge may influence in the proposal theory
- how domain knowledge may influence in the proposal theory
-
- As an intro:
-    analyst domain knowledge is statistically relevant
-    analyst training is even more relevant
- focus on the technique from the perspective of knowledge and technique
- future of that technique to solve more complex problems, from the prospective of knowledge and technique
 
 <!-- just raw latex --->
 \newpage
