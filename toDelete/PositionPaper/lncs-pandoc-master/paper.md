@@ -13,10 +13,11 @@ abstract: |
 # Introduction
 I need an introduction...
 
-# Unknowness
+# My approach (i need a section title) 
+## Tacit knowledge in elicitation interviews 
 Requirements elicitation is the process of finding and formulation requirements, and this process has many barriers due to stakeholders are not able to express their needs, explain what they do and why, conflicting demands, or new demands once other are met[@lauesen2001softwarereq], just to mention some examples.
 Many analyst consider interviews the most important elicitation technique, and usually elicitation process starts with interviewing the stakeholders. 
-Interviews allow analysts to check their understanding about the problem domain inmediately and ask for clarifications.
+Interviews allow analysts to check their understanding about the problem domain immediately and ask for clarifications.
 Moreover, this technique is versatile in the sense of it is possible that new and unexpected issues come up and they can be attacked at that moment.
 
 However, elicit tacit knowledge in interviews is still a hard task to do. 
@@ -26,6 +27,44 @@ The  known knowns is the knowledge that is documented, expressible, and relevant
 The known unknowns is the knowledge that cannot be expressible because the stakeholders are not aware of their lack of domain knowledge,  their might forget it. In this case analyst are aware of the domain knowledge and therefore, their job is to challenge assumptions or implications.
 The unknown knowns is the knowledge that stakeholders hold but it is not documented by some reason.  Thus, analysts should use their interviewing skill to elicit when they spot any glimpse of that knowledge.
 The unknown unknowns is the knowledge that neither the analysts nor stakeholders are aware. 
+
+## Challenge tacit knowledge 
+The unknowness clarification presented in above suggest the presence of three problems.
+The goal is to go from any scenario in which tacit knowledge exists to known knowns. 
+In order to achieve that goal and take the advantages presented in elicitation interviews (immediately clarification of assumptions and debate of implications) we are going to use the theoretical  framework described by Elrakaiby [@elrakaiby2017using].
+In this framework we model the interview as a set of arguments and attacks between them.
+In that sense, we will able to spot ambiguities and tacit knowledge in terms of inconsistencies and insufficiency of information. 
+We will adapt some examples from [@elrakaiby2017using] to show how each tacit knowledge scenario can be addresed. 
+
+**known unknowns**: In the following example the domain knowledge of the analyst is used to detect inconsistencies (attacks), because the stakeholder didn't take into account relevant information about domain application (location of trash bins).
+
+A customers wanted a recycling-support system and one of the goals was _to avoid fines from the municipality for incorrect recycling_.  According to the domain knowledge of the analyst, _trash bins are placed along the streets_.  Thus, the goal was inconsistent with the domain knowledge of the analyst because _there is no way to trace back person who brakes the recycling rule_. 
+This scenario can be modeled using arguments and attacks as follows:
+
+The arguments: (A1)trash bins are placed along the streets, (A2)since trash bins are placed along the streets, the trash owner cannot be traced back. (B1)people who do not recycle should be fined (B2)to fine people, the municipality must be able to trace products in trash bins back to their owners.
+
+Attacks: A2 attacks B1, and viceversa.
+
+**unknown knowns**: In the following example analyst challenges the stakeholder statement, as a result the stakeholder reveals new information (reply). 
+
+A customers wants to develop a system to allow patients to measure the amount of glucose in their blood, and then send the result to their general practitioner. If the glucose level is above a certain threshold, the practitioner pays a visit to the patient.
+The customer said: _in one-two days the doctor sees the notification in the system_. Then analyst asked:  _What happens if the doctor is not available for any reason?_. The customer replied: _The general practitioner is substituted by another doctor who accesses the same system_.
+
+The arguments: (A1)in one-two days the doctor sees the notification,(B1)the doctor might be unavailable,(B2)since the the doctor might be unavailable, the notification might be  delayed.
+
+The attacks: A1 attacks B2, and viceversa 
+
+**unknown unknowns**: In the following example the stakeholder didn't notice the inconsistency between his statements, but the analyst did and asked for clarification. However, the stakeholder couldn't give an answers due to his ignorance.
+
+One of the customers wants to develop an app to manage medical-related reservation in Tuscani. The costumer mentioned that the  _current reservation system, based on phone calls, was centralised_. During the interview,  the customer said that _depending on where the examination/visit will be, the patient has to call Nottola or Siena_. The analyst could not understand how this realization was possible since it means the reservation system is not centralized. Therefore the analyst asked for clarification and the stakeholder couldn't give any acceptable answer.
+
+The arguments: (A1)the current reservation is centralized, (B1)depending on where the examination/visit will be (B2)the patience has to call Nottola or Siena, (B3) since it is possible to call either Nottola or Siena the system is not centralized.
+
+The attacks: A1 attacks B3, and viceversa
+
+## Limits of elicited knowledge
+In the last section we present how to use a theoretical framework based on arguments and attacks to addresed the different levels of tacit knowledge.
+But now our question is 
 
 
 # Using Argumentation to Explain Ambiguity in Requirements Elicitation Interviews

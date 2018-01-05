@@ -57,10 +57,9 @@
 \maketitle
 \begin{abstract}
 I need an abstract
-aeuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu
 
 % lncs keyword extension 
-\keywords{hope, luke, ewoks}
+\keywords{I, need, keywords}
 
 \end{abstract}
 
@@ -69,8 +68,13 @@ aeuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu
 
 I need an introduction\ldots{}
 
-\hypertarget{unknowness}{%
-\section{Unknowness}\label{unknowness}}
+\hypertarget{my-approach-i-need-a-section-title}{%
+\section{My approach (i need a section
+title)}\label{my-approach-i-need-a-section-title}}
+
+\hypertarget{tacit-knowledge-in-elicitation-interviews}{%
+\subsection{Tacit knowledge in elicitation
+interviews}\label{tacit-knowledge-in-elicitation-interviews}}
 
 Requirements elicitation is the process of finding and formulation
 requirements, and this process has many barriers due to stakeholders are
@@ -79,7 +83,7 @@ conflicting demands, or new demands once other are met{[}1{]}, just to
 mention some examples. Many analyst consider interviews the most
 important elicitation technique, and usually elicitation process starts
 with interviewing the stakeholders. Interviews allow analysts to check
-their understanding about the problem domain inmediately and ask for
+their understanding about the problem domain immediately and ask for
 clarifications. Moreover, this technique is versatile in the sense of it
 is possible that new and unexpected issues come up and they can be
 attacked at that moment.
@@ -100,6 +104,89 @@ stakeholders hold but it is not documented by some reason. Thus,
 analysts should use their interviewing skill to elicit when they spot
 any glimpse of that knowledge. The unknown unknowns is the knowledge
 that neither the analysts nor stakeholders are aware.
+
+\hypertarget{challenge-tacit-knowledge}{%
+\subsection{Challenge tacit knowledge}\label{challenge-tacit-knowledge}}
+
+The unknowness clarification presented in above suggest the presence of
+three problems. The goal is to go from any scenario in which tacit
+knowledge exists to known knowns. In order to achieve that goal and take
+the advantages presented in elicitation interviews (immediately
+clarification of assumptions and debate of implications) we are going to
+use the theoretical framework described by Elrakaiby {[}3{]}. In this
+framework we model the interview as a set of arguments and attacks
+between them. In that sense, we will able to spot ambiguities and tacit
+knowledge in terms of inconsistencies and insufficiency of information.
+We will adapt some examples from {[}3{]} to show how each tacit
+knowledge scenario can be addresed.
+
+\textbf{known unknowns}: In the following example the domain knowledge
+of the analyst is used to detect inconsistencies (attacks), because the
+stakeholder didn't take into account relevant information about domain
+application (location of trash bins).
+
+A customers wants a recycling-support system and one of the goals is
+\emph{to avoid fines from the municipality for incorrect recycling}.
+According to the domain knowledge of the analyst, \emph{trash bins are
+placed along the streets}. Thus, the goal is inconsistent with the
+domain knowledge of the analyst because \emph{there is no way to trace
+back person who brakes the recycling rule}. This scenario can be modeled
+using arguments and attacks as follows:
+
+The arguments: (A1)trash bins are placed along the streets, (A2)since
+trash bins are placed along the streets, the trash owner cannot be
+traced back. (B1)people who do not recycle should be fined (B2)to fine
+people, the municipality must be able to trace products in trash bins
+back to their owners.
+
+Attacks: A2 attacks B1, and viceversa.
+
+\textbf{unknown knowns}: In the following example analyst challenges the
+stakeholder statement by using a question, as a result the stakeholder
+reveals new information (reply).
+
+A customers wants to develop a system to allow patients to measure the
+amount of glucose in their blood, and then send the result to their
+general practitioner. If the glucose level is above a certain threshold,
+the practitioner pays a visit to the patient. The customer says:
+\emph{In one-two days the doctor sees the notification in the system}.
+Then analyst asks: \emph{What happens if the doctor is not available for
+any reason?}. The customer replies: \emph{The general practitioner is
+substituted by another doctor who accesses the same system}.
+
+The arguments: (A1)in one-two days the doctor sees the
+notification,(B1)the doctor might be unavailable,(B2)since the the
+doctor might be unavailable, the notification might be delayed.
+
+The attacks: A1 attacks B2, and viceversa
+
+\textbf{unknown unknowns}: In the following example the stakeholder
+didn't notice the inconsistency between his statements, but the analyst
+did and asked for clarification. However, the stakeholder couldn't give
+an answers due to his ignorance.
+
+One of the customers wants to develop an app to manage medical-related
+reservation in Tuscani. The costumer mentions that the \emph{current
+reservation system, based on phone calls, was centralised}. During the
+interview, the customer says that \emph{depending on where the
+examination/visit will be, the patient has to call Nottola or Siena}.
+The analyst could not understand how this realization was possible since
+it means that the reservation system is not centralized. So the analyst
+asks for clarification and the stakeholder cannot give any acceptable
+answer.
+
+The arguments: (A1)the current reservation is centralized, (B1)depending
+on where the examination/visit will be (B2)the patience has to call
+Nottola or Siena, (B3) since it is possible to call either Nottola or
+Siena the system is not centralized.
+
+The attacks: A1 attacks B3, and viceversa
+
+\hypertarget{limits-of-elicited-knowledge}{%
+\subsection{Limits of elicited
+knowledge}\label{limits-of-elicited-knowledge}}
+
+aeu
 
 \hypertarget{using-argumentation-to-explain-ambiguity-in-requirements-elicitation-interviews}{%
 \section{Using Argumentation to Explain Ambiguity in Requirements
