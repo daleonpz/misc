@@ -3,86 +3,25 @@ documentclass: llncs
 title: I need a title 
 author: Daniel Paredes
 institute: FH Dortmund
-keywords: I, need, keywords
+keywords: interview, tacit knowledge, elicitation
 abstract: |
-    I need an abstract 
-
+    Interviews are the most common technique in requirements elicitation. However, the presence of tacit knowledge have an important influence on interviews success. In this paper, we describe a tacit knowledge classification. Then, we make use, with examples, of a theoretical framework to detect and minimize the effects of tacit knowledge. Finally, we analyze how likely is to have a sucessful elicitation interviews based on the tacit knowledge classification. 
 ...
 
-
 # Introduction
-I need an introduction...
+Requirements engineering is the subset of systems engineering concerned with discovering, developing, tracing, analyzing, qualifying, communicating and managing requirements that define the system at succesive levels of abstraction [@dick2017requirements]. 
+The first step of requirements engineering is requirements elicitation which is defined as the process of finding and formulation requirements [@lauesen2001softwarereq], and this process has many barriers due to stakeholders are not able to express their needs, explain what they do and why, conflicting demands, or new demands once other are met, just to mention some examples.
 
-# My approach (i need a section title) 
-## Tacit knowledge in elicitation interviews 
-Requirements elicitation is the process of finding and formulation requirements, and this process has many barriers due to stakeholders are not able to express their needs, explain what they do and why, conflicting demands, or new demands once other are met[@lauesen2001softwarereq], just to mention some examples.
-Many analyst consider interviews the most important elicitation technique, and usually elicitation process starts with interviewing the stakeholders. 
-Interviews allow analysts to check their understanding about the problem domain immediately and ask for clarifications.
-Moreover, this technique is versatile in the sense of it is possible that new and unexpected issues come up and they can be attacked at that moment.
+One of the most used techiques to elict requirements is open interviews, and also is considered the most effective way to transfer domain knowledge [@elrakaiby2017using]. 
+However, the success of interviews depends on mainly two factors, analyst set of interviewing skills and stakeholders domain knowledge; nonetheless, statistically analyst domain knowledge is important but not as relevant as the other two[@aranda2016effect].
+Therefore, analyst should make use of tools and techniques to detect and elicit tacit knowledge form stakeholders. Tacit knowledge is in requirements engineering is defined as the knowledge that a stakeholders has, but does not pass to the requirements analyst [@ferrari2015ambiguity].
 
-However, elicit tacit knowledge in interviews is still a hard task to do. 
-This tacit knowledge  can be classified in four groups as describe in [@sutcliffe2013requirements].
-The **known knowns**, **known unknowns**, **unknown knowns** and **unknown unknowns**.
-The  known knowns is the knowledge that is documented, expressible, and relevant to the system. In order words, is the scenario in which it is possible to elicit since the beginning all the requirements, there is no tacit knowledge.
-The known unknowns is the knowledge that cannot be expressible because the stakeholders are not aware of their lack of domain knowledge,  their might forget it. In this case analyst are aware of the domain knowledge and therefore, their job is to challenge assumptions or implications.
-The unknown knowns is the knowledge that stakeholders hold but it is not documented by some reason.  Thus, analysts should use their interviewing skill to elicit when they spot any glimpse of that knowledge.
-The unknown unknowns is the knowledge that neither the analysts nor stakeholders are aware. 
+In this paper we describe a classification of tacit knowledge in elicitation interviews based on [@sutcliffe2013requirements]. Then we apply the theoretical framework described in [@elrakaiby2017using] in examples to show how to deal with tacit knowledge. The examples were selected in order to match the each scenario of the classification. Finally, 
+we use the result from [@aranda2016effect] to identify in which scenario is most likely to perform a succesful interview. 
 
-## Challenge tacit knowledge 
-The unknowness clarification presented in above suggest the presence of three problems.
-The goal is to go from any scenario in which tacit knowledge exists to known knowns. 
-In order to achieve that goal and take the advantages presented in elicitation interviews (immediately clarification of assumptions and debate of implications) we are going to use the theoretical  framework described by Elrakaiby [@elrakaiby2017using].
-In this framework we model the interview as a set of arguments and attacks between them.
-In that sense, we will able to spot ambiguities and tacit knowledge in terms of inconsistencies and insufficiency of information. 
-We will adapt some examples from [@elrakaiby2017using] to show how each tacit knowledge scenario can be addresed. 
+The remainder paper is structured as follows. In section 2 we provide a summary of the papers used to write this paper. In section 3 we present our approach. Finally, in section 4, we present our conclusions. 
 
-**known unknowns**: In the following example the domain knowledge of the analyst is used to detect inconsistencies (attacks), because the stakeholder didn't take into account relevant information about domain application (location of trash bins).
-
-A customers wanted a recycling-support system and one of the goals was _to avoid fines from the municipality for incorrect recycling_.  According to the domain knowledge of the analyst, _trash bins are placed along the streets_.  Thus, the goal was inconsistent with the domain knowledge of the analyst because _there is no way to trace back person who brakes the recycling rule_. 
-This scenario can be modeled using arguments and attacks as follows:
-
-The arguments: (A1)trash bins are placed along the streets, (A2)since trash bins are placed along the streets, the trash owner cannot be traced back. (B1)people who do not recycle should be fined (B2)to fine people, the municipality must be able to trace products in trash bins back to their owners.
-
-Attacks: A2 attacks B1, and viceversa.
-
-**unknown knowns**: In the following example analyst challenges the stakeholder statement, as a result the stakeholder reveals new information (reply). 
-
-A customers wants to develop a system to allow patients to measure the amount of glucose in their blood, and then send the result to their general practitioner. If the glucose level is above a certain threshold, the practitioner pays a visit to the patient.
-The customer said: _in one-two days the doctor sees the notification in the system_. Then analyst asked:  _What happens if the doctor is not available for any reason?_. The customer replied: _The general practitioner is substituted by another doctor who accesses the same system_.
-
-The arguments: (A1)in one-two days the doctor sees the notification,(B1)the doctor might be unavailable,(B2)since the the doctor might be unavailable, the notification might be  delayed.
-
-The attacks: A1 attacks B2, and viceversa 
-
-**unknown unknowns**: In the following example the stakeholder didn't notice the inconsistency between his statements, but the analyst did and asked for clarification. However, the stakeholder couldn't give an answers due to his ignorance.
-
-One of the customers wants to develop an app to manage medical-related reservation in Tuscani. The costumer mentioned that the  _current reservation system, based on phone calls, was centralised_. During the interview,  the customer said that _depending on where the examination/visit will be, the patient has to call Nottola or Siena_. The analyst could not understand how this realization was possible since it means the reservation system is not centralized. Therefore the analyst asked for clarification and the stakeholder couldn't give any acceptable answer.
-
-The arguments: (A1)the current reservation is centralized, (B1)depending on where the examination/visit will be (B2)the patience has to call Nottola or Siena, (B3) since it is possible to call either Nottola or Siena the system is not centralized.
-
-The attacks: A1 attacks B3, and viceversa
-
-## Limits of elicited knowledge
-In the last section we present how to use a theoretical framework based on arguments and attacks to addresed the different levels of tacit knowledge.
-In this section we will compare in which scenario of tacit knowledge the elicitation interview is more effective based on Aranda et al. work [@aranda2016effect] about the effect of domain knowledge on elicitation process.   
-Effectiveness is described in [@aranda2016effect] as the total percentage of problem domain elements identified compared to a benchmark. 
-However, since we have no accesse to any requirement data, we will use the conclusions of [@aranda2016effect] to compare the different scenarios of tacit knowledge (known unknowns, unknown knowns and unknowns unknowns).
-
-The works presented in [@aranda2016effect] concludes that: (1)analyst's domain knowledge(ADK) has small but statisticall significant effect on the effectiveness, (2)stakeholders' domain knowledge(SDK) has a big positive and significant influence and (3)analyst's interviewing skill and general training in requirement activities have also a big positive and significant influence. 
-In this paper, we will focus only in comparing based on the domain knowledge holder since that knowledge can be measured.
-
-| scenario              | ADK | SDK |
-|:----------------------|:---:|:---:|
-| known unknowns        | $+$ | 0   |
-| unknown knowns        | 0   |$++$ |
-| unknown unknowns      | 0   | 0   |
-
-Table: Influence of domain knowledge in the different tacit knowledge scenarios
-
-We can observed in Table 1 that it is more likely to be effective in the scenario of _unknown knowns_ because the stakeholders' domain knowledge have more influence than analyst's domain knowledge. 
-On the other hand, the analyst's interviewing skills will have different approaches in the case of _known unknowns_ and _unknown knowns_. In the first case, the interview will be more focused on challenging assumptions and implications, and in the latter case on spoting glympses of stakeholders' hidden knowledge.
-
-# Papers summary 
+# Background 
 ## Requirements elicitation: Towards the Unknown Unknowns [@sutcliffe2013requirements]
 Elicitation in requirements engineering is still problematic because missing or mistaken requirements are hard to elicit, and this produce projects delays and have financial implications. 
 In this paper, the authors propose an elicitation review framework (ERF) in order to explore the different challenges related to the "unknowness" of the domain knowledge.
@@ -170,10 +109,82 @@ However, the results also suggest that the domain knowledge of the interviewees 
 Supplementary, the results of the internal replication also  suggest that the domain knowledge of the stakeholders is more relevant than the analysts', in term of effectiveness of the elicitation interviews. 
 Nevertheless, these results also show that the positive effects of the training in requirements engineering of the interviewers, with these effects being as relevant as interviewees' domain knowledge. 
 
+# Tacit knowledge in elicitation interviews 
+## Types of tacit knowledge
+Many analyst consider interviews the most important elicitation technique, and usually elicitation process starts with interviewing the stakeholders. 
+Interviews allow analysts to check their understanding about the problem domain immediately and ask for clarifications.
+Moreover, this technique is versatile in the sense of it is possible that new and unexpected issues come up and they can be attacked at that moment.
+
+However, elicit tacit knowledge in interviews is still a hard task to do. 
+This tacit knowledge  can be classified in four groups as describe in [@sutcliffe2013requirements].
+The **known knowns**, **known unknowns**, **unknown knowns** and **unknown unknowns**.
+The  known knowns is the knowledge that is documented, expressible, and relevant to the system. In order words, is the scenario in which it is possible to elicit since the beginning all the requirements, there is no tacit knowledge.
+The known unknowns is the knowledge that cannot be expressible because the stakeholders are not aware of their lack of domain knowledge,  their might forget it. In this case analyst are aware of the domain knowledge and therefore, their job is to challenge assumptions or implications.
+The unknown knowns is the knowledge that stakeholders hold but it is not documented by some reason.  Thus, analysts should use their interviewing skill to elicit when they spot any glimpse of that knowledge.
+The unknown unknowns is the knowledge that neither the analysts nor stakeholders are aware. 
+
+## How to deal with tacit knowledge 
+The unknowness clarification presented in above suggest the presence of three problems.
+The goal is to go from any scenario in which tacit knowledge exists to known knowns. 
+In order to achieve that goal and take the advantages presented in elicitation interviews (immediately clarification of assumptions and debate of implications) we are going to use the theoretical  framework described by Elrakaiby [@elrakaiby2017using].
+In this framework we model the interview as a set of arguments and attacks between them.
+In that sense, we will able to spot ambiguities and tacit knowledge in terms of inconsistencies and insufficiency of information. 
+We will adapt some examples from [@elrakaiby2017using] to show how each tacit knowledge scenario can be addresed. 
+
+**known unknowns**: In the following example the domain knowledge of the analyst is used to detect inconsistencies (attacks), because the stakeholder didn't take into account relevant information about domain application (location of trash bins).
+
+A customers wanted a recycling-support system and one of the goals was _to avoid fines from the municipality for incorrect recycling_.  According to the domain knowledge of the analyst, _trash bins are placed along the streets_.  Thus, the goal was inconsistent with the domain knowledge of the analyst because _there is no way to trace back person who brakes the recycling rule_. 
+This scenario can be modeled using arguments and attacks as follows:
+
+The arguments: (A1)trash bins are placed along the streets, (A2)since trash bins are placed along the streets, the trash owner cannot be traced back. (B1)people who do not recycle should be fined (B2)to fine people, the municipality must be able to trace products in trash bins back to their owners.
+
+Attacks: A2 attacks B1, and viceversa.
+
+**unknown knowns**: In the following example analyst challenges the stakeholder statement, as a result the stakeholder reveals new information (reply). 
+
+A customers wants to develop a system to allow patients to measure the amount of glucose in their blood, and then send the result to their general practitioner. If the glucose level is above a certain threshold, the practitioner pays a visit to the patient.
+The customer said: _in one-two days the doctor sees the notification in the system_. Then analyst asked:  _What happens if the doctor is not available for any reason?_. The customer replied: _The general practitioner is substituted by another doctor who accesses the same system_.
+
+The arguments: (A1)in one-two days the doctor sees the notification,(B1)the doctor might be unavailable,(B2)since the the doctor might be unavailable, the notification might be  delayed.
+
+The attacks: A1 attacks B2, and viceversa 
+
+**unknown unknowns**: In the following example the stakeholder didn't notice the inconsistency between his statements, but the analyst did and asked for clarification. However, the stakeholder couldn't give an answers due to his ignorance.
+
+One of the customers wants to develop an app to manage medical-related reservation in Tuscani. The costumer mentioned that the  _current reservation system, based on phone calls, was centralised_. During the interview,  the customer said that _depending on where the examination/visit will be, the patient has to call Nottola or Siena_. The analyst could not understand how this realization was possible since it means the reservation system is not centralized. Therefore the analyst asked for clarification and the stakeholder couldn't give any acceptable answer.
+
+The arguments: (A1)the current reservation is centralized, (B1)depending on where the examination/visit will be (B2)the patience has to call Nottola or Siena, (B3) since it is possible to call either Nottola or Siena the system is not centralized.
+
+The attacks: A1 attacks B3, and viceversa
+
+## Limits of elicited knowledge
+In the last section we present how to use a theoretical framework based on arguments and attacks to addresed the different levels of tacit knowledge.
+In this section we will compare in which scenario of tacit knowledge the elicitation interview would be more effective based on Aranda et al. work [@aranda2016effect] about the effect of domain knowledge on elicitation process.   
+Effectiveness is described in [@aranda2016effect] as the total percentage of problem domain elements identified compared to a benchmark. 
+However, since we have no accesse to any requirement data, we will use the conclusions of [@aranda2016effect] to compare the different scenarios of tacit knowledge (known unknowns, unknown knowns and unknowns unknowns).
+
+The works presented in [@aranda2016effect] concludes that: (1)analyst's domain knowledge(ADK) has small but statisticall significant effect on the effectiveness, (2)stakeholders' domain knowledge(SDK) has a big positive and significant influence and (3)analyst's interviewing skill and general training in requirement activities have also a big positive and significant influence. 
+In this paper, we will focus only in comparing based on the domain knowledge holder since that knowledge can be measured.
+
+| scenario              | ADK | SDK |
+|:----------------------|:---:|:---:|
+| known unknowns        | $+$ | 0   |
+| unknown knowns        | 0   |$++$ |
+| unknown unknowns      | 0   | 0   |
+
+Table: Influence of domain knowledge in the different tacit knowledge scenarios
+
+We can observed in Table 1 that it is more likely to be effective in the scenario of _unknown knowns_ because the stakeholders' domain knowledge have more influence than analyst's domain knowledge. 
+On the other hand, the analyst's interviewing skills will have different approaches in the case of _known unknowns_ and _unknown knowns_. In the first case, the interview will be more focused on challenging assumptions and implications, and in the latter case on spoting glympses of stakeholders' hidden knowledge.
 
 # Conclusions
-I need some conclusions
- 
+Elicitation interviews is not an easy task. Like in any intensive oral communication there are missunderstandings related to tacit knowledge. 
+In our work we focus on analysing the different levels of how tacit knowledge[@sutcliffe2013requirements] would affect the effectiveness of elicitation interviews. 
+Moreover, we use the theoretical framework described in [@elrakaiby2017using] to indentify and manage tacit knowledge during interviews.
+And finally, we analyze based on the results of [@aranda2016effect] in which scenario of tacit knowledge it is more likely to have a sucessful elictation interview. 
+
+
+<!--- 
 # What i'll do 
 Explain tacit knowledge
 explain domain knowledge
@@ -182,8 +193,9 @@ explain domain knowledge
  Explain ASPIC+
  Inconsistencies
  It's highly influenced by the domain knowledge of the analyst
+-->
 
-<!-- just raw latex --->
-\newpage
+<!-- just raw latex -->
+<!-- \newpage -->
 
 # References

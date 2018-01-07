@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.11.20)  5 JAN 2018 17:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.11.20)  7 JAN 2018 13:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1075,34 +1075,34 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 ! Undefined control sequence.
-l.259 \tightlist
+l.131 \tightlist
                 
 ? 
-[4] [5] [6] [7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 465.
- [8]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 465.
+[2] [3] [4] [5] [6] [7] [8]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 507.
+ [9]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 507.
  (./paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 465.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 465.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 507.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 507.
 Package rerunfilecheck Info: File `paper.out' has not changed.
 (rerunfilecheck)             Checksum: 5CAA2CD1FCC8CC3AC8C31FAFDFECA27F;122.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 465.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 507.
  ) 
 Here is how much of TeX's memory you used:
- 12100 strings out of 492985
- 171826 string characters out of 6138637
- 273702 words of memory out of 5000000
- 15359 multiletter control sequences out of 15000+600000
- 50629 words of font info for 98 fonts, out of 8000000 for 9000
+ 12115 strings out of 492985
+ 171974 string characters out of 6138637
+ 275656 words of memory out of 5000000
+ 15357 multiletter control sequences out of 15000+600000
+ 51370 words of font info for 106 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 31i,6n,38p,424b,437s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 31i,6n,38p,424b,427s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf-dis
 t/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm
 -rm.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf-d
@@ -1112,10 +1112,10 @@ e/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf-dist/fonts/type
 1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr9.pfb></u
 sr/share/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf-dist/fon
 ts/type1/public/lm/lmsy10.pfb>
-Output written on paper.pdf (8 pages, 188883 bytes).
+Output written on paper.pdf (9 pages, 193722 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
- 107 compressed objects within 2 object streams
- 41 named destinations out of 1000 (max. 500000)
+ 131 PDF objects out of 1000 (max. 8388607)
+ 110 compressed objects within 2 object streams
+ 42 named destinations out of 1000 (max. 500000)
  14345 words of extra memory for PDF output out of 14400 (max. 10000000)
 
