@@ -5,19 +5,19 @@ author: Daniel Paredes
 institute: FH Dortmund
 keywords: interview, tacit knowledge, elicitation
 abstract: |
-    Interviews are the most common technique in requirements elicitation. However, the presence of tacit knowledge have an important influence on interviews success. In this paper, we describe a tacit knowledge classification. Then, we make use, with examples, of a theoretical framework to detect and minimize the effects of tacit knowledge. Finally, we analyze how likely is to have a sucessful elicitation interviews based on the tacit knowledge classification. 
+    Interviews are the most common technique in requirements elicitation. However, the presence of tacit knowledge have an important influence on interviews success. In this paper, we describe a tacit knowledge classification. Then, we make use, with examples, of a theoretical framework to detect and minimize the effects of tacit knowledge. Finally, we analyze how likely is to have a successful elicitation interviews based on the tacit knowledge classification. 
 ...
 
 # Introduction
-Requirements engineering is the subset of systems engineering concerned with discovering, developing, tracing, analyzing, qualifying, communicating and managing requirements that define the system at succesive levels of abstraction [@dick2017requirements]. 
+Requirements engineering is the subset of systems engineering concerned with discovering, developing, tracing, analyzing, qualifying, communicating and managing requirements that define the system at successive levels of abstraction [@dick2017requirements]. 
 The first step of requirements engineering is requirements elicitation which is defined as the process of finding and formulation requirements [@lauesen2001softwarereq], and this process has many barriers due to stakeholders are not able to express their needs, explain what they do and why, conflicting demands, or new demands once other are met, just to mention some examples.
 
-One of the most used techiques to elict requirements is open interviews, and also is considered the most effective way to transfer domain knowledge [@elrakaiby2017using]. 
+One of the most used techniques to elicit requirements is open interviews, and also is considered the most effective way to transfer domain knowledge [@elrakaiby2017using]. 
 However, the success of interviews depends on mainly two factors, analyst set of interviewing skills and stakeholders domain knowledge; nonetheless, statistically analyst domain knowledge is important but not as relevant as the other two[@aranda2016effect].
 Therefore, analyst should make use of tools and techniques to detect and elicit tacit knowledge form stakeholders. Tacit knowledge is in requirements engineering is defined as the knowledge that a stakeholders has, but does not pass to the requirements analyst [@ferrari2015ambiguity].
 
 In this paper we describe a classification of tacit knowledge in elicitation interviews based on [@sutcliffe2013requirements]. Then we apply the theoretical framework described in [@elrakaiby2017using] in examples to show how to deal with tacit knowledge. The examples were selected in order to match the each scenario of the classification. Finally, 
-we use the result from [@aranda2016effect] to identify in which scenario is most likely to perform a succesful interview. 
+we use the result from [@aranda2016effect] to identify in which scenario is most likely to perform a successful interview. 
 
 The remainder paper is structured as follows. In section 2 we provide a summary of the papers used to write this paper. In section 3 we present our approach. Finally, in section 4, we present our conclusions. 
 
@@ -138,7 +138,7 @@ This scenario can be modeled using arguments and attacks as follows:
 
 The arguments: (A1)trash bins are placed along the streets, (A2)since trash bins are placed along the streets, the trash owner cannot be traced back. (B1)people who do not recycle should be fined (B2)to fine people, the municipality must be able to trace products in trash bins back to their owners.
 
-Attacks: A2 attacks B1, and viceversa.
+Attacks: A2 attacks B1, and vice versa.
 
 **unknown knowns**: In the following example analyst challenges the stakeholder statement, as a result the stakeholder reveals new information (reply). 
 
@@ -147,23 +147,23 @@ The customer said: _in one-two days the doctor sees the notification in the syst
 
 The arguments: (A1)in one-two days the doctor sees the notification,(B1)the doctor might be unavailable,(B2)since the the doctor might be unavailable, the notification might be  delayed.
 
-The attacks: A1 attacks B2, and viceversa 
+The attacks: A1 attacks B2, and vice versa 
 
 **unknown unknowns**: In the following example the stakeholder didn't notice the inconsistency between his statements, but the analyst did and asked for clarification. However, the stakeholder couldn't give an answers due to his ignorance.
 
-One of the customers wants to develop an app to manage medical-related reservation in Tuscani. The costumer mentioned that the  _current reservation system, based on phone calls, was centralised_. During the interview,  the customer said that _depending on where the examination/visit will be, the patient has to call Nottola or Siena_. The analyst could not understand how this realization was possible since it means the reservation system is not centralized. Therefore the analyst asked for clarification and the stakeholder couldn't give any acceptable answer.
+One of the customers wants to develop an app to manage medical-related reservation in Tuscani. The costumer mentioned that the  _current reservation system, based on phone calls, was centralized_. During the interview,  the customer said that _depending on where the examination/visit will be, the patient has to call Nottola or Siena_. The analyst could not understand how this realization was possible since it means the reservation system is not centralized. Therefore the analyst asked for clarification and the stakeholder couldn't give any acceptable answer.
 
 The arguments: (A1)the current reservation is centralized, (B1)depending on where the examination/visit will be (B2)the patience has to call Nottola or Siena, (B3) since it is possible to call either Nottola or Siena the system is not centralized.
 
-The attacks: A1 attacks B3, and viceversa
+The attacks: A1 attacks B3, and vice versa
 
 ## Limits of elicited knowledge
-In the last section we present how to use a theoretical framework based on arguments and attacks to addresed the different levels of tacit knowledge.
+In the last section we present how to use a theoretical framework based on arguments and attacks to addressed the different levels of tacit knowledge.
 In this section we will compare in which scenario of tacit knowledge the elicitation interview would be more effective based on Aranda et al. work [@aranda2016effect] about the effect of domain knowledge on elicitation process.   
 Effectiveness is described in [@aranda2016effect] as the total percentage of problem domain elements identified compared to a benchmark. 
-However, since we have no accesse to any requirement data, we will use the conclusions of [@aranda2016effect] to compare the different scenarios of tacit knowledge (known unknowns, unknown knowns and unknowns unknowns).
+However, since we have no access to any requirement data, we will use the conclusions of [@aranda2016effect] to compare the different scenarios of tacit knowledge (known unknowns, unknown knowns and unknowns unknowns).
 
-The works presented in [@aranda2016effect] concludes that: (1)analyst's domain knowledge(ADK) has small but statisticall significant effect on the effectiveness, (2)stakeholders' domain knowledge(SDK) has a big positive and significant influence and (3)analyst's interviewing skill and general training in requirement activities have also a big positive and significant influence. 
+The works presented in [@aranda2016effect] concludes that: (1)analyst's domain knowledge(ADK) has small but statistically significant effect on the effectiveness, (2)stakeholders' domain knowledge(SDK) has a big positive and significant influence and (3)analyst's interviewing skill and general training in requirement activities have also a big positive and significant influence. 
 In this paper, we will focus only in comparing based on the domain knowledge holder since that knowledge can be measured.
 
 | scenario              | ADK | SDK |
@@ -175,13 +175,13 @@ In this paper, we will focus only in comparing based on the domain knowledge hol
 Table: Influence of domain knowledge in the different tacit knowledge scenarios
 
 We can observed in Table 1 that it is more likely to be effective in the scenario of _unknown knowns_ because the stakeholders' domain knowledge have more influence than analyst's domain knowledge. 
-On the other hand, the analyst's interviewing skills will have different approaches in the case of _known unknowns_ and _unknown knowns_. In the first case, the interview will be more focused on challenging assumptions and implications, and in the latter case on spoting glympses of stakeholders' hidden knowledge.
+On the other hand, the analyst's interviewing skills will have different approaches in the case of _known unknowns_ and _unknown knowns_. In the first case, the interview will be more focused on challenging assumptions and implications, and in the latter case on spotting glimpses of stakeholders' hidden knowledge.
 
 # Conclusions
-Elicitation interviews is not an easy task. Like in any intensive oral communication there are missunderstandings related to tacit knowledge. 
-In our work we focus on analysing the different levels of how tacit knowledge[@sutcliffe2013requirements] would affect the effectiveness of elicitation interviews. 
-Moreover, we use the theoretical framework described in [@elrakaiby2017using] to indentify and manage tacit knowledge during interviews.
-And finally, we analyze based on the results of [@aranda2016effect] in which scenario of tacit knowledge it is more likely to have a sucessful elictation interview. 
+Elicitation interviews is not an easy task. Like in any intensive oral communication there are misunderstandings related to tacit knowledge. 
+In our work we focus on analyzing the different levels of how tacit knowledge[@sutcliffe2013requirements] would affect the effectiveness of elicitation interviews. 
+Moreover, we use the theoretical framework described in [@elrakaiby2017using] to identify and manage tacit knowledge during interviews.
+And finally, we analyze based on the results of [@aranda2016effect] in which scenario of tacit knowledge it is more likely to have a successful elicitation interview. 
 
 
 <!--- 
