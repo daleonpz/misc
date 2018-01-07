@@ -38,7 +38,7 @@
 \hypersetup{breaklinks=true,
             bookmarks=true,
             pdfauthor={Daniel Paredes},
-            pdftitle={I need a title},
+            pdftitle={Influence of tacit knowledge in elicitation interviews},
             colorlinks=true,
             citecolor=blue,
             urlcolor=blue,
@@ -50,7 +50,7 @@
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \setcounter{secnumdepth}{5}
 
-\title{I need a title}
+\title{Influence of tacit knowledge in elicitation interviews}
 \author{Daniel Paredes}
 \date{}
 
@@ -89,15 +89,15 @@ domain knowledge {[}3{]}. However, the success of interviews depends on
 mainly two factors, analyst set of interviewing skills and stakeholders
 domain knowledge; nonetheless, statistically analyst domain knowledge is
 important but not as relevant as the other two{[}4{]}. Therefore,
-analyst should make use of tools and techniques to detect and elicit
-tacit knowledge form stakeholders. Tacit knowledge is in requirements
+analyst depends on the use of tools and techniques to detect and elicit
+tacit knowledge form stakeholders. Tacit knowledge in requirements
 engineering is defined as the knowledge that a stakeholders has, but
 does not pass to the requirements analyst {[}5{]}.
 
 In this paper we describe a classification of tacit knowledge in
 elicitation interviews based on {[}6{]}. Then we apply the theoretical
-framework described in {[}3{]} in examples to show how to deal with
-tacit knowledge. The examples were selected in order to match the each
+framework described in {[}3{]} to examples to show how to deal with
+tacit knowledge. The examples were selected in order to analyze each
 scenario of the classification. Finally, we use the result from {[}4{]}
 to identify in which scenario is most likely to perform a successful
 interview.
@@ -143,20 +143,6 @@ levels of unknowness in domain knowledge.
   accessible but may be relevant.
 \end{itemize}
 
-This levels of knowledge implies problems of different perspective of
-the elicitation process that involves analysts and stakeholders. The
-\emph{known knowns} is a simple scenario since the counterparts are
-aware of the domain problem which is expressible and articulated. In the
-case of the \emph{known unknowns}, the analysts has a domain knowledge
-and they should be able draw out the information from the stakeholders
-that they might be unaware of. In contrast, in the \emph{unknown knowns}
-scenario the stakeholders are the ones that are aware of the domain
-knowledge but for some reason it is no articulated, and therefore, the
-analysts once they notice any glimpse of the stakeholders information
-they should able to discover and elicit that. On the other hand, in the
-case of \emph{unknown unknowns} both counterparts are unaware of the
-missing information that might be relevant to the system.
-
 Based on the perspectives described before, the authors identified three
 challenges to requirement elicitation. The first one is to identifying
 tacit knowledge (unknown knowns), even in the case the analyst presume
@@ -166,23 +152,23 @@ is the articulation of the knowledge. Thus, in the worst case scenario
 the goal is go from the unknown unknowns perspective to known knowns.
 
 Finally, the authors suggest four research directions to deal with the
-unknowness problem. Starting with the known unknown in which the analyst
-should challenging assumptions, implications, and relaxing domain
-constrains in order to increase the probability to elicit the unaware
-knowledge of the stakeholders. In the same direction, in the design
-discovery, which is a variant of the latter case, the analyst should
-deal with the the following statement ``I'll know what I want when I see
-it''. Thus, there is a need of prototyping or simulations as part of the
-elicitation process. In the case of the unknown knowns in which the
-analyst can elicit tacit knowledge by taking into account the background
-(political, cultural, emotional) of stakeholders, and use that
-background as an ``emotional guidance'' in order to draw out the
-relevant information. Finally, in the case of unknown unknowns the
-authors suggest to main approaches. The first one is based on the
-``over-the-horizon'' knowledge, in which authors proposed a
-socio-technical approach based on social media and e-communities. And
-the other one is using counter examples that can challenges the
-boundaries of the idea under development.
+unknowness problem. First, in \emph{known unknown} the analyst should
+challenging assumptions, implications, and relaxing domain constrains in
+order to increase the probability to elicit the unaware knowledge of the
+stakeholders. In the same direction, the design discovery, which is a
+variant of the latter case, the analyst should deal with the the
+following statement ``I'll know what I want when I see it''. Thus, there
+is a need of prototyping or simulations as part of the elicitation
+process. In the case of the \emph{unknown knowns} the analyst can elicit
+tacit knowledge by taking into account the background (political,
+cultural, emotional) of stakeholders, and use that background as an
+``emotional guidance'' in order to draw out the relevant information.
+Finally, in order to deal with \emph{unknown unknowns} the authors
+suggest two main approaches. The first one is based on the
+``over-the-horizon'' knowledge which is a socio-technical approach based
+on social media and e-communities. And the other one is using counter
+examples that can challenges the boundaries of the idea under
+development.
 
 \hypertarget{using-argumentation-to-explain-ambiguity-in-requirements-elicitation-interviews-elrakaiby2017using}{%
 \subsection{Using Argumentation to Explain Ambiguity in Requirements
@@ -200,7 +186,7 @@ theoretical framework to overcome ambiguity during interviews in the
 elicitation phase. The framework is based on the ``Argumentation
 theory''.
 
-In that sense, Elrakaiby et al.~focus on one type of ambiguities, the
+In that sense, the authors focus on one type of ambiguities, the
 ``acceptance unclarity''. An acceptance unclarity occurs every time the
 analyst is able to assign an interpretation or meaning to the speech
 fragment of the stakeholder, the interpretation matches the intended
@@ -216,27 +202,26 @@ and conclusions. It makes explicit attacks between arguments and the
 argumentation flow that leads to conclusions. A basic model in this
 framework is a pair \((A,D)\), where \(A\) is a set of arguments and
 \(D\) is a set of attacks among those arguments. For example, a set
-\(A\) is defined as \(A = \{A1,A2,A3\}\), and a possible set of attacks
-could be \(D = \{(A1,A3)\}\). Which means that if A1 is realizable then
-A3 can't be realizable.
+\(A\) could be defined as \(A = \{A1,A2,A3\}\), and a possible set of
+attacks could be \(D = \{(A1,A3)\}\). Which means that if A1 is
+realizable then A3 can't be realizable.
 
-In the paper, Elrakaiby et al.~models statements given by the
-stakeholders, analysts domain knowledge and analysts inferences as
-arguments, and ambiguities between them as attacks. For example, let say
-the analyst listens the following statement \emph{the professor will
-upload the task description within three days} (A1), but the analyst
-know (domain knowledge) that \emph{the professor may be on a business
-meeting} (A2), so the analyst think (inference) that \emph{it may be
-possible that it will be take longer to upload the task description}
-(A3). In this scenario the set of attacks \(D\) is given by
-\(D = \{(A1,A3)\}\). Thus, since there is an attack it is possible to
-ask for clarifications or details.
+In the paper, statements given by the stakeholders, analysts domain
+knowledge and analysts inferences are modeled as arguments, and
+ambiguities between them as attacks. For example, let say the analyst
+listens the following statement \emph{the professor will upload the task
+description within three days} (A1), but the analyst know (domain
+knowledge) that \emph{the professor may be on a business meeting} (A2),
+so the analyst think (inference) that \emph{it may be possible that it
+will be take longer to upload the task description} (A3). In this
+scenario the set of attacks \(D\) is given by \(D = \{(A1,A3)\}\). Thus,
+since there is an attack it is possible to ask for clarifications.
 
-The theoretical framework proposed by Elrakaiby et al.~allows analysts
-to detect and minimize ambiguities during elicitation interviews, while
-most of the methods that focus on ambiguities analyze written texts. On
-the other hand, this framework focuses in more complex ambiguities that
-cannot be view as single terms.
+The theoretical framework proposed allows analysts to detect and
+minimize ambiguities during elicitation interviews, while most of the
+methods focus on ambiguities analysis in written texts. On the other
+hand, this framework focuses in more complex ambiguities that cannot be
+view as single terms.
 
 \hypertarget{effect-of-domain-knowledge-on-elicitation-effectiveness-an-internally-replicated-controlled-experiment-aranda2016effect}{%
 \subsection{Effect of Domain Knowledge on Elicitation Effectiveness: An
@@ -244,7 +229,7 @@ Internally Replicated Controlled Experiment
 {[}4{]}}\label{effect-of-domain-knowledge-on-elicitation-effectiveness-an-internally-replicated-controlled-experiment-aranda2016effect}}
 
 The effectiveness of elicitation interviews may be influenced by analyst
-skills or characteristics. In these high intensive oral communication
+skills or characteristics. In this high intensive oral communication
 scenario the analyst must be able to draw out relevant information and
 needs from the stakeholders. It has been reported that the effectiveness
 of the interviews has a direct relation with the domain knowledge of the
@@ -264,15 +249,10 @@ negatively) the effectiveness of the requirements elicitation activity?}
 For this purpose, the authors performed the study in two stages. They
 performed an initial baseline experiment with two domain problems, and
 then they performed an internal replication with two other domain
-problems. Furthermore, the authors divided the elicitation process in
-two phases. The elicitation phase which is the actual interview with the
-stakeholder, and the reporting phase in which the analyst understands
-and documents the information gathered in the elicitation phase.
-
-One remark of the study is that the authors chose students because of
-their lack of experience in elicitation interviews, isolation of the
-domain knowledge, and to analyze, in the internal replication, the
-influence of the training in requirements engineering in elicitation
+problems. One remark of the study is that the authors chose students
+because of their lack of experience in elicitation interviews, isolation
+of the domain knowledge, and to analyze, in the internal replication,
+the influence of the training in requirements engineering in elicitation
 interviews. In the study participated post-graduated students as
 interviewers and two professors as interviewees. The students should
 make open interviews and elicit the information afterwards. Moreover,
@@ -289,10 +269,10 @@ elicitation interviews. However, the results also suggest that the
 domain knowledge of the interviewees has statistically significant
 influence. Supplementary, the results of the internal replication also
 suggest that the domain knowledge of the stakeholders is more relevant
-than the analysts', in term of effectiveness of the elicitation
-interviews. Nevertheless, these results also show that the positive
-effects of the training in requirements engineering of the interviewers,
-with these effects being as relevant as interviewees' domain knowledge.
+than the analysts', in terms of effectiveness of elicitation interviews.
+Nevertheless, these results also show that the positive effects of the
+training in requirements engineering of the interviewers, with these
+effects being as relevant as interviewees' domain knowledge.
 
 \hypertarget{tacit-knowledge-in-elicitation-interviews}{%
 \section{Tacit knowledge in elicitation
@@ -320,11 +300,13 @@ knowledge. The known unknowns is the knowledge that cannot be
 expressible because the stakeholders are not aware of their lack of
 domain knowledge, their might forget it. In this case analyst are aware
 of the domain knowledge and therefore, their job is to challenge
-assumptions or implications. The unknown knowns is the knowledge that
+assumptions or implications in order to elicit information that
+stakeholders are unaware of. The unknown knowns is the knowledge that
 stakeholders hold but it is not documented by some reason. Thus,
 analysts should use their interviewing skill to elicit when they spot
 any glimpse of that knowledge. The unknown unknowns is the knowledge
-that neither the analysts nor stakeholders are aware.
+that neither the analysts nor stakeholders are aware but might be
+relevant to the project.
 
 \hypertarget{how-to-deal-with-tacit-knowledge}{%
 \subsection{How to deal with tacit
@@ -416,7 +398,7 @@ Aranda et al.~work {[}4{]} about the effect of domain knowledge on
 elicitation process.\\
 Effectiveness is described in {[}4{]} as the total percentage of problem
 domain elements identified compared to a benchmark. However, since we
-have no access to any requirement data, we will use the conclusions of
+have no access to any requirement data, we will use the results from
 {[}4{]} to compare the different scenarios of tacit knowledge (known
 unknowns, unknown knowns and unknowns unknowns).
 
