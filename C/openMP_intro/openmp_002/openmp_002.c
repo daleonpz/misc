@@ -94,8 +94,8 @@ ERROR is so huge
     for (i = 0; i < n; i += 1)
     {
        fX = fH * ((double)i + 0.5);
-    //    fSum += f(fX);
-    	fSum += (4.0/ (1.0 + fX*fX));
+        fSum += f(fX);
+//     	fSum += (4.0/ (1.0 + fX*fX));
     }
     return fH * fSum;
 }
