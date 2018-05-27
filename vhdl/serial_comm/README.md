@@ -90,10 +90,10 @@ IDLE:
     if (done):
         next_state <= SHOW
     else 
-        out <= 0 -- 0 in 7 seg
+        out <= (others => '0') -- implies BCD to 7SEGMENT
     
 SHOW:
-    out <= data -- this implies BCD to 7 segment conversion
+    out <= data -- this implies BCD to 7SEGMENT conversion
     next_state <= IDLE
 ```
 
