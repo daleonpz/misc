@@ -16,6 +16,9 @@ The communication protocol is based on SPI. Thus, this will be our setting:
 - Clk from FPGA master will be used as SPI clk
 - Transmit a 4-bit data packet 
 
+
+![Block Diagram](images/block.jpg)
+
 In blocks:
 
 BUTTONS --> SPI --> CONVERT BIN TO 7SEG --> DISPLAY
