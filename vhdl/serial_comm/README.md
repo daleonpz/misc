@@ -20,6 +20,8 @@ In blocks:
 
 BUTTONS --> SPI --> CONVERT BIN TO 7SEG --> DISPLAY
 
+All blocks will have it's own clock and reset as well
+
 ## Buttons
 Since they are debounced buttons, there is no need for a debouncing circuit. 
 The goal of this block is to:
@@ -27,16 +29,17 @@ The goal of this block is to:
 - Enable the SPI-TX block
 
 ```vhdl
--- State Machine
--- States: IDLE, EN_TX (enable transmition)
+--  Pseudocode
+--  States: IDLE, EN_TX (enable transmission)
 port(
      s: in std_logic_vector (3 downto 0);
     en: out std_logic;
-    data: out std_logic_vector (3 downto 0);
+    data: out std_logic_vector (3 downto 0)
+);
     
 IDLE: 
     if (press_buttons):
-        Next_state <= EN_TX;
+        next_state <= EN_TX;
 
 EN_TX:
     data <= s;
@@ -46,13 +49,53 @@ EN_TX:
 
 ## SPI
 The communication will be only in one direction, so we will need only two lines.
-One for the SPI clock and the other for transmition from FPGA master to FPGA slave.
-- TX: to be done
-- RX: to be done 
+One for the SPI clock and the other for transmission from FPGA master to FPGA slave.
+- TX: 
+```vhdl
+-- Pseudocode
+
+port( 
+    data : in std_logic_vector (3 downto 0);
+    en: in std_logic;
+    clk_spi: out std_logic;
+    tx: out std_logic
+);
+```
+
+- RX: 
+```vhdl
+-- Pseudocode 
+
+port(
+    clk_spi: in std_logic;
+    rx: in std_logic;
+    data: out std_logic_vector (3 downto 0);
+    done: out std_logic
+);
+```
 
 ## Converter 
-The implementation will be done by **with ... select ... when**.
+The implementation will be done by **with ... select ... when**
 
+```vhdl
+-- Pseudocode
+-- States: IDLE, SHOW
+port(
+    data: in std_logic_vector (3 downto 0);
+    done: in std_logic;
+    out: out std_logic_vector (6 downto 0) -- 7segment
+);
+
+IDLE:
+    if (done):
+        next_state <= SHOW
+    else 
+        out <= 0 -- 0 in 7 seg
+    
+SHOW:
+    out <= data -- this implies BCD to 7 segment conversion
+    next_state <= IDLE
+```
 
 
 
