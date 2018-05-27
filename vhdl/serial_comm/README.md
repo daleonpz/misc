@@ -54,6 +54,9 @@ EN_TX:
 ## SPI
 The communication will be only in one direction, so we will need only two lines.
 One for the SPI clock and the other for transmission from FPGA master to FPGA slave.
+
+We will need to implement a "Rising edge detector" for the SPI_clk in the slave  and a "clock generator" in the case of the master. 
+
 - TX: 
 ```vhdl
 -- Pseudocode
