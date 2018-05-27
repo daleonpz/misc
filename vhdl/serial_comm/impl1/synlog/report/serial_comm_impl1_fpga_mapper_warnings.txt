@@ -1,0 +1,6 @@
+@W: BN137 :|Found combinational loop during mapping at net G_116
+@W: BN137 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":29:8:29:9|Found combinational loop during mapping at net G_117
+@W: BN137 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":29:8:29:9|Found combinational loop during mapping at net G_118
+@W: BN137 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":29:8:29:9|Found combinational loop during mapping at net G_119
+@W: BN137 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":29:8:29:9|Found combinational loop during mapping at net G_120
+@W: MT420 |Found inferred clock clk_generator|clk with period 5.16ns. Please declare a user-defined clock on object "p:clk"

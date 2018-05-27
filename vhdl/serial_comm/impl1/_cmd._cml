@@ -1,0 +1,1 @@
+-link    -encrypt        -top clk_generator -osyn /home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/impl1/synwork/serial_comm_impl1_comp.srs /home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/impl1/synwork/layer0.srs   

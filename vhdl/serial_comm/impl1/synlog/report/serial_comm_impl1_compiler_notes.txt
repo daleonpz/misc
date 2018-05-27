@@ -1,0 +1,9 @@
+@N|Running in 64-bit mode
+@N|Running in 64-bit mode
+@N: CD720 :"/home/dnl/diamond_lattice/usr/local/diamond/3.10_x64/synpbase/lib/vhd/std.vhd":123:18:123:21|Setting time resolution to ps
+@N:"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":8:7:8:19|Top entity is set to clk_generator.
+@N: CD630 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":8:7:8:19|Synthesizing work.clk_generator.arch.
+@N: CD233 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":17:16:17:17|Using sequential encoding for type states.
+@N: CL201 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":29:8:29:9|Trying to extract state machine for register state_reg.
+@N|Running in 64-bit mode
+

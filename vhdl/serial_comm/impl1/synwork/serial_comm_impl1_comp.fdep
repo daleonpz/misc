@@ -1,0 +1,24 @@
+#OPTIONS:"|-layerid|0|-orig_srs|/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/impl1/synwork/serial_comm_impl1_comp.srs|-top|clk_generator|-prodtype|synplify_pro|-fixsmult|-infer_seqShift|-nram|-sdff_counter|-divnmod|-nostructver|-encrypt|-pro|-lite|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-ignore_undefined_lib|-lib|work|-lib|work"
+#CUR:"/home/dnl/diamond_lattice/usr/local/diamond/3.10_x64/synpbase/linux_a_64/c_vhdl":1501863388
+#CUR:"/home/dnl/diamond_lattice/usr/local/diamond/3.10_x64/synpbase/lib/vhd/location.map":1501886520
+#CUR:"/home/dnl/diamond_lattice/usr/local/diamond/3.10_x64/synpbase/lib/vhd/std.vhd":1501862701
+#CUR:"/home/dnl/diamond_lattice/usr/local/diamond/3.10_x64/synpbase/lib/vhd/snps_haps_pkg.vhd":1501862701
+#CUR:"/home/dnl/diamond_lattice/usr/local/diamond/3.10_x64/synpbase/lib/vhd/std1164.vhd":1501862701
+#CUR:"/home/dnl/diamond_lattice/usr/local/diamond/3.10_x64/synpbase/lib/vhd/numeric.vhd":1501862701
+#CUR:"/home/dnl/diamond_lattice/usr/local/diamond/3.10_x64/synpbase/lib/vhd/umr_capim.vhd":1501862701
+#CUR:"/home/dnl/diamond_lattice/usr/local/diamond/3.10_x64/synpbase/lib/vhd/arith.vhd":1501862700
+#CUR:"/home/dnl/diamond_lattice/usr/local/diamond/3.10_x64/synpbase/lib/vhd/unsigned.vhd":1501862701
+#CUR:"/home/dnl/diamond_lattice/usr/local/diamond/3.10_x64/synpbase/lib/vhd/hyperents.vhd":1501862700
+#CUR:"/home/dnl/diamond_lattice/usr/local/diamond/3.10_x64/cae_library/synthesis/vhdl/xp2.vhd":1493334710
+#CUR:"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":1527447327
+0			"/home/dnl/diamond_lattice/usr/local/diamond/3.10_x64/cae_library/synthesis/vhdl/xp2.vhd" vhdl
+1			"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd" vhdl
+#Dependency Lists(Uses List)
+0 -1
+1 -1
+#Dependency Lists(Users Of)
+0 -1
+1 -1
+#Design Unit to File Association
+module work clk_generator 1
+arch work clk_generator arch 1
