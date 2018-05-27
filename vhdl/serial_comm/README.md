@@ -47,6 +47,7 @@ IDLE:
 EN_TX:
     data <= s;
     en <= 1
+    next_state <= IDLE
 
 ```
 
