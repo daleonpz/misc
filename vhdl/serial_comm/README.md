@@ -22,6 +22,27 @@ BUTTONS --> SPI --> CONVERT BIN TO 7SEG --> DISPLAY
 
 ## Buttons
 Since they are debounced buttons, there is no need for a debouncing circuit. 
+The goal of this block is to:
+- Generate the data vector (4 bits) to transmit
+- Enable the SPI-TX block
+
+```vhdl
+-- State Machine
+-- States: IDLE, EN_TX (enable transmition)
+port(
+     s: in std_logic_vector (3 downto 0);
+    en: out std_logic;
+    data: out std_logic_vector (3 downto 0);
+    
+IDLE: 
+    if (press_buttons):
+        Next_state <= EN_TX;
+
+EN_TX:
+    data <= s;
+    en <= 1
+
+```
 
 ## SPI
 The communication will be only in one direction, so we will need only two lines.
