@@ -33,7 +33,7 @@ The goal of this block is to:
 
 ```vhdl
 --  Pseudocode
---  States: IDLE, EN_TX (enable transmission)
+--  STATES: IDLE, EN_TX (enable transmission)
 port(
      s: in std_logic_vector (3 downto 0);
     en: out std_logic;
@@ -57,18 +57,32 @@ One for the SPI clock and the other for transmission from FPGA master to FPGA sl
 - TX: 
 ```vhdl
 -- Pseudocode
-
+-- STATES: IDLE, TX, DONE
 port( 
     data : in std_logic_vector (3 downto 0);
     en: in std_logic;
     clk_spi: out std_logic;
     tx: out std_logic
 );
+
+
+IDLE:
+    if (en)
+        next_state <= TX
+
+TX:
+    tx <= data -- using a loop
+    if (tx_done)
+        next_state <= DONE
+
+DONE:
+    next_state <= IDLE 
 ```
 
 - RX: 
 ```vhdl
 -- Pseudocode 
+-- STATES: IDLE, RX, DONE
 
 port(
     clk_spi: in std_logic;
@@ -76,6 +90,19 @@ port(
     data: out std_logic_vector (3 downto 0);
     done: out std_logic
 );
+
+IDLE:
+    if (some_data_arrived)
+        next_state <= RX
+
+RX:
+    data <= rx -- using a loop
+    if (rx_done)
+        next_state <= DONE
+
+DONE:
+    done <= '1'
+        next_state <= IDLE
 ```
 
 ## Converter 
@@ -83,7 +110,7 @@ The implementation will be done by **with ... select ... when**
 
 ```vhdl
 -- Pseudocode
--- States: IDLE, SHOW
+-- STATES: IDLE, SHOW
 port(
     data: in std_logic_vector (3 downto 0);
     done: in std_logic;
