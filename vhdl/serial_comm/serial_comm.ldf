@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BaliProject version="3.2" title="serial_comm" device="LFXP2-17E-5QN208C" default_implementation="spi1">
+    <Options/>
+    <Implementation title="spi1" dir="spi1" description="spi1" synthesis="synplify" default_strategy="Strategy1">
+        <Options/>
+        <Source name="serial_comm.lpf" type="Logic Preference" type_short="LPF">
+            <Options/>
+        </Source>
+    </Implementation>
+    <Strategy name="Strategy1" file="serial_comm1.sty"/>
+</BaliProject>
