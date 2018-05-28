@@ -38,7 +38,7 @@ begin
     end process;
 
     -- Control logic and data path
-    process(clk_reg, state_reg, en)
+    process(state_reg, count_reg, en)
     begin
         state_next <= IDLE; 
         if (en = '1') then
@@ -47,11 +47,11 @@ begin
                     state_next <= ONE;
                 when ONE =>
                     state_next <= HOLD;
-                    state_h <= ONE;
+                    state_h <= ZERO;
                     clk_next <= '1';
                 when ZERO =>  
                     state_next <= HOLD;
-                    state_h <= ZERO;
+                    state_h <= ONE;
                     clk_next <= '0';
                 when HOLD => 
                     if (count_reg = MAX_COUNT - 1) then
