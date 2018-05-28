@@ -1,1 +1,1 @@
-project -fileorder "/home/dnl/diamond_lattice/usr/local/diamond/3.10_x64/cae_library/synthesis/vhdl/xp2.vhd" "/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd" 
+project -fileorder "/home/dnl/diamond_lattice/usr/local/diamond/3.10_x64/cae_library/synthesis/vhdl/xp2.vhd" "/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd" "/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/rising_edge_detector.vhd" "/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/delay_sync.vhd" 

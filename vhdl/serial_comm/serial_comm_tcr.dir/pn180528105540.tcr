@@ -1,0 +1,5 @@
+#Start recording tcl command: 5/28/2018 09:48:33
+#Project Location: /home/dnl/Documents/gitStuff/misc/vhdl/serial_comm; Project name: serial_comm
+prj_project open "/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/serial_comm.ldf"
+prj_src add "/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/delay_sync.vhd"
+#Stop recording: 5/28/2018 10:55:40

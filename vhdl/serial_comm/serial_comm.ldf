@@ -2,9 +2,15 @@
 <BaliProject version="3.2" title="serial_comm" device="LFXP2-17E-5QN208C" default_implementation="impl1">
     <Options/>
     <Implementation title="impl1" dir="impl1" description="impl1" synthesis="synplify" default_strategy="Strategy1">
-        <Options def_top="clk_generator"/>
+        <Options def_top="rising_edge_detector"/>
         <Source name="clk_generator.vhd" type="VHDL" type_short="VHDL">
             <Options top_module="clk_generator"/>
+        </Source>
+        <Source name="rising_edge_detector.vhd" type="VHDL" type_short="VHDL">
+            <Options top_module="rising_edge_detector"/>
+        </Source>
+        <Source name="delay_sync.vhd" type="VHDL" type_short="VHDL">
+            <Options/>
         </Source>
         <Source name="serial_comm.lpf" type="Logic Preference" type_short="LPF">
             <Options/>

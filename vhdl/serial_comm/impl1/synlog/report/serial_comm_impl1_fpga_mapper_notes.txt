@@ -1,12 +1,6 @@
 @N: MF248 |Running in 64-bit mode.
 @N: MF666 |Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.)
 @N: MT206 |Auto Constrain mode is enabled
-@N: MO225 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":29:8:29:9|There are no possible illegal states for state machine state_reg[0:3] (in view: work.clk_generator(arch)); safe FSM implementation is not required.
-@N: BN362 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":29:8:29:9|Removing sequential instance state_reg[1] (in view: work.clk_generator(arch)) because it does not drive other instances.
-@N: BN362 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":29:8:29:9|Removing sequential instance state_reg[0] (in view: work.clk_generator(arch)) because it does not drive other instances.
-@N: FX271 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":29:8:29:9|Replicating instance count_reg[0] (in view: work.clk_generator(arch)) with 5 loads 1 time to improve timing.
-@N: FX271 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":29:8:29:9|Replicating instance count_reg[1] (in view: work.clk_generator(arch)) with 4 loads 1 time to improve timing.
-@N: FX271 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":29:8:29:9|Replicating instance count_reg[3] (in view: work.clk_generator(arch)) with 4 loads 1 time to improve timing.
 @N: FX164 |The option to pack registers in the IOB has not been specified. Please set syn_useioff attribute.  
 @N: FX1056 |Writing EDF file: /home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/impl1/serial_comm_impl1.edi
 @N: BW106 |Synplicity Constraint File capacitance units using default value of 1pF 

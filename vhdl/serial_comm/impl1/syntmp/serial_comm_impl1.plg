@@ -1,8 +1,3 @@
-@P:  Worst Slack : -0.910
-@P:  clk_generator|clk - Estimated Frequency : 164.9 MHz
-@P:  clk_generator|clk - Requested Frequency : 194.0 MHz
-@P:  clk_generator|clk - Estimated Period : 6.065
-@P:  clk_generator|clk - Requested Period : 5.156
-@P:  clk_generator|clk - Slack : -0.910
-@P:  Total Area : 25.0
-@P:  CPU Time : 0h:00m:02s
+@P:  Worst Slack : NA
+@P:  Total Area : 0.0
+@P:  CPU Time : 0h:00m:01s

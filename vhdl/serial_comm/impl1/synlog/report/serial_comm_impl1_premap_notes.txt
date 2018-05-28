@@ -1,3 +1,2 @@
 @N: MF248 |Running in 64-bit mode.
 @N: MF666 |Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.)
-@N: MO225 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":29:8:29:9|There are no possible illegal states for state machine state_reg[0:3] (in view: work.clk_generator(arch)); safe FSM implementation is not required.

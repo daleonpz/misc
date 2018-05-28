@@ -8,177 +8,50 @@
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>CD434 :&quot;/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd&quot;:41:12:41:18|Signal clk_reg in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.</Dynamic>
-            <Navigation>CD434</Navigation>
-            <Navigation>/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd</Navigation>
-            <Navigation>41</Navigation>
-            <Navigation>12</Navigation>
-            <Navigation>41</Navigation>
-            <Navigation>18</Navigation>
-            <Navigation>Signal clk_reg in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.</Navigation>
+            <Dynamic>CD638 :&quot;/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/rising_edge_detector.vhd&quot;:19:19:19:23|Signal q_reg is undriven. Either assign the signal a value or remove the signal declaration.</Dynamic>
+            <Navigation>CD638</Navigation>
+            <Navigation>/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/rising_edge_detector.vhd</Navigation>
+            <Navigation>19</Navigation>
+            <Navigation>19</Navigation>
+            <Navigation>19</Navigation>
+            <Navigation>23</Navigation>
+            <Navigation>Signal q_reg is undriven. Either assign the signal a value or remove the signal declaration.</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>CG296 :&quot;/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd&quot;:41:4:41:10|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.</Dynamic>
-            <Navigation>CG296</Navigation>
-            <Navigation>/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd</Navigation>
-            <Navigation>41</Navigation>
-            <Navigation>4</Navigation>
-            <Navigation>41</Navigation>
-            <Navigation>10</Navigation>
-            <Navigation>Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.</Navigation>
+            <Dynamic>CL240 :&quot;/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/rising_edge_detector.vhd&quot;:19:19:19:23|Signal q_reg is floating; a simulation mismatch is possible.</Dynamic>
+            <Navigation>CL240</Navigation>
+            <Navigation>/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/rising_edge_detector.vhd</Navigation>
+            <Navigation>19</Navigation>
+            <Navigation>19</Navigation>
+            <Navigation>19</Navigation>
+            <Navigation>23</Navigation>
+            <Navigation>Signal q_reg is floating; a simulation mismatch is possible.</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>CG290 :&quot;/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd&quot;:57:24:57:32|Referenced variable count_reg is not in sensitivity list.</Dynamic>
-            <Navigation>CG290</Navigation>
-            <Navigation>/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd</Navigation>
-            <Navigation>57</Navigation>
-            <Navigation>24</Navigation>
-            <Navigation>57</Navigation>
-            <Navigation>32</Navigation>
-            <Navigation>Referenced variable count_reg is not in sensitivity list.</Navigation>
-        </Message>
-        <Message>
-            <ID>2019991</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>CL117 :&quot;/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd&quot;:44:8:44:9|Latch generated from process for signal state_h(1 downto 0); possible missing assignment in an if or case statement.</Dynamic>
-            <Navigation>CL117</Navigation>
-            <Navigation>/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd</Navigation>
-            <Navigation>44</Navigation>
+            <Dynamic>CL169 :&quot;/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/rising_edge_detector.vhd&quot;:25:8:25:9|Pruning unused register q_next_3. Make sure that there are no unused intermediate registers.</Dynamic>
+            <Navigation>CL169</Navigation>
+            <Navigation>/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/rising_edge_detector.vhd</Navigation>
+            <Navigation>25</Navigation>
             <Navigation>8</Navigation>
-            <Navigation>44</Navigation>
+            <Navigation>25</Navigation>
             <Navigation>9</Navigation>
-            <Navigation>Latch generated from process for signal state_h(1 downto 0); possible missing assignment in an if or case statement.</Navigation>
+            <Navigation>Pruning unused register q_next_3. Make sure that there are no unused intermediate registers.</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>CL117 :&quot;/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd&quot;:44:8:44:9|Latch generated from process for signal clk_next; possible missing assignment in an if or case statement.</Dynamic>
-            <Navigation>CL117</Navigation>
-            <Navigation>/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd</Navigation>
-            <Navigation>44</Navigation>
+            <Dynamic>CL169 :&quot;/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/rising_edge_detector.vhd&quot;:25:8:25:9|Pruning unused register state_reg_3(1 downto 0). Make sure that there are no unused intermediate registers.</Dynamic>
+            <Navigation>CL169</Navigation>
+            <Navigation>/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/rising_edge_detector.vhd</Navigation>
+            <Navigation>25</Navigation>
             <Navigation>8</Navigation>
-            <Navigation>44</Navigation>
+            <Navigation>25</Navigation>
             <Navigation>9</Navigation>
-            <Navigation>Latch generated from process for signal clk_next; possible missing assignment in an if or case statement.</Navigation>
-        </Message>
-        <Message>
-            <ID>2019991</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>CL117 :&quot;/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd&quot;:44:8:44:9|Latch generated from process for signal count_next(3 downto 0); possible missing assignment in an if or case statement.</Dynamic>
-            <Navigation>CL117</Navigation>
-            <Navigation>/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd</Navigation>
-            <Navigation>44</Navigation>
-            <Navigation>8</Navigation>
-            <Navigation>44</Navigation>
-            <Navigation>9</Navigation>
-            <Navigation>Latch generated from process for signal count_next(3 downto 0); possible missing assignment in an if or case statement.</Navigation>
-        </Message>
-        <Message>
-            <ID>2019991</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>BN132 :&quot;/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd&quot;:44:8:44:9|Removing sequential instance state_h[1] because it is equivalent to instance state_h[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.</Dynamic>
-            <Navigation>BN132</Navigation>
-            <Navigation>/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd</Navigation>
-            <Navigation>44</Navigation>
-            <Navigation>8</Navigation>
-            <Navigation>44</Navigation>
-            <Navigation>9</Navigation>
-            <Navigation>Removing sequential instance state_h[1] because it is equivalent to instance state_h[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.</Navigation>
-        </Message>
-        <Message>
-            <ID>2019991</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>BN132 :&quot;/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd&quot;:44:8:44:9|Removing sequential instance state_h[0] because it is equivalent to instance clk_next. To keep the instance, apply constraint syn_preserve=1 on the instance.</Dynamic>
-            <Navigation>BN132</Navigation>
-            <Navigation>/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd</Navigation>
-            <Navigation>44</Navigation>
-            <Navigation>8</Navigation>
-            <Navigation>44</Navigation>
-            <Navigation>9</Navigation>
-            <Navigation>Removing sequential instance state_h[0] because it is equivalent to instance clk_next. To keep the instance, apply constraint syn_preserve=1 on the instance.</Navigation>
-        </Message>
-        <Message>
-            <ID>2019991</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>MT531 :&quot;/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd&quot;:44:8:44:9|Found signal identified as System clock which controls 5 sequential elements including count_next[3:0].  Using this clock, which has no specified timing constraint, can prevent conversion of gated or generated clocks and can adversely impact design performance.</Dynamic>
-            <Navigation>MT531</Navigation>
-            <Navigation>/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd</Navigation>
-            <Navigation>44</Navigation>
-            <Navigation>8</Navigation>
-            <Navigation>44</Navigation>
-            <Navigation>9</Navigation>
-            <Navigation>Found signal identified as System clock which controls 5 sequential elements including count_next[3:0].  Using this clock, which has no specified timing constraint, can prevent conversion of gated or generated clocks and can adversely impact design performance. </Navigation>
-        </Message>
-        <Message>
-            <ID>2019991</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>MT529 :&quot;/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd&quot;:29:8:29:9|Found inferred clock clk_generator|clk which controls 9 sequential elements including count_reg[3:0]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance.</Dynamic>
-            <Navigation>MT529</Navigation>
-            <Navigation>/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd</Navigation>
-            <Navigation>29</Navigation>
-            <Navigation>8</Navigation>
-            <Navigation>29</Navigation>
-            <Navigation>9</Navigation>
-            <Navigation>Found inferred clock clk_generator|clk which controls 9 sequential elements including count_reg[3:0]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. </Navigation>
-        </Message>
-        <Message>
-            <ID>2019991</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>BN137 :&quot;/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd&quot;:29:8:29:9|Found combinational loop during mapping at net G_117</Dynamic>
-            <Navigation>BN137</Navigation>
-            <Navigation>/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd</Navigation>
-            <Navigation>29</Navigation>
-            <Navigation>8</Navigation>
-            <Navigation>29</Navigation>
-            <Navigation>9</Navigation>
-            <Navigation>Found combinational loop during mapping at net G_117</Navigation>
-        </Message>
-        <Message>
-            <ID>2019991</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>BN137 :&quot;/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd&quot;:29:8:29:9|Found combinational loop during mapping at net G_118</Dynamic>
-            <Navigation>BN137</Navigation>
-            <Navigation>/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd</Navigation>
-            <Navigation>29</Navigation>
-            <Navigation>8</Navigation>
-            <Navigation>29</Navigation>
-            <Navigation>9</Navigation>
-            <Navigation>Found combinational loop during mapping at net G_118</Navigation>
-        </Message>
-        <Message>
-            <ID>2019991</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>BN137 :&quot;/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd&quot;:29:8:29:9|Found combinational loop during mapping at net G_119</Dynamic>
-            <Navigation>BN137</Navigation>
-            <Navigation>/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd</Navigation>
-            <Navigation>29</Navigation>
-            <Navigation>8</Navigation>
-            <Navigation>29</Navigation>
-            <Navigation>9</Navigation>
-            <Navigation>Found combinational loop during mapping at net G_119</Navigation>
-        </Message>
-        <Message>
-            <ID>2019991</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>BN137 :&quot;/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd&quot;:29:8:29:9|Found combinational loop during mapping at net G_120</Dynamic>
-            <Navigation>BN137</Navigation>
-            <Navigation>/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd</Navigation>
-            <Navigation>29</Navigation>
-            <Navigation>8</Navigation>
-            <Navigation>29</Navigation>
-            <Navigation>9</Navigation>
-            <Navigation>Found combinational loop during mapping at net G_120</Navigation>
-        </Message>
-        <Message>
-            <ID>2019993</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>MT420 |Found inferred clock clk_generator|clk with period 5.16ns. Please declare a user-defined clock on object &quot;p:clk&quot;</Dynamic>
-            <Navigation>MT420</Navigation>
-            <Navigation>Found inferred clock clk_generator|clk with period 5.16ns. Please declare a user-defined clock on object &quot;p:clk&quot;</Navigation>
+            <Navigation>Pruning unused register state_reg_3(1 downto 0). Make sure that there are no unused intermediate registers.</Navigation>
         </Message>
     </Task>
 </BaliMessageLog>

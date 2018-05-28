@@ -3,7 +3,7 @@ Running in Lattice mode
 Starting:    /home/dnl/diamond_lattice/usr/local/diamond/3.10_x64/synpbase/linux_a_64/mbin/synbatch
 Install:     /home/dnl/diamond_lattice/usr/local/diamond/3.10_x64/synpbase
 Hostname:    dnl
-Date:        Sun May 27 20:55:36 2018
+Date:        Mon May 28 11:02:27 2018
 Version:     M-2017.03L-SP1-1
 
 Arguments:   -product synplify_pro -batch serial_comm_impl1_synplify.tcl
@@ -18,66 +18,67 @@ Running: hdl_info_gen in foreground
 Generating HDL info...
 
 hdl_info_gen completed
-# Sun May 27 20:55:37 2018
+# Mon May 28 11:02:27 2018
 
 Return Code: 0
 Run Time:00h:00m:00s
+Copied /home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/impl1/serial_comm_impl1.srr to /home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/impl1/serial_comm_impl1.srf
 log file: "/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/impl1/serial_comm_impl1.srr"
 Running: impl1 in foreground
 
 Running proj_1|impl1
 
 Running: compile (Compile) on proj_1|impl1
-# Sun May 27 20:55:37 2018
+# Mon May 28 11:02:27 2018
 
 Running: compile_flow (Compile Process) on proj_1|impl1
-# Sun May 27 20:55:37 2018
+# Mon May 28 11:02:27 2018
 
 Running: compiler (Compile Input) on proj_1|impl1
-# Sun May 27 20:55:37 2018
+# Mon May 28 11:02:27 2018
 Copied /home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/impl1/synwork/serial_comm_impl1_comp.srs to /home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/impl1/serial_comm_impl1.srs
 
 compiler completed
-# Sun May 27 20:55:38 2018
+# Mon May 28 11:02:29 2018
 
 Return Code: 0
-Run Time:00h:00m:01s
+Run Time:00h:00m:02s
 
 Running: multi_srs_gen (Multi-srs Generator) on proj_1|impl1
-# Sun May 27 20:55:38 2018
+# Mon May 28 11:02:29 2018
 
 multi_srs_gen completed
-# Sun May 27 20:55:39 2018
+# Mon May 28 11:02:29 2018
 
 Return Code: 0
-Run Time:00h:00m:01s
+Run Time:00h:00m:00s
 Copied /home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/impl1/synwork/serial_comm_impl1_mult.srs to /home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/impl1/serial_comm_impl1.srs
 Copied /home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/impl1/serial_comm_impl1.srr to /home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/impl1/serial_comm_impl1.srf
 Complete: Compile Process on proj_1|impl1
 
 Running: premap (Pre-mapping) on proj_1|impl1
-# Sun May 27 20:55:39 2018
+# Mon May 28 11:02:29 2018
 
-premap completed with warnings
-# Sun May 27 20:55:40 2018
+premap completed
+# Mon May 28 11:02:30 2018
 
-Return Code: 1
+Return Code: 0
 Run Time:00h:00m:01s
 Complete: Compile on proj_1|impl1
 
 Running: map (Map) on proj_1|impl1
-# Sun May 27 20:55:40 2018
+# Mon May 28 11:02:30 2018
 License granted for 4 parallel jobs
 
 Running: fpga_mapper (Map & Optimize) on proj_1|impl1
-# Sun May 27 20:55:40 2018
+# Mon May 28 11:02:30 2018
 Copied /home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/impl1/synwork/serial_comm_impl1_m.srm to /home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/impl1/serial_comm_impl1.srm
 
-fpga_mapper completed with warnings
-# Sun May 27 20:55:42 2018
+fpga_mapper completed
+# Mon May 28 11:02:31 2018
 
-Return Code: 1
-Run Time:00h:00m:02s
+Return Code: 0
+Run Time:00h:00m:01s
 Complete: Map on proj_1|impl1
 Copied /home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/impl1/serial_comm_impl1.srr to /home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/impl1/serial_comm_impl1.srf
 Complete: Logic Synthesis on proj_1|impl1

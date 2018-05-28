@@ -1,12 +1,14 @@
 #--  Synopsys, Inc.
 #--  Version M-2017.03L-SP1-1
 #--  Project file /home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/impl1/run_options.txt
-#--  Written on Sun May 27 20:55:37 2018
+#--  Written on Mon May 28 11:02:27 2018
 
 
 #project files
 add_file -vhdl -lib work "/home/dnl/diamond_lattice/usr/local/diamond/3.10_x64/cae_library/synthesis/vhdl/xp2.vhd"
 add_file -vhdl -lib work "/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd"
+add_file -vhdl -lib work "/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/rising_edge_detector.vhd"
+add_file -vhdl -lib work "/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/delay_sync.vhd"
 
 
 
@@ -27,7 +29,7 @@ set_option -speed_grade -5
 set_option -part_companion ""
 
 #compilation/mapping options
-set_option -top_module "clk_generator"
+set_option -top_module "rising_edge_detector"
 
 # hdl_compiler_options
 set_option -distributed_compile 0

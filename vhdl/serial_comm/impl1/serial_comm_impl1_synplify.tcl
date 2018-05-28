@@ -45,9 +45,11 @@ set_option -resolve_multiple_driver 0
 #-- add_file options
 add_file -vhdl {/home/dnl/diamond_lattice/usr/local/diamond/3.10_x64/cae_library/synthesis/vhdl/xp2.vhd}
 add_file -vhdl -lib "work" {/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd}
+add_file -vhdl -lib "work" {/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/rising_edge_detector.vhd}
+add_file -vhdl -lib "work" {/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/delay_sync.vhd}
 
 #-- top module name
-set_option -top_module clk_generator
+set_option -top_module rising_edge_detector
 
 #-- set result format/file last
 project -result_file {/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/impl1/serial_comm_impl1.edi}

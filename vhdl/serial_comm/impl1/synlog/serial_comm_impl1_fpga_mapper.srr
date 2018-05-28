@@ -1,4 +1,4 @@
-# Sun May 27 20:55:40 2018
+# Mon May 28 11:02:30 2018
 
 Synopsys Lattice Technology Mapper, Version maplat, Build 1796R, Built Aug  4 2017 09:36:35
 Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
@@ -32,13 +32,6 @@ Available hyper_sources - for debug and ip models
 
 Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 138MB peak: 141MB)
 
-Encoding state machine state_reg[0:3] (in view: work.clk_generator(arch))
-original code -> new code
-   00 -> 00
-   01 -> 01
-   10 -> 10
-   11 -> 11
-@N: MO225 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":29:8:29:9|There are no possible illegal states for state machine state_reg[0:3] (in view: work.clk_generator(arch)); safe FSM implementation is not required.
 
 Starting factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 138MB peak: 141MB)
 
@@ -46,12 +39,10 @@ Starting factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; M
 Finished factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 138MB peak: 141MB)
 
 
-Starting gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 139MB peak: 141MB)
+Starting gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 138MB peak: 141MB)
 
-@N: BN362 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":29:8:29:9|Removing sequential instance state_reg[1] (in view: work.clk_generator(arch)) because it does not drive other instances.
-@N: BN362 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":29:8:29:9|Removing sequential instance state_reg[0] (in view: work.clk_generator(arch)) because it does not drive other instances.
 
-Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 139MB peak: 141MB)
+Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 138MB peak: 141MB)
 
 
 Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 139MB peak: 141MB)
@@ -60,7 +51,7 @@ Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:00s; CP
 Starting Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 139MB peak: 141MB)
 
 
-Finished Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 140MB peak: 141MB)
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 139MB peak: 141MB)
 
 
 Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 139MB peak: 141MB)
@@ -69,36 +60,16 @@ Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:00s; CP
 Finished preparing to map (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 139MB peak: 141MB)
 
 
-Finished technology mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 139MB peak: 141MB)
+Finished technology mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 138MB peak: 141MB)
 
 Pass		 CPU time		Worst Slack		Luts / Registers
 ------------------------------------------------------------
-   1		0h:00m:00s		    -1.35ns		  20 /        10
-   2		0h:00m:00s		    -1.33ns		  19 /        10
-@N: FX271 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":29:8:29:9|Replicating instance count_reg[0] (in view: work.clk_generator(arch)) with 5 loads 1 time to improve timing.
-@N: FX271 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":29:8:29:9|Replicating instance count_reg[1] (in view: work.clk_generator(arch)) with 4 loads 1 time to improve timing.
-@N: FX271 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":29:8:29:9|Replicating instance count_reg[3] (in view: work.clk_generator(arch)) with 4 loads 1 time to improve timing.
-Timing driven replication report
-Added 3 Registers via timing driven replication
-Added 0 LUTs via timing driven replication
 
-   3		0h:00m:00s		    -0.78ns		  23 /        13
-   4		0h:00m:00s		    -0.96ns		  22 /        13
-   5		0h:00m:00s		    -1.12ns		  22 /        13
-   6		0h:00m:00s		    -0.78ns		  22 /        13
-   7		0h:00m:00s		    -0.96ns		  22 /        13
-
-
-   8		0h:00m:00s		    -0.78ns		  22 /        13
-   9		0h:00m:00s		    -0.96ns		  22 /        13
-  10		0h:00m:00s		    -1.12ns		  22 /        13
-  11		0h:00m:00s		    -0.96ns		  22 /        13
-
-Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 140MB peak: 141MB)
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 138MB peak: 141MB)
 
 @N: FX164 |The option to pack registers in the IOB has not been specified. Please set syn_useioff attribute.  
 
-Finished restoring hierarchy (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 140MB peak: 141MB)
+Finished restoring hierarchy (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 138MB peak: 141MB)
 
 
 
@@ -107,83 +78,40 @@ Finished restoring hierarchy (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:
 
 #### START OF CLOCK OPTIMIZATION REPORT #####[
 
-1 non-gated/non-generated clock tree(s) driving 13 clock pin(s) of sequential element(s)
+0 non-gated/non-generated clock tree(s) driving 0 clock pin(s) of sequential element(s)
 0 gated/generated clock tree(s) driving 0 clock pin(s) of sequential element(s)
 0 instances converted, 0 sequential instances remain driven by gated/generated clocks
 
-=========================== Non-Gated/Non-Generated Clocks ============================
-Clock Tree ID     Driving Element     Drive Element Type     Fanout     Sample Instance
----------------------------------------------------------------------------------------
-@K:CKID0001       clk                 port                   13         clk_reg_0io    
-=======================================================================================
 
 
 ##### END OF CLOCK OPTIMIZATION REPORT ######]
 
 
-Start Writing Netlists (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 106MB peak: 141MB)
+Start Writing Netlists (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 105MB peak: 141MB)
 
 Writing Analyst data base /home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/impl1/synwork/serial_comm_impl1_m.srm
 
-Finished Writing Netlist Databases (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 139MB peak: 141MB)
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 138MB peak: 141MB)
 
 Writing EDIF Netlist and constraint files
 @N: FX1056 |Writing EDF file: /home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/impl1/serial_comm_impl1.edi
 M-2017.03L-SP1-1
 @N: BW106 |Synplicity Constraint File capacitance units using default value of 1pF 
 
-Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 143MB peak: 145MB)
+Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:01s; Memory used current: 142MB peak: 144MB)
 
 
-Start final timing analysis (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 144MB peak: 145MB)
+Start final timing analysis (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 143MB peak: 144MB)
 
-Warning: Found 5 combinational loops!
-@W: BN137 :|Found combinational loop during mapping at net G_116
-1) instance I_56.lat_r (in view: work.clk_generator(arch)), output net G_116 (in view: work.clk_generator(arch))
-    net        G_116
-    input  pin I_56.lat_r/B
-    instance   I_56.lat_r (cell ORCALUT4)
-    output pin I_56.lat_r/Z
-    net        G_116
-@W: BN137 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":29:8:29:9|Found combinational loop during mapping at net G_117
-2) instance I_57.lat (in view: work.clk_generator(arch)), output net G_117 (in view: work.clk_generator(arch))
-    net        G_117
-    input  pin I_57.lat/B
-    instance   I_57.lat (cell ORCALUT4)
-    output pin I_57.lat/Z
-    net        G_117
-@W: BN137 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":29:8:29:9|Found combinational loop during mapping at net G_118
-3) instance I_58.lat (in view: work.clk_generator(arch)), output net G_118 (in view: work.clk_generator(arch))
-    net        G_118
-    input  pin I_58.lat/B
-    instance   I_58.lat (cell ORCALUT4)
-    output pin I_58.lat/Z
-    net        G_118
-@W: BN137 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":29:8:29:9|Found combinational loop during mapping at net G_119
-4) instance I_59.lat (in view: work.clk_generator(arch)), output net G_119 (in view: work.clk_generator(arch))
-    net        G_119
-    input  pin I_59.lat/B
-    instance   I_59.lat (cell ORCALUT4)
-    output pin I_59.lat/Z
-    net        G_119
-@W: BN137 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":29:8:29:9|Found combinational loop during mapping at net G_120
-5) instance I_60.lat (in view: work.clk_generator(arch)), output net G_120 (in view: work.clk_generator(arch))
-    net        G_120
-    input  pin I_60.lat/B
-    instance   I_60.lat (cell ORCALUT4)
-    output pin I_60.lat/Z
-    net        G_120
-End of loops
-@W: MT420 |Found inferred clock clk_generator|clk with period 5.16ns. Please declare a user-defined clock on object "p:clk"
 
 
 ##### START OF TIMING REPORT #####[
-# Timing Report written on Sun May 27 20:55:42 2018
+# Timing Report written on Mon May 28 11:02:31 2018
 #
 
 
-Top view:               clk_generator
-Requested Frequency:    194.0 MHz
+Top view:               rising_edge_detector
+Requested Frequency:    1.0 MHz
 Wire load mode:         top
 Paths requested:        5
 Constraint File(s):    
@@ -197,13 +125,8 @@ Performance Summary
 *******************
 
 
-Worst slack in design: -0.910
+Worst slack in design: NA
 
-                      Requested     Estimated     Requested     Estimated                Clock        Clock                
-Starting Clock        Frequency     Frequency     Period        Period        Slack      Type         Group                
----------------------------------------------------------------------------------------------------------------------------
-clk_generator|clk     194.0 MHz     164.9 MHz     5.156         6.065         -0.910     inferred     Autoconstr_clkgroup_0
-===========================================================================================================================
 
 
 
@@ -212,12 +135,11 @@ clk_generator|clk     194.0 MHz     164.9 MHz     5.156         6.065         -0
 Clock Relationships
 *******************
 
-Clocks                                |    rise  to  rise    |    fall  to  fall   |    rise  to  fall   |    fall  to  rise 
------------------------------------------------------------------------------------------------------------------------------
-Starting           Ending             |  constraint  slack   |  constraint  slack  |  constraint  slack  |  constraint  slack
------------------------------------------------------------------------------------------------------------------------------
-clk_generator|clk  clk_generator|clk  |  5.156       -0.910  |  No paths    -      |  No paths    -      |  No paths    -    
-=============================================================================================================================
+Clocks            |    rise  to  rise   |    fall  to  fall   |    rise  to  fall   |    fall  to  rise 
+--------------------------------------------------------------------------------------------------------
+Starting  Ending  |  constraint  slack  |  constraint  slack  |  constraint  slack  |  constraint  slack
+--------------------------------------------------------------------------------------------------------
+========================================================================================================
  Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
        'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
 
@@ -229,292 +151,36 @@ Interface Information
 No IO constraint found
 
 
-
-====================================
-Detailed Report for Clock: clk_generator|clk
-====================================
-
-
-
-Starting Points with Worst Slack
-********************************
-
-                                    Starting                                                                      Arrival           
-Instance                            Reference             Type        Pin     Net                                 Time        Slack 
-                                    Clock                                                                                           
-------------------------------------------------------------------------------------------------------------------------------------
-state_reg_0[0]                      clk_generator|clk     FD1S3DX     Q       state_reg[0]                        1.251       -0.910
-state_reg_0[1]                      clk_generator|clk     FD1S3DX     Q       state_reg[1]                        1.213       -0.872
-state_reg_ret                       clk_generator|clk     FD1S3BX     Q       state_reg_i[1]                      1.006       -0.665
-state_reg_ret_1                     clk_generator|clk     FD1S3BX     Q       state_reg_i[0]                      1.006       -0.665
-state_reg_ns_1_0_.state_reg_ret     clk_generator|clk     FD1S3BX     Q       state_reg_ns_1_0_.state_reg_ret     1.279       0.829 
-count_reg_fast[3]                   clk_generator|clk     FD1S3DX     Q       count_reg_fast[3]                   1.091       1.017 
-count_reg_fast[0]                   clk_generator|clk     FD1S3DX     Q       count_reg_fast[0]                   1.166       1.618 
-count_reg_fast[1]                   clk_generator|clk     FD1S3DX     Q       count_reg_fast[1]                   1.166       1.618 
-count_reg[2]                        clk_generator|clk     FD1S3DX     Q       count_reg[2]                        1.279       1.712 
-count_reg[3]                        clk_generator|clk     FD1S3DX     Q       count_reg[3]                        1.091       1.816 
-====================================================================================================================================
-
-
-Ending Points with Worst Slack
-******************************
-
-                                    Starting                                                         Required           
-Instance                            Reference             Type         Pin     Net                   Time         Slack 
-                                    Clock                                                                               
-------------------------------------------------------------------------------------------------------------------------
-state_reg_ns_1_0_.state_reg_ret     clk_generator|clk     FD1S3BX      D       N_17_reti             4.420        -0.910
-state_reg_0[0]                      clk_generator|clk     FD1S3DX      D       state_reg_ns[0]       4.420        -0.186
-state_reg_ret_1                     clk_generator|clk     FD1S3BX      D       state_reg_ns_i[0]     4.420        -0.186
-state_reg_0[1]                      clk_generator|clk     FD1S3DX      D       state_reg_ns[1]       4.420        -0.111
-state_reg_ret                       clk_generator|clk     FD1S3BX      D       state_reg_ns_i[1]     4.420        -0.111
-clk_reg_0io                         clk_generator|clk     OFS1P3DX     D       N_110_i               5.045        1.360 
-count_reg[2]                        clk_generator|clk     FD1S3DX      D       N_4                   5.045        1.999 
-count_reg[3]                        clk_generator|clk     FD1S3DX      D       N_9                   5.045        1.999 
-count_reg_fast[3]                   clk_generator|clk     FD1S3DX      D       N_9                   5.045        1.999 
-count_reg[1]                        clk_generator|clk     FD1S3DX      D       N_3                   5.045        2.112 
-========================================================================================================================
-
-
-
-Worst Path Information
-***********************
-
-
-Path information for path number 1: 
-      Requested Period:                      5.156
-    - Setup time:                            0.736
-    + Clock delay at ending point:           0.000 (ideal)
-    = Required time:                         4.420
-
-    - Propagation time:                      5.329
-    - Clock delay at starting point:         0.000 (ideal)
-    = Slack (critical) :                     -0.910
-
-    Number of logic level(s):                5
-    Starting point:                          state_reg_0[0] / Q
-    Ending point:                            state_reg_ns_1_0_.state_reg_ret / D
-    The start point is clocked by            clk_generator|clk [rising] on pin CK
-    The end   point is clocked by            clk_generator|clk [rising] on pin CK
-
-Instance / Net                                         Pin      Pin               Arrival     No. of    
-Name                                      Type         Name     Dir     Delay     Time        Fan Out(s)
---------------------------------------------------------------------------------------------------------
-state_reg_0[0]                            FD1S3DX      Q        Out     1.251     1.251       -         
-state_reg[0]                              Net          -        -       -         -           5         
-clk_next_1_sqmuxa_0_a3_0_a3               ORCALUT4     B        In      0.000     1.251       -         
-clk_next_1_sqmuxa_0_a3_0_a3               ORCALUT4     Z        Out     0.883     2.134       -         
-clk_next_1_sqmuxa                         Net          -        -       -         -           1         
-I_56.lat_r                                ORCALUT4     A        In      0.000     2.134       -         
-I_56.lat_r                                ORCALUT4     Z        Out     0.883     3.018       -         
-G_116                                     Net          -        -       -         -           5         
-state_reg_ns_1_0_.state_reg_ret_RNO_2     ORCALUT4     A        In      0.000     3.018       -         
-state_reg_ns_1_0_.state_reg_ret_RNO_2     ORCALUT4     Z        Out     0.883     3.901       -         
-state_reg_ret_RNO_2                       Net          -        -       -         -           1         
-state_reg_ns_1_0_.state_reg_ret_RNO_0     ORCALUT4     A        In      0.000     3.901       -         
-state_reg_ns_1_0_.state_reg_ret_RNO_0     ORCALUT4     Z        Out     0.883     4.784       -         
-G_4_0_1                                   Net          -        -       -         -           1         
-state_reg_ns_1_0_.state_reg_ret_RNO       ORCALUT4     A        In      0.000     4.784       -         
-state_reg_ns_1_0_.state_reg_ret_RNO       ORCALUT4     Z        Out     0.545     5.329       -         
-N_17_reti                                 Net          -        -       -         -           1         
-state_reg_ns_1_0_.state_reg_ret           FD1S3BX      D        In      0.000     5.329       -         
-========================================================================================================
-
-
-Path information for path number 2: 
-      Requested Period:                      5.156
-    - Setup time:                            0.736
-    + Clock delay at ending point:           0.000 (ideal)
-    = Required time:                         4.420
-
-    - Propagation time:                      5.292
-    - Clock delay at starting point:         0.000 (ideal)
-    = Slack (non-critical) :                 -0.872
-
-    Number of logic level(s):                5
-    Starting point:                          state_reg_0[1] / Q
-    Ending point:                            state_reg_ns_1_0_.state_reg_ret / D
-    The start point is clocked by            clk_generator|clk [rising] on pin CK
-    The end   point is clocked by            clk_generator|clk [rising] on pin CK
-
-Instance / Net                                         Pin      Pin               Arrival     No. of    
-Name                                      Type         Name     Dir     Delay     Time        Fan Out(s)
---------------------------------------------------------------------------------------------------------
-state_reg_0[1]                            FD1S3DX      Q        Out     1.213     1.213       -         
-state_reg[1]                              Net          -        -       -         -           4         
-un8_0_a3_0_a3                             ORCALUT4     B        In      0.000     1.213       -         
-un8_0_a3_0_a3                             ORCALUT4     Z        Out     0.883     2.097       -         
-un8_0_a3_0_a3                             Net          -        -       -         -           1         
-I_56.lat_r                                ORCALUT4     C        In      0.000     2.097       -         
-I_56.lat_r                                ORCALUT4     Z        Out     0.883     2.980       -         
-G_116                                     Net          -        -       -         -           5         
-state_reg_ns_1_0_.state_reg_ret_RNO_2     ORCALUT4     A        In      0.000     2.980       -         
-state_reg_ns_1_0_.state_reg_ret_RNO_2     ORCALUT4     Z        Out     0.883     3.863       -         
-state_reg_ret_RNO_2                       Net          -        -       -         -           1         
-state_reg_ns_1_0_.state_reg_ret_RNO_0     ORCALUT4     A        In      0.000     3.863       -         
-state_reg_ns_1_0_.state_reg_ret_RNO_0     ORCALUT4     Z        Out     0.883     4.747       -         
-G_4_0_1                                   Net          -        -       -         -           1         
-state_reg_ns_1_0_.state_reg_ret_RNO       ORCALUT4     A        In      0.000     4.747       -         
-state_reg_ns_1_0_.state_reg_ret_RNO       ORCALUT4     Z        Out     0.545     5.292       -         
-N_17_reti                                 Net          -        -       -         -           1         
-state_reg_ns_1_0_.state_reg_ret           FD1S3BX      D        In      0.000     5.292       -         
-========================================================================================================
-
-
-Path information for path number 3: 
-      Requested Period:                      5.156
-    - Setup time:                            0.736
-    + Clock delay at ending point:           0.000 (ideal)
-    = Required time:                         4.420
-
-    - Propagation time:                      5.085
-    - Clock delay at starting point:         0.000 (ideal)
-    = Slack (non-critical) :                 -0.665
-
-    Number of logic level(s):                5
-    Starting point:                          state_reg_ret / Q
-    Ending point:                            state_reg_ns_1_0_.state_reg_ret / D
-    The start point is clocked by            clk_generator|clk [rising] on pin CK
-    The end   point is clocked by            clk_generator|clk [rising] on pin CK
-
-Instance / Net                                         Pin      Pin               Arrival     No. of    
-Name                                      Type         Name     Dir     Delay     Time        Fan Out(s)
---------------------------------------------------------------------------------------------------------
-state_reg_ret                             FD1S3BX      Q        Out     1.006     1.006       -         
-state_reg_i[1]                            Net          -        -       -         -           1         
-clk_next_1_sqmuxa_0_a3_0_a3               ORCALUT4     C        In      0.000     1.006       -         
-clk_next_1_sqmuxa_0_a3_0_a3               ORCALUT4     Z        Out     0.883     1.890       -         
-clk_next_1_sqmuxa                         Net          -        -       -         -           1         
-I_56.lat_r                                ORCALUT4     A        In      0.000     1.890       -         
-I_56.lat_r                                ORCALUT4     Z        Out     0.883     2.773       -         
-G_116                                     Net          -        -       -         -           5         
-state_reg_ns_1_0_.state_reg_ret_RNO_2     ORCALUT4     A        In      0.000     2.773       -         
-state_reg_ns_1_0_.state_reg_ret_RNO_2     ORCALUT4     Z        Out     0.883     3.657       -         
-state_reg_ret_RNO_2                       Net          -        -       -         -           1         
-state_reg_ns_1_0_.state_reg_ret_RNO_0     ORCALUT4     A        In      0.000     3.657       -         
-state_reg_ns_1_0_.state_reg_ret_RNO_0     ORCALUT4     Z        Out     0.883     4.540       -         
-G_4_0_1                                   Net          -        -       -         -           1         
-state_reg_ns_1_0_.state_reg_ret_RNO       ORCALUT4     A        In      0.000     4.540       -         
-state_reg_ns_1_0_.state_reg_ret_RNO       ORCALUT4     Z        Out     0.545     5.085       -         
-N_17_reti                                 Net          -        -       -         -           1         
-state_reg_ns_1_0_.state_reg_ret           FD1S3BX      D        In      0.000     5.085       -         
-========================================================================================================
-
-
-Path information for path number 4: 
-      Requested Period:                      5.156
-    - Setup time:                            0.736
-    + Clock delay at ending point:           0.000 (ideal)
-    = Required time:                         4.420
-
-    - Propagation time:                      5.085
-    - Clock delay at starting point:         0.000 (ideal)
-    = Slack (non-critical) :                 -0.665
-
-    Number of logic level(s):                5
-    Starting point:                          state_reg_ret_1 / Q
-    Ending point:                            state_reg_ns_1_0_.state_reg_ret / D
-    The start point is clocked by            clk_generator|clk [rising] on pin CK
-    The end   point is clocked by            clk_generator|clk [rising] on pin CK
-
-Instance / Net                                         Pin      Pin               Arrival     No. of    
-Name                                      Type         Name     Dir     Delay     Time        Fan Out(s)
---------------------------------------------------------------------------------------------------------
-state_reg_ret_1                           FD1S3BX      Q        Out     1.006     1.006       -         
-state_reg_i[0]                            Net          -        -       -         -           1         
-un8_0_a3_0_a3                             ORCALUT4     C        In      0.000     1.006       -         
-un8_0_a3_0_a3                             ORCALUT4     Z        Out     0.883     1.890       -         
-un8_0_a3_0_a3                             Net          -        -       -         -           1         
-I_56.lat_r                                ORCALUT4     C        In      0.000     1.890       -         
-I_56.lat_r                                ORCALUT4     Z        Out     0.883     2.773       -         
-G_116                                     Net          -        -       -         -           5         
-state_reg_ns_1_0_.state_reg_ret_RNO_2     ORCALUT4     A        In      0.000     2.773       -         
-state_reg_ns_1_0_.state_reg_ret_RNO_2     ORCALUT4     Z        Out     0.883     3.657       -         
-state_reg_ret_RNO_2                       Net          -        -       -         -           1         
-state_reg_ns_1_0_.state_reg_ret_RNO_0     ORCALUT4     A        In      0.000     3.657       -         
-state_reg_ns_1_0_.state_reg_ret_RNO_0     ORCALUT4     Z        Out     0.883     4.540       -         
-G_4_0_1                                   Net          -        -       -         -           1         
-state_reg_ns_1_0_.state_reg_ret_RNO       ORCALUT4     A        In      0.000     4.540       -         
-state_reg_ns_1_0_.state_reg_ret_RNO       ORCALUT4     Z        Out     0.545     5.085       -         
-N_17_reti                                 Net          -        -       -         -           1         
-state_reg_ns_1_0_.state_reg_ret           FD1S3BX      D        In      0.000     5.085       -         
-========================================================================================================
-
-
-Path information for path number 5: 
-      Requested Period:                      5.156
-    - Setup time:                            0.736
-    + Clock delay at ending point:           0.000 (ideal)
-    = Required time:                         4.420
-
-    - Propagation time:                      4.606
-    - Clock delay at starting point:         0.000 (ideal)
-    = Slack (non-critical) :                 -0.186
-
-    Number of logic level(s):                4
-    Starting point:                          state_reg_0[0] / Q
-    Ending point:                            state_reg_ret_1 / D
-    The start point is clocked by            clk_generator|clk [rising] on pin CK
-    The end   point is clocked by            clk_generator|clk [rising] on pin CK
-
-Instance / Net                                       Pin      Pin               Arrival     No. of    
-Name                                    Type         Name     Dir     Delay     Time        Fan Out(s)
-------------------------------------------------------------------------------------------------------
-state_reg_0[0]                          FD1S3DX      Q        Out     1.251     1.251       -         
-state_reg[0]                            Net          -        -       -         -           5         
-clk_next_1_sqmuxa_0_a3_0_a3             ORCALUT4     B        In      0.000     1.251       -         
-clk_next_1_sqmuxa_0_a3_0_a3             ORCALUT4     Z        Out     0.883     2.134       -         
-clk_next_1_sqmuxa                       Net          -        -       -         -           1         
-I_56.lat_r                              ORCALUT4     A        In      0.000     2.134       -         
-I_56.lat_r                              ORCALUT4     Z        Out     0.883     3.018       -         
-G_116                                   Net          -        -       -         -           5         
-state_reg_ns_1_0_.m7_0_a3_0_0           ORCALUT4     A        In      0.000     3.018       -         
-state_reg_ns_1_0_.m7_0_a3_0_0           ORCALUT4     Z        Out     1.043     4.061       -         
-G_4_0_1_0                               Net          -        -       -         -           3         
-state_reg_ns_1_0_.state_reg_ns_i[0]     ORCALUT4     A        In      0.000     4.061       -         
-state_reg_ns_1_0_.state_reg_ns_i[0]     ORCALUT4     Z        Out     0.545     4.606       -         
-state_reg_ns_i[0]                       Net          -        -       -         -           1         
-state_reg_ret_1                         FD1S3BX      D        In      0.000     4.606       -         
-======================================================================================================
-
-
-
 ##### END OF TIMING REPORT #####]
 
 Timing exceptions that could not be applied
 None
 
-Finished final timing analysis (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 144MB peak: 145MB)
+Finished final timing analysis (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 143MB peak: 144MB)
 
 
-Finished timing report (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 144MB peak: 145MB)
+Finished timing report (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 143MB peak: 144MB)
 
 ---------------------------------------
 Resource Usage Report
 Part: lfxp2_17e-5
 
-Register bits: 13 of 16560 (0%)
+Register bits: 0 of 16560 (0%)
 PIC Latch:       0
-I/O cells:       4
+I/O cells:       1
 
 
 Details:
-FD1S3BX:        3
-FD1S3DX:        9
 GSR:            1
-IB:             3
-INV:            1
 OB:             1
-OFS1P3DX:       1
-ORCALUT4:       24
 PUR:            1
 VHI:            1
 VLO:            1
 Mapper successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 31MB peak: 145MB)
+At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 30MB peak: 144MB)
 
-Process took 0h:00m:02s realtime, 0h:00m:02s cputime
-# Sun May 27 20:55:42 2018
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Mon May 28 11:02:31 2018
 
 ###########################################################]

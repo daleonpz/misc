@@ -8,42 +8,39 @@ Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated
 
 Running on host :dnl
 @N: CD720 :"/home/dnl/diamond_lattice/usr/local/diamond/3.10_x64/synpbase/lib/vhd/std.vhd":123:18:123:21|Setting time resolution to ps
-@N:"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":8:7:8:19|Top entity is set to clk_generator.
+@N:"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/rising_edge_detector.vhd":8:7:8:26|Top entity is set to rising_edge_detector.
+Options changed - recompiling
 VHDL syntax check successful!
-@N: CD630 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":8:7:8:19|Synthesizing work.clk_generator.arch.
-@N: CD233 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":17:16:17:17|Using sequential encoding for type states.
-@W: CD434 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":41:12:41:18|Signal clk_reg in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
-@W: CG296 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":41:4:41:10|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
-@W: CG290 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":57:24:57:32|Referenced variable count_reg is not in sensitivity list.
-Post processing for work.clk_generator.arch
-@W: CL117 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":44:8:44:9|Latch generated from process for signal state_h(1 downto 0); possible missing assignment in an if or case statement.
-@W: CL117 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":44:8:44:9|Latch generated from process for signal clk_next; possible missing assignment in an if or case statement.
-@W: CL117 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":44:8:44:9|Latch generated from process for signal count_next(3 downto 0); possible missing assignment in an if or case statement.
-@N: CL201 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/clk_generator.vhd":29:8:29:9|Trying to extract state machine for register state_reg.
-Extracted state machine for register state_reg
-State machine has 4 reachable states with original encodings of:
-   00
-   01
-   10
-   11
+Options changed - recompiling
+@N: CD630 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/rising_edge_detector.vhd":8:7:8:26|Synthesizing work.rising_edge_detector.arch.
+@N: CD233 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/rising_edge_detector.vhd":17:16:17:17|Using sequential encoding for type states.
+@W: CD638 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/rising_edge_detector.vhd":19:19:19:23|Signal q_reg is undriven. Either assign the signal a value or remove the signal declaration.
+Post processing for work.rising_edge_detector.arch
+@W: CL240 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/rising_edge_detector.vhd":19:19:19:23|Signal q_reg is floating; a simulation mismatch is possible.
+@W: CL169 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/rising_edge_detector.vhd":25:8:25:9|Pruning unused register q_next_3. Make sure that there are no unused intermediate registers.
+@W: CL169 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/rising_edge_detector.vhd":25:8:25:9|Pruning unused register state_reg_3(1 downto 0). Make sure that there are no unused intermediate registers.
+@N: CL159 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/rising_edge_detector.vhd":9:12:9:14|Input clk is unused.
+@N: CL159 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/rising_edge_detector.vhd":10:12:10:16|Input reset is unused.
+@N: CL159 :"/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/rising_edge_detector.vhd":11:12:11:17|Input clk_in is unused.
 
-At c_vhdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 71MB peak: 71MB)
+At c_vhdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 70MB peak: 71MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Sun May 27 20:55:37 2018
+# Mon May 28 11:02:28 2018
 
 ###########################################################]
 Synopsys Netlist Linker, version comp2017q2p1, Build 190R, built Aug  4 2017
 @N|Running in 64-bit mode
+File /home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/impl1/synwork/layer0.srs changed - recompiling
 
 At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 67MB peak: 68MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Sun May 27 20:55:37 2018
+# Mon May 28 11:02:28 2018
 
 ###########################################################]
 @END
@@ -53,6 +50,6 @@ At c_hdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Sun May 27 20:55:37 2018
+# Mon May 28 11:02:28 2018
 
 ###########################################################]
