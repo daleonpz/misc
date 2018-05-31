@@ -1,5 +1,0 @@
-#Start recording tcl command: 5/27/2018 20:52:30
-#Project Location: /home/dnl/Documents/gitStuff/misc/vhdl/serial_comm; Project name: serial_comm
-prj_project open "/home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/serial_comm.ldf"
-prj_run Synthesis -impl impl1
-#Stop recording: 5/27/2018 20:53:16

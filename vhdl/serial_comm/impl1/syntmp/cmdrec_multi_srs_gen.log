@@ -1,8 +1,0 @@
-/home/dnl/diamond_lattice/usr/local/diamond/3.10_x64/synpbase/bin/syn_nfilter  -link  -top  rising_edge_detector  -multisrs  /home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/impl1/synwork/serial_comm_impl1_comp.srs  -osyn  /home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/impl1/synwork/serial_comm_impl1_mult.srs  -log  /home/dnl/Documents/gitStuff/misc/vhdl/serial_comm/impl1/synlog/serial_comm_impl1_multi_srs_gen.srr 
-relcom:../../../../../../../diamond_lattice/usr/local/diamond/3.10_x64/synpbase/bin/syn_nfilter -link -top rising_edge_detector -multisrs ../synwork/serial_comm_impl1_comp.srs -osyn ../synwork/serial_comm_impl1_mult.srs -log ../synlog/serial_comm_impl1_multi_srs_gen.srr
-rc:0 success:1 runtime:0
-file:../synwork/serial_comm_impl1_comp.srs|io:i|time:1527498148|size:1883|exec:0|csum:95A59BEF23E33BFF698F774CBA78F64C
-file:../synwork/serial_comm_impl1_mult.srs|io:o|time:1527498149|size:1486|exec:0|csum:
-file:../synlog/serial_comm_impl1_multi_srs_gen.srr|io:o|time:1527498149|size:517|exec:0|csum:
-file:../../../../../../../diamond_lattice/usr/local/diamond/3.10_x64/synpbase/linux_a_64/syn_nfilter|io:i|time:1501863392|size:12690424|exec:1|csum:A627AB8280782A7BED487F9319044368
-file:../../../../../../../diamond_lattice/usr/local/diamond/3.10_x64/synpbase/bin/syn_nfilter|io:i|time:1501863022|size:366|exec:1|csum:FA02E240C38072139DDDFB111F4F0C5E
