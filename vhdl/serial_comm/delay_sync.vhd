@@ -1,4 +1,5 @@
 -- Delay based on 2 Flip flops type D
+-- One clock delay
 -- This block will delay the input of the SPI RX
 -- can be seen as synchronization block
 
