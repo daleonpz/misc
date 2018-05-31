@@ -40,8 +40,8 @@ begin
     process(state_reg, count_reg, en)
     begin
         state_next <= state_reg; 
-	-- clk_next <= '0';
-	count_next <= count_reg;
+        -- clk_next <= '0';
+        count_next <= count_reg;
         if (en = '1') then
             case state_reg is
                 when IDLE => 
@@ -53,16 +53,16 @@ begin
                     state_next <=  HOLD_0;
                     clk_next <= '0';
                 when HOLD_1 => 
-		    clk_next <= '1';
+                    clk_next <= '1';
                     if ( count_reg = (MAX_COUNT-1)  ) then
                         count_next <= (others => '0');
                         state_next <= ZERO;
                     else 
                         count_next <= (count_reg + 1);
                     end if; 
-		when HOLD_0 => 
-		    clk_next <= '0';
-		    if ( count_reg = (MAX_COUNT-1)   ) then
+                when HOLD_0 => 
+                    clk_next <= '0';
+                    if ( count_reg = (MAX_COUNT-1)   ) then
                         count_next <= (others => '0');
                         state_next <= ONE;
                     else 
