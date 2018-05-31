@@ -24,29 +24,30 @@ begin
     begin
         if (reset = '1') then
             state_reg <= ZERO;
-            q_next <= '0';
+            q_reg <= '0';
         elsif (clk'event and clk='1') then
             state_reg <= state_next;
-            q_next <= q_reg; 
+            q_reg <= q_next; 
         end if;
     end process;  
 
     -- control flow and data path
-    process (state_reg, q_reg)
+    process (state_reg, clk_in)
     begin
+        state_next <= state_reg;
         q_next <= '0'; 
         case state_reg is
             when ZERO =>
-                if ( q_reg ='1') then
+                if ( clk_in ='1') then
                     state_next <= R_EDGE;
                 end if;
             when ONE =>
-                if ( q_reg = '0') then
+                if ( clk_in = '0') then
                     state_next <= ZERO;
                 end if;
             when R_EDGE =>  
                 q_next <= '1';
-                if ( q_reg = '0') then
+                if ( clk_in = '0') then
                     state_next <= ZERO;
                 else
                     state_next <= ONE;
