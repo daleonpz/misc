@@ -55,21 +55,22 @@ BEGIN
 -- *** Test Bench - User Defined Section ***
    tb : PROCESS
    BEGIN
-		for i in 1 to 20 loop
-			clk <= '1'; wait for 20 ns;
-			clk <= '0'; wait for 20 ns;
-		end loop;
-      wait; -- will wait forever
+        clk <= '1'; wait for 10 ns;
+        clk <= '0'; wait for 10 ns;
    END PROCESS;
    
    tb1: process
    begin
-		reset <= '1';
-		wait for 60ns;
-		en <= '1';
-		reset <= '0';
-		wait;
-	end process;
+        reset <= '1';
+        wait for 25 ns;
+        en <= '1';
+        reset <= '0';
+        wait for 200 ns;
+        en <= '0';
+        wait for 50 ns;
+        en <= '1';
+        wait for 200 ns;
+    end process;
 	
 -- *** End Test Bench - User Defined Section ***
 
