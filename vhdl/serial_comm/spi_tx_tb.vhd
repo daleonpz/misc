@@ -1,5 +1,5 @@
 
--- VHDL Test Bench Created from source file spi_tx.vhd -- Fri Jun  1 21:04:04 2018
+-- VHDL Test Bench Created from source file spi_tx.vhd -- Fri Jun  1 21:45:15 2018
 
 --
 -- Notes: 
@@ -31,21 +31,19 @@ ARCHITECTURE behavior OF testbench IS
 	PORT(
 		clk : IN std_logic;
 		reset : IN std_logic;
-		en : IN std_logic;
+		edge : IN std_logic;
 		data : IN std_logic_vector(3 downto 0);          
 		empty_buf : OUT std_logic;
-		tx : OUT std_logic;
-		clk_spi : OUT std_logic
+		tx : OUT std_logic
 		);
 	END COMPONENT;
 
 	SIGNAL clk :  std_logic;
 	SIGNAL reset :  std_logic;
-	SIGNAL en :  std_logic;
+	SIGNAL edge :  std_logic;
 	SIGNAL data :  std_logic_vector(3 downto 0);
 	SIGNAL empty_buf :  std_logic;
 	SIGNAL tx :  std_logic;
-	SIGNAL clk_spi :  std_logic;
 
 BEGIN
 
@@ -53,19 +51,41 @@ BEGIN
 	uut: spi_tx PORT MAP(
 		clk => clk,
 		reset => reset,
-		en => en,
+		edge => edge,
 		data => data,
 		empty_buf => empty_buf,
-		tx => tx,
-		clk_spi => clk_spi
+		tx => tx
 	);
 
 
 -- *** Test Bench - User Defined Section ***
-   tb : PROCESS
+    tb0 : PROCESS
    BEGIN
-      wait; -- will wait forever
+        clk <= '0'; wait for 5 ns;
+        clk <= '1'; wait for 5 ns;
    END PROCESS;
+   
+   tb1 : PROCESS
+   BEGIN
+        edge <= '0'; wait for 50 ns;
+        edge <= '1'; wait for 10 ns;
+   END PROCESS;
+   
+   tb2: process
+   begin
+        reset <= '1';
+        wait for 25 ns;
+        reset <= '0';
+        data <= "1111";
+        wait for 400 ns;
+        data <= "1010";
+        wait for 400 ns;
+        data <= "0110";
+        wait for 400 ns;
+        data <= "1001";
+        wait for 400 ns;
+     
+    end process;
 -- *** End Test Bench - User Defined Section ***
 
 END;
