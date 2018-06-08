@@ -19,7 +19,6 @@ Servo myservo;
 #define R_trig  9
 #define R_echo  8 
 
-
 ///////////////////////
 //  FUNCTIONS
 ///////////////////////
@@ -35,7 +34,7 @@ void go_straight(){
     myservo.write(90+ANGLE_OFFSET);
 }
 
-void readUltrasoundDistance(int trigPin, int echoPin){
+unsigned long readUltrasoundDistance(int trigPin, int echoPin){
     unsigned long duration, distance;
     digitalWrite(trigPin, LOW);  // Clears the trigPin
     delayMicroseconds(2);      
@@ -43,13 +42,30 @@ void readUltrasoundDistance(int trigPin, int echoPin){
     delayMicroseconds(10);// Sets the trigPin on HIGH state for 10 micro seconds
     digitalWrite(trigPin, LOW);
     duration = pulseIn(echoPin, HIGH);
-    distance= duration*0.01716; 
+    distance = duration*0.01716; 
     Serial.print("\t");
     Serial.print(distance);
+    return distance; 
 }
 
 void chooseDirection(){
+    const unsigned long delta = 20; 
+    unsigned long left;
+    unsigned long mid;
+    unsigned long right; 
 
+    left    = readUltrasoundDistance(L_trig, L_echo);
+    mid     = readUltrasoundDistance(M_trig, M_echo);
+    right   = readUltrasoundDistance(R_trig, R_echo);
+
+    // Simple algorithm to choose direction
+    // TODO: Update this
+    left =  (left < 20)?1:0;
+    right = (right < 20)?1:0;
+
+    if (right) turn_right();
+    else if  (left) turn_left(); 
+    else go_straight();
 }
 
 ///////////////////////
@@ -69,15 +85,6 @@ void setup() {
 }
 
 void loop() {
-/*    myservo.write(80+ANGLE_OFFSET);
-    delay(500); 
-    myservo.write(90+ANGLE_OFFSET);
-    delay(500);
-    myservo.write(100+ANGLE_OFFSET);
-    delay(500);
-*/
-    readUltrasoundDistance(L_trig, L_echo);
-    readUltrasoundDistance(M_trig, M_echo);
-    readUltrasoundDistance(R_trig, R_echo);
-     Serial.println("");
+    chooseDirection();
+    Serial.println("");
 }
