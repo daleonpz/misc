@@ -15,7 +15,7 @@ entity spi_tx is
 end entity spi_tx; 
 
 architecture arch of spi_tx is
-    type STATES is (IDLE, SEND);
+    type STATES is (IDLE, SEND, STOP);
     signal state_next, state_reg: STATES;
     signal buf_next, buf_reg: std_logic_vector (3 downto 0);  
     signal count_next, count_reg: unsigned (2 downto 0); 
@@ -63,8 +63,8 @@ begin
                 if ( edge ='1') then 
                     if ( count_reg = DBIT  ) then
                         count_next <= (others => '0');
-                        state_next <= IDLE;
-                        empty_next <= '1';
+                        state_next <= STOP;
+            --            empty_next <= '1';
                     else 
                         count_next <= (count_reg + 1);
                         -- LSB is sent first
@@ -74,6 +74,12 @@ begin
                     end if; 
                 else
                     tx_next <= tx_reg;
+                end if;
+            when STOP => 
+                empty_next <= '0';
+                if ( edge = '1') then
+                    empty_next <= '1';
+                    state_next <= IDLE;
                 end if;
         end case;
     end process;  
