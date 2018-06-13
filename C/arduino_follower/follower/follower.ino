@@ -91,7 +91,7 @@ int validPassword() {
     String S = "" ;
     if (BT.available()) {
         char c = BT.read(); 
-        while ( c != '\n') {           //Hasta que el caracter sea intro
+        while ( c != '\n') { 
             S = S + c;
             c = BT.read();
             //delay(25) ;
@@ -102,13 +102,17 @@ int validPassword() {
     else return -1;
 }
 
-void authentication (){
-     if ( validPassword() > 0 ){
+int authentication (){
+    int valid = -1;
+    if ( validPassword() > 0 ){
         digitalWrite(LED_BT, HIGH);
+        valid = 1 ;
         delay(1000);
      }
-     else 
+    else 
         digitalWrite(LED_BT, LOW);
+
+    return valid;
 }
 
 void chooseDirection(){
@@ -158,11 +162,7 @@ void setup() {
 }
 
 void loop() {
-    //chooseDirection();
-    //motor_ON();
-    //delay(3000);
-    //motor_OFF();
-    //delay(3000);
-    call_bart();
-    authentication();
+    if ( authentication() > 0)
+        chooseDirection();
+        call_bart();
 }
