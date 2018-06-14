@@ -75,6 +75,10 @@ All the blocks have a clock and reset signal.
 
 ![SPI RX - block diagram](images/spi_block_rx_diagram.png)
 
+- RX testbench (internal block)
+
+![SPI RX - testbench result](images/spi_rx_tb.png)
+
 ## Converter 
 The implementation will be done by **with ... select ... when**
 
