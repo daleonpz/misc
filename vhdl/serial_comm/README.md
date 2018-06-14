@@ -55,7 +55,13 @@ EN_TX:
 The communication will be only in one direction, so we will need only two lines.
 One for the SPI clock and the other for transmission from FPGA master to FPGA slave.
 
-We will need to implement a "Rising edge detector" for the SPI_clk in the slave  and a "clock generator" in the case of the master. 
+We implemented a "Rising edge detector", "clock generator"  and a  "delay". 
+- Clock generator: used to generated the SPI clock
+- Rising edge detector: to detect the rising edges of the SPI clock. We need it because the SPI clock is not ideal (instant change between '0' and '1'); in other words, it takes sometime to change from '0' to '1' and viceversa, and the transtions is a ramp. See picture below.
+- Delay: since the SPI clock is not ideal we need a delay to synchronize (avoid the transtion) any signal with that clock
+
+
+![Non ideal clock signal](images/real_clk.png)
 
 All the blocks have a clock and reset signal. 
 
