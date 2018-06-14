@@ -60,56 +60,15 @@ We will need to implement a "Rising edge detector" for the SPI_clk in the slave 
 - TX: 
 **NOTE**: 
     -   Maybe we should one more delay before transmit the data 
-    -   Need one more spi_clk
-```vhdl
--- Pseudocode
--- STATES: IDLE, TX, DONE
-port( 
-    data : in std_logic_vector (3 downto 0);
-    en: in std_logic;
-    clk_spi: out std_logic;
-    tx: out std_logic
-);
 
+![SPI TX - block diagram](images/spi_block_tx_diagram.png)
 
-IDLE:
-    if (en)
-        next_state <= TX
-
-TX:
-    tx <= data -- using a loop
-    if (tx_done)
-        next_state <= DONE
-
-DONE:
-    next_state <= IDLE 
-```
 
 - RX: 
-```vhdl
--- Pseudocode 
--- STATES: IDLE, RX, DONE
+**NOTE**: 
+    -   Not tested
 
-port(
-    clk_spi: in std_logic;
-    rx: in std_logic;
-    data: out std_logic_vector (3 downto 0);
-    done: out std_logic
-);
-
-IDLE:
-    if (some_data_arrived)
-        next_state <= RX
-
-RX:
-    data <= rx -- using a loop
-    if (rx_done)
-        next_state <= DONE
-
-DONE:
-    done <= '1'
-        next_state <= IDLE
-```
+![SPI RX - block diagram](images/spi_block_rx_diagram.png)
 
 ## Converter 
 The implementation will be done by **with ... select ... when**
