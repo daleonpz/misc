@@ -63,6 +63,9 @@ We will need to implement a "Rising edge detector" for the SPI_clk in the slave 
 
 ![SPI TX - block diagram](images/spi_block_tx_diagram.png)
 
+- TX testbench:
+
+![SPI TX - testbench result](images/spi_block_tx_tb.png]
 
 - RX: 
 **NOTE**: 
