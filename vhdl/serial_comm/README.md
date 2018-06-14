@@ -63,25 +63,50 @@ We implemented a "Rising edge detector", "clock generator"  and a  "delay".
 
 ![Non ideal clock signal](images/real_clk.png)
 
+- SPI Tx (internal block)
+
+```vhdl
+-- Pseudocode 
+if (en = '1') 
+    generate(SPI_clk)
+    while ( isSendingData )
+        empty_buff <= '0'
+        if ( rising_edge (SPI_clk) )
+            tx <= send_BIT
+    
+    empty_buff <= '1'
+```
+
+- SPI Rx (internal block)
+
+```vhdl
+-- Pseudocode 
+while ( rising_edge_detected )
+    full_buf <= '0'
+    data <= fill_with(rx_BIT)
+
+full_buf <= '1'
+inMemory(data) 
+```
+
+
 All the blocks have a clock and reset signal. 
 
-- TX: 
-**NOTE**: 
-    -   Maybe we should one more delay before transmit the data 
+- SPI TX Block: 
+    - **NOTE**: Maybe we should add one more delay before transmit the data. 
 
 ![SPI TX - block diagram](images/spi_block_tx_diagram.png)
 
-- TX testbench:
+- SPI TX Block testbench:
 
 ![SPI TX - testbench result](images/spi_block_tx_tb.png)
 
-- RX: 
-**NOTE**: 
-    -   Not tested
+- SPI RX Block: 
+    - **NOTE**: Not tested
 
 ![SPI RX - block diagram](images/spi_block_rx_diagram.png)
 
-- RX testbench (internal block)
+- SPI RX Block testbench (internal block only, I ll update later)
 
 ![SPI RX - testbench result](images/spi_rx_tb.png)
 
