@@ -57,6 +57,8 @@ One for the SPI clock and the other for transmission from FPGA master to FPGA sl
 
 We will need to implement a "Rising edge detector" for the SPI_clk in the slave  and a "clock generator" in the case of the master. 
 
+All the blocks have a clock and reset signal. 
+
 - TX: 
 **NOTE**: 
     -   Maybe we should one more delay before transmit the data 
