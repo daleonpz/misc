@@ -10,7 +10,7 @@ ARCHITECTURE behavior OF testbench IS
             clk : IN std_logic;
             reset : IN std_logic;
             clk_spi: in std_logic;
-            rx: in std_logic
+            rx: in std_logic;
             data: out std_logic_vector (3 downto 0);
             full_buf: out std_logic
             );
@@ -82,7 +82,38 @@ BEGIN
         clk_spi <= '0'; wait for 20 ns;
  
         wait for 200 ns;
-       -- wait for 500 ns;
+
+        -- sync
+        rx <= '0';
+        clk_spi <= '1'; wait for 20 ns; 
+        clk_spi <= '0'; wait for 20 ns;
+        -- reception of 1100 starts here 
+        clk_spi <= '1'; wait for 15 ns; 
+        rx <= '0'; wait for 5 ns;
+        clk_spi <= '0'; wait for 20 ns;
+        
+        clk_spi <= '1'; wait for 15 ns; 
+        rx <= '0'; wait for 5 ns;
+        clk_spi <= '0'; wait for 20 ns;
+        
+        clk_spi <= '1'; wait for 15 ns; 
+        rx <= '1'; wait for 5 ns;
+        clk_spi <= '0'; wait for 20 ns;
+        
+        clk_spi <= '1'; wait for 15 ns; 
+        rx <= '1'; wait for 5 ns;
+        clk_spi <= '0'; wait for 20 ns;
+        
+        -- two more clk_spi
+        clk_spi <= '1'; wait for 15 ns; 
+        rx <= '0'; wait for 5 ns;
+        clk_spi <= '0'; wait for 20 ns;
+        
+        clk_spi <= '1'; wait for 15 ns; 
+        rx <= '0'; wait for 5 ns;
+        clk_spi <= '0'; wait for 20 ns;
+ 
+        wait for 200 ns;
    END PROCESS;
    
 -- *** End Test Bench - User Defined Section ***
