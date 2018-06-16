@@ -21,15 +21,23 @@ SoftwareSerial BT(5,6); // RX, TX
 #define R_echo  8 
 
 #define MOTOR_Pin 3       //Output pin number for the motor
-#define MOTOR_Max 120
+#define MOTOR_Max 130
 #define MOTOR_Min 0
 
 #define LED_BT A4
 #define LED_B A5
 #define Button 2
 
-int BTstate = 0;
 int motor_speed = 0;
+
+enum bartStates{
+    TURN_RIGHT,
+    TURN_LEFT,
+    STOP,
+    GO
+};
+
+bartStates BTstate = GO;
 
 ///////////////////////
 //  FUNCTIONS
@@ -62,18 +70,26 @@ unsigned long readUltrasoundDistance(int trigPin, int echoPin){
 
 void motor_ON() {
     while (motor_speed < MOTOR_Max) {
-        motor_speed += 5;
+        motor_speed += 15;
         analogWrite(MOTOR_Pin, motor_speed);
         delay(20);
   }
+    Serial.print("Motor speed:  ");
+    Serial.println(motor_speed);
+    analogWrite(MOTOR_Pin, motor_speed);
+ 
 }
 
 void motor_OFF() {
     while (motor_speed > MOTOR_Min) {
-        motor_speed -= 5;
+        motor_speed -= 15;
         analogWrite(MOTOR_Pin, motor_speed);
         delay(20);
   }
+    Serial.print("Motor speed");
+    Serial.println(motor_speed);
+    analogWrite(MOTOR_Pin, motor_speed);
+
 }
 
 void call_bart(){
@@ -96,7 +112,7 @@ int validPassword() {
             c = BT.read();
             //delay(25) ;
         }
-        Serial.print(S);
+        Serial.println(S);
     }
     if (pass == S) return 1;
     else return -1;
@@ -117,6 +133,7 @@ int authentication (){
 
 void chooseDirection(){
     const unsigned long delta = 20; 
+    const unsigned long diff = 0.8;
     unsigned long left;
     unsigned long mid;
     unsigned long right; 
@@ -125,16 +142,58 @@ void chooseDirection(){
     mid     = readUltrasoundDistance(M_trig, M_echo);
     right   = readUltrasoundDistance(R_trig, R_echo);
 
+    Serial.println("");
     // Simple algorithm to choose direction
     // TODO: Update this
+
+/*
     left =  (left < 20)?1:0;
     right = (right < 20)?1:0;
+*/
 
-    if (right) turn_right();
-    else if  (left) turn_left(); 
-    else go_straight();
+    // it's turning but it's not close to stop
+    if ((mid < delta ) )//&& (left < delta) && ( right < delta) ) 
+        BTstate = STOP;
+
+    else  if ((left < delta*1.5) && ( right > delta*1.5))
+         BTstate = TURN_LEFT; 
+
+    else if ((right < delta*1.5) && ( left > delta*1.5))
+        BTstate = TURN_RIGHT;
+
+    else
+        BTstate = GO;
+
+    Serial.print("STATE: ");
+    Serial.println(BTstate);
 }
 
+
+void state_machines (){
+    switch(BTstate) {
+        case GO:
+            motor_ON();
+            go_straight();
+            break;
+        case TURN_RIGHT:
+            motor_ON();
+            turn_right();
+            break;
+        case TURN_LEFT:
+            motor_ON();
+            turn_left();
+            break;
+        case STOP:
+            motor_OFF();
+            break;
+        default:
+            motor_ON();
+            go_straight();
+    }
+}
+
+void direction_sm(){
+}
 
 ///////////////////////
 //  MAIN FUNCTIONS
@@ -159,10 +218,13 @@ void setup() {
     pinMode(Button, INPUT);
 
     Serial.begin(9600);
+
+    while (authentication() < 0){
+    }
 }
 
 void loop() {
-    if ( authentication() > 0)
-        chooseDirection();
-        call_bart();
+    chooseDirection();
+    state_machines();
+    call_bart();
 }
