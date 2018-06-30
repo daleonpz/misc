@@ -20,7 +20,7 @@ architecture arch of spi_rx is
     signal buf_next, buf_reg: std_logic_vector (3 downto 0);  
     signal count_next, count_reg: unsigned (2 downto 0); 
     signal full_next, full_reg: std_logic;
-    constant DBIT: integer := 4;   
+    constant DBIT: integer := 8;   
 begin
 
     -- FSMD: state and data registers

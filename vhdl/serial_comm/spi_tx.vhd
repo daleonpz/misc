@@ -21,7 +21,7 @@ architecture arch of spi_tx is
     signal count_next, count_reg: unsigned (2 downto 0); 
     signal empty_next, empty_reg: std_logic;
     signal tx_next, tx_reg: std_logic;  
-    constant DBIT: integer := 4;   
+    constant DBIT: integer := 8;   
 begin
 
     -- FSMD: state and data registers
