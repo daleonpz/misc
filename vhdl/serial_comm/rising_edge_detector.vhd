@@ -25,7 +25,7 @@ begin
         if (reset = '1') then
             state_reg <= ZERO;
             q_reg <= '0';
-        elsif (clk'event and clk='1') then
+        elsif (rising_edge(clk)) then
             state_reg <= state_next;
             q_reg <= q_next; 
         end if;

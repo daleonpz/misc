@@ -25,7 +25,7 @@ begin
         if (reset  = '1') then
             q1_reg <= '0';
             q2_reg <= '0';
-        elsif (clk'event and clk='1') then
+        elsif ( rising_edge(clk)) then
             q1_reg <= q1_next;
             q2_reg <= q2_next;
         end if;

@@ -28,7 +28,6 @@ begin
             state_reg <= IDLE;
             clk_reg <= '0';
             count_reg <= (others => '0');
-    --    elsif (clk'event and clk = '1') then
 	elsif ( rising_edge(clk)) then 
             state_reg <= state_next;
             clk_reg <= clk_next;
