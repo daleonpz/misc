@@ -6,7 +6,7 @@ USE ieee.std_logic_1164.ALL;
 entity spi_block_tx is
     port (  clk: in std_logic; 
             reset: in std_logic; 
-            data: in std_logic_vector (3 downto 0);
+            data: in std_logic_vector (7 downto 0);
             en: in std_logic; 
             empty_buf: out std_logic; 
             clk_spi: out std_logic;
@@ -30,7 +30,7 @@ component spi_tx
             clk: in std_logic;
             reset: in std_logic;
             edge: in std_logic;  
-            data: in std_logic_vector (3 downto 0);
+            data: in std_logic_vector (7 downto 0);
             empty_buf: out std_logic;
             tx: out std_logic
          );

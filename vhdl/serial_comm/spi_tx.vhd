@@ -8,7 +8,7 @@ entity spi_tx is
     port (  clk: in std_logic;
             reset: in std_logic;
             edge: in std_logic;  
-            data: in std_logic_vector (3 downto 0);
+            data: in std_logic_vector (7 downto 0);
             empty_buf: out std_logic;
             tx: out std_logic
          );
@@ -17,8 +17,8 @@ end entity spi_tx;
 architecture arch of spi_tx is
     type STATES is (IDLE, SEND, STOP);
     signal state_next, state_reg: STATES;
-    signal buf_next, buf_reg: std_logic_vector (3 downto 0);  
-    signal count_next, count_reg: unsigned (2 downto 0); 
+    signal buf_next, buf_reg: std_logic_vector (7 downto 0);  
+    signal count_next, count_reg: unsigned (3 downto 0); 
     signal empty_next, empty_reg: std_logic;
     signal tx_next, tx_reg: std_logic;  
     constant DBIT: integer := 8;   
@@ -69,7 +69,7 @@ begin
                         count_next <= (count_reg + 1);
                         -- LSB is sent first
                         -- so we need to rotate the buffer
-                        buf_next <= '0' & buf_reg(3 downto 1);
+                        buf_next <= '0' & buf_reg(7 downto 1);
                         tx_next <= buf_reg(0);
                     end if; 
                 else

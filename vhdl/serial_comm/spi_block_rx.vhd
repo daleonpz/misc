@@ -8,7 +8,7 @@ entity spi_block_rx is
             reset: in std_logic; 
             clk_spi: in std_logic;
             rx: in std_logic;
-            data: out std_logic_vector (3 downto 0);
+            data: out std_logic_vector (7 downto 0);
             full_buf: out std_logic
         );
 end entity spi_block_rx; 
@@ -20,7 +20,7 @@ component spi_rx
             reset: in std_logic;
             edge: in std_logic;  
             rx: in std_logic;
-            data: out std_logic_vector (3 downto 0);
+            data: out std_logic_vector (7 downto 0);
             full_buf: out std_logic
          );
 end component;

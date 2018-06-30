@@ -28,16 +28,16 @@ All blocks will have it's own clock and reset as well
 ## Buttons
 Since they are debounced buttons, there is no need for a debouncing circuit. 
 The goal of this block is to:
-- Generate the data vector (4 bits) to transmit
+- Generate the data vector (8 bits) to transmit
 - Enable the SPI-TX block
 
 ```vhdl
 --  Pseudocode
 --  STATES: IDLE, EN_TX (enable transmission)
 port(
-     s: in std_logic_vector (3 downto 0);
+     s: in std_logic_vector (7 downto 0);
     en: out std_logic;
-    data: out std_logic_vector (3 downto 0)
+    data: out std_logic_vector (7 downto 0)
 );
     
 IDLE: 
@@ -117,7 +117,7 @@ The implementation will be done by **with ... select ... when**
 -- Pseudocode
 -- STATES: IDLE, SHOW
 port(
-    data: in std_logic_vector (3 downto 0);
+    data: in std_logic_vector (7 downto 0);
     done: in std_logic;
     out: out std_logic_vector (6 downto 0) -- 7segment
 );

@@ -9,7 +9,7 @@ entity spi_rx is
             reset: in std_logic;
             edge: in std_logic;  
             rx: in std_logic;
-            data: out std_logic_vector (3 downto 0);
+            data: out std_logic_vector (7 downto 0);
             full_buf: out std_logic
          );
 end entity spi_rx; 
@@ -17,8 +17,8 @@ end entity spi_rx;
 architecture arch of spi_rx is
     type STATES is (IDLE, RECEIVE, STOP);
     signal state_next, state_reg: STATES;
-    signal buf_next, buf_reg: std_logic_vector (3 downto 0);  
-    signal count_next, count_reg: unsigned (2 downto 0); 
+    signal buf_next, buf_reg: std_logic_vector (7 downto 0);  
+    signal count_next, count_reg: unsigned (3 downto 0); 
     signal full_next, full_reg: std_logic;
     constant DBIT: integer := 8;   
 begin
@@ -67,7 +67,7 @@ begin
                         count_next <= (count_reg + 1);
                         -- LSB is received first
                         -- so we need to rotate the buffer
-                        buf_next <= rx & buf_reg(3 downto 1);
+                        buf_next <= rx & buf_reg(7 downto 1);
                     end if; 
                 else
                     buf_next <= buf_reg;

@@ -33,7 +33,7 @@ ARCHITECTURE behavior OF testbench IS
 		reset : IN std_logic;
 		edge : IN std_logic;
 		rx: IN std_logic;
-		data : out std_logic_vector(3 downto 0);          
+		data : out std_logic_vector(7 downto 0);          
 		full_buf : OUT std_logic
 		);
 	END COMPONENT;
@@ -42,7 +42,7 @@ ARCHITECTURE behavior OF testbench IS
 	SIGNAL reset :  std_logic;
 	SIGNAL edge :  std_logic;
 	SIGNAL rx :  std_logic;
-	SIGNAL data :  std_logic_vector(3 downto 0);
+	SIGNAL data :  std_logic_vector(7 downto 0);
 	SIGNAL full_buf :  std_logic;
 
 BEGIN
@@ -77,7 +77,23 @@ BEGIN
         edge <= '0'; wait for 30 ns; 
         rx <= '0'; wait for 20 ns;
         edge <= '1'; wait for 10 ns;
-        -- transmition starts here 0011
+        -- transmition starts here 0011 0011
+        edge <= '0'; wait for 30 ns; 
+        rx  <= '1'; wait for 20 ns;
+        edge <= '1'; wait for 10 ns;
+        
+        edge <= '0'; wait for 30 ns; 
+        rx  <= '1'; wait for 20 ns;
+        edge <= '1'; wait for 10 ns;
+        
+        edge <= '0'; wait for 30 ns; 
+        rx  <= '0'; wait for 20 ns;
+        edge <= '1'; wait for 10 ns;
+        
+        edge <= '0'; wait for 30 ns; 
+        rx  <= '0'; wait for 20 ns;
+        edge <= '1'; wait for 10 ns;
+       
         edge <= '0'; wait for 30 ns; 
         rx  <= '1'; wait for 20 ns;
         edge <= '1'; wait for 10 ns;
@@ -94,6 +110,7 @@ BEGIN
         rx  <= '0'; wait for 20 ns;
         edge <= '1'; wait for 10 ns;
         
+ 
         -- one more clk_spi
         edge <= '0'; wait for 30 ns; 
         rx  <= '0'; wait for 20 ns;
@@ -106,7 +123,23 @@ BEGIN
         edge <= '0'; wait for 30 ns; 
         rx <= '0'; wait for 20 ns;
         edge <= '1'; wait for 10 ns;
-        -- transmition starts here 0110
+        -- transmition starts here 0110 0110
+        edge <= '0'; wait for 30 ns; 
+        rx  <= '0'; wait for 20 ns;
+        edge <= '1'; wait for 10 ns;
+        
+        edge <= '0'; wait for 30 ns; 
+        rx  <= '1'; wait for 20 ns;
+        edge <= '1'; wait for 10 ns;
+        
+        edge <= '0'; wait for 30 ns; 
+        rx  <= '1'; wait for 20 ns;
+        edge <= '1'; wait for 10 ns;
+        
+        edge <= '0'; wait for 30 ns; 
+        rx  <= '0'; wait for 20 ns;
+        edge <= '1'; wait for 10 ns;
+       
         edge <= '0'; wait for 30 ns; 
         rx  <= '0'; wait for 20 ns;
         edge <= '1'; wait for 10 ns;
@@ -123,6 +156,7 @@ BEGIN
         rx  <= '0'; wait for 20 ns;
         edge <= '1'; wait for 10 ns;
         
+ 
          -- one more clk_spi
         edge <= '0'; wait for 30 ns; 
         rx  <= '0'; wait for 20 ns;

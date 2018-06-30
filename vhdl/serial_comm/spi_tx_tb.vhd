@@ -18,6 +18,8 @@
 -- TSALL and they are not present in the testbench. For more information see
 -- the How To section of online help.  
 --
+
+
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
@@ -32,7 +34,7 @@ ARCHITECTURE behavior OF testbench IS
 		clk : IN std_logic;
 		reset : IN std_logic;
 		edge : IN std_logic;
-		data : IN std_logic_vector(3 downto 0);          
+		data : IN std_logic_vector(7 downto 0);          
 		empty_buf : OUT std_logic;
 		tx : OUT std_logic
 		);
@@ -41,7 +43,7 @@ ARCHITECTURE behavior OF testbench IS
 	SIGNAL clk :  std_logic;
 	SIGNAL reset :  std_logic;
 	SIGNAL edge :  std_logic;
-	SIGNAL data :  std_logic_vector(3 downto 0);
+	SIGNAL data :  std_logic_vector(7 downto 0);
 	SIGNAL empty_buf :  std_logic;
 	SIGNAL tx :  std_logic;
 
@@ -76,13 +78,13 @@ BEGIN
         reset <= '1';
         wait for 25 ns;
         reset <= '0';
-        data <= "1111";
+        data <= "11111111";
         wait for 400 ns;
-        data <= "1010";
+        data <= "10101010";
         wait for 400 ns;
-        data <= "0110";
+        data <= "01100110";
         wait for 400 ns;
-        data <= "1001";
+        data <= "10011001";
         wait for 400 ns;
      
     end process;

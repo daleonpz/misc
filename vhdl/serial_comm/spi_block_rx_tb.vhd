@@ -1,3 +1,5 @@
+-- Update data to send
+
 USE ieee.numeric_std.ALL;
 
 ENTITY testbench IS
@@ -11,7 +13,7 @@ ARCHITECTURE behavior OF testbench IS
             reset : IN std_logic;
             clk_spi: in std_logic;
             rx: in std_logic;
-            data: out std_logic_vector (3 downto 0);
+            data: out std_logic_vector (7 downto 0);
             full_buf: out std_logic
             );
 	END COMPONENT;
@@ -20,7 +22,7 @@ ARCHITECTURE behavior OF testbench IS
 	SIGNAL reset :  std_logic;
 	SIGNAL clk_spi :  std_logic;
 	SIGNAL rx :  std_logic;
-	SIGNAL data :  std_logic_vector(3 downto 0);
+	SIGNAL data :  std_logic_vector(7 downto 0);
 	SIGNAL full_buf :  std_logic;
 
 BEGIN
@@ -55,7 +57,23 @@ BEGIN
         rx <= '0';
         clk_spi <= '1'; wait for 20 ns; 
         clk_spi <= '0'; wait for 20 ns;
-        -- reception starts here 0101
+        -- reception starts here 0101 0101
+        clk_spi <= '1'; wait for 15 ns; 
+        rx <= '1'; wait for 5 ns;
+        clk_spi <= '0'; wait for 20 ns;
+        
+        clk_spi <= '1'; wait for 15 ns; 
+        rx <= '0'; wait for 5 ns;
+        clk_spi <= '0'; wait for 20 ns;
+        
+        clk_spi <= '1'; wait for 15 ns; 
+        rx <= '1'; wait for 5 ns;
+        clk_spi <= '0'; wait for 20 ns;
+        
+        clk_spi <= '1'; wait for 15 ns; 
+        rx <= '0'; wait for 5 ns;
+        clk_spi <= '0'; wait for 20 ns;
+       
         clk_spi <= '1'; wait for 15 ns; 
         rx <= '1'; wait for 5 ns;
         clk_spi <= '0'; wait for 20 ns;
@@ -87,7 +105,23 @@ BEGIN
         rx <= '0';
         clk_spi <= '1'; wait for 20 ns; 
         clk_spi <= '0'; wait for 20 ns;
-        -- reception of 1100 starts here 
+        -- reception of 1100 1100 starts here 
+        clk_spi <= '1'; wait for 15 ns; 
+        rx <= '0'; wait for 5 ns;
+        clk_spi <= '0'; wait for 20 ns;
+        
+        clk_spi <= '1'; wait for 15 ns; 
+        rx <= '0'; wait for 5 ns;
+        clk_spi <= '0'; wait for 20 ns;
+        
+        clk_spi <= '1'; wait for 15 ns; 
+        rx <= '1'; wait for 5 ns;
+        clk_spi <= '0'; wait for 20 ns;
+        
+        clk_spi <= '1'; wait for 15 ns; 
+        rx <= '1'; wait for 5 ns;
+        clk_spi <= '0'; wait for 20 ns;
+        
         clk_spi <= '1'; wait for 15 ns; 
         rx <= '0'; wait for 5 ns;
         clk_spi <= '0'; wait for 20 ns;

@@ -11,7 +11,7 @@ ARCHITECTURE behavior OF testbench IS
     PORT(
         clk : IN std_logic;
         reset : IN std_logic;
-        data : IN std_logic_vector(3 downto 0);  
+        data : IN std_logic_vector(7 downto 0);  
         en: in std_logic; 
         empty_buf : OUT std_logic;
         clk_spi: out std_logic;
@@ -21,7 +21,7 @@ ARCHITECTURE behavior OF testbench IS
 
     SIGNAL clk :  std_logic;
     SIGNAL reset :  std_logic;
-    SIGNAL data :  std_logic_vector(3 downto 0);
+    SIGNAL data :  std_logic_vector(7 downto 0);
     SIGNAL en: std_logic; 
     SIGNAL empty_buf :  std_logic;
     SIGNAL clk_spi: std_logic;
@@ -54,15 +54,15 @@ BEGIN
         reset <= '1';
         wait for 25 ns;
         reset <= '0';
-        data <= "1111";
+        data <= "11111111";
         en <= '0';
         wait for 40 ns;
         en <= '1';
      	wait for 100 ns;
-        data <= "0000";
+        data <= "00000000";
         wait for 400 ns;
         en <= '0';
-        data <= "1001";
+        data <= "10011001";
         wait for 100 ns;
         en <= '1';
         wait for 400 ns;
