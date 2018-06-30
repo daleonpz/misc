@@ -18,7 +18,7 @@ architecture arch of clk_generator is
     signal state_next, state_reg: STATES; 
     signal clk_next, clk_reg: std_logic;
     signal count_next, count_reg: unsigned (3 downto 0);
-    constant MAX_COUNT: integer := 3;
+    constant MAX_COUNT: integer := 16;
 begin
 
     -- FSMD: state and data registers
