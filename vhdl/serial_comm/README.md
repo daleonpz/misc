@@ -7,9 +7,6 @@ author: Daniel Paredes, Cristian Gil
 --> 
 
 
-The goal is to send a telegram from one FPGA to another using serial communication. Both FPGAs should be able to send a telegram. 
-In our case,  our communication is a SPI-based one. Our design uses two SPI-based lines of communications in order to make possible the bidirectional communication. 
-
 # SPI-based Communication protocol
 The standard Serial Peripheral Interface (SPI) which uses the MASTER-SLAVE principle and it uses 4 lines of data transmission (spi_clk, MISO, MOSI, SS). 
 On the other hand, our designed protocol also uses the Master-Slave principle but it only uses 2 lines of data transmission since we only have one slave, and the communication only goes from the master to the slave. 
@@ -36,17 +33,8 @@ Our protocol uses five main blocks: "Rising edge detector", "clock generator",a 
 ![Non ideal clock signal](images/real_clk.png)
 
 
-# SPI Transmission block
-
-The SPI Transmission is located in the side of the FPGA master. The internal block diagram is presented in Figure 4. 
-Our transmission block have 2 inputs: Enable SPI clock signal `EN` and data to transmit `DATA`; and 3 outputs: A buffer `empty_buffer` that works as feedback to other blocks that want to send data through our SPI channel, the SPI generated clock `SPI_clk`  used to synchronize the communication between master and slave, and the transmission pin `TX`. 
-
- 
-As it can be observed, our design includes 4 blocks. A clock generator that runs 20 times slower than the FPGA internal clock and this clock will be used as the **SPI clock** (`SPI_clk`); a delay or synchronizer that is used to avoid reading data during ramps in the `SPI_clk`;  rising edge detector, used to detect rising edges of our `SPI_clk`; and the proper SPI transmission component which is in charge of sending the data.   
-
-
-![SPI TX - block diagram](images/spi_block_tx_diagram.png)
-
+# Communication related components
+All the components in our design have a internal clock signal and an asynchronous reset signal.
 
 ## Clock Generator
 We used a state machine with only two states (ONE, ZERO) and a counter. In each state we reset the counter to zero and it starts counting up to some fixed maximum count, in our case is maximun count fixed to ten. 
@@ -119,8 +107,37 @@ Once all the data is sent (`all_data_sent = TRUE`), the component goes to STOP s
 ![SPI transmission component state machine](images/spi_tx_state_machine.png){height=40%}
 
 
-## Putting all together: SPI Transmission Block
-As it was mentioned in Section 2, our SPI transmission block is made of four blocks (Figure 4). The entity definition is as follows:
+## SPI RX component
+The entity definition of this component is as follows: 
+
+```vhdl
+entity spi_rx is
+    port (  clk: in std_logic;
+            reset: in std_logic;
+            edge: in std_logic;  
+            rx: in std_logic;
+            data: out std_logic_vector (7 downto 0);
+            full_buf: out std_logic
+         );
+end entity spi_rx; 
+```
+
+The behaviour is showned in Figure X. The SPI RX component will be in state IDLE until an `edge` is detected. Similar to transmission block, the component while in IDLE reception buffer is set to 1 ( `buffer_full <= '1'`). 
+ When an edge is detected the component goes to SEND state starting the data frame reception. In every detected edge a bit is received through RX port, also the flag that states the reception is taking place is set to `0` (`buffer_full <= '0'`). The least significant bit is received first. The reception is done by using a shifting register. 
+Once all the data is received (`all_data_rec = TRUE`), the component goes to STOP state. In this state the component makes sure that all the bits have been received and the new data is ready to be read. Finally, in the next `edge` the component goes to IDLE state again.   
+
+![SPI reception component state machine](images/spi_rx_state_machine.png){height=40%}
+
+# SPI Transmission block
+The SPI Transmission is located in the side of the FPGA master. The internal block diagram is presented in Figure 4. 
+Our transmission block have 2 inputs: Enable SPI clock signal `EN` and data to transmit `DATA`; and 3 outputs: A buffer `empty_buffer` that works as feedback to other blocks that want to send data through our SPI channel, the SPI generated clock `SPI_clk`  used to synchronize the communication between master and slave, and the transmission pin `TX`. 
+ 
+As it can be observed, our design includes 4 blocks. A clock generator that runs 20 times slower than the FPGA internal clock and this clock will be used as the **SPI clock** (`SPI_clk`); a delay or synchronizer that is used to avoid reading data during ramps in the `SPI_clk`;  rising edge detector, used to detect rising edges of our `SPI_clk`; and the proper SPI transmission component which is in charge of sending the data.   
+
+
+![SPI TX - block diagram](images/spi_block_tx_diagram.png)
+
+The entity definition is as follows:
 
 ```vhdl
 entity spi_block_tx is
@@ -153,60 +170,50 @@ while (EN = '1')
 
 A testbench result can be observed in Figure X. 
 
- 
-
 # SPI Reception block 
-- SPI Rx (internal block)
+
+The SPI Reception is located in the side of the FPGA slave. The internal block diagram is presented in Figure X. 
+This block have 2 inputs: the SPI generated clock `SPI_clk` form master, and the reception frame `RX`; also have two outputs: the received data `data` and a buffer `buffer_full` that tell other blocks that there is data ready to be read. 
+
+The entity definition is as follows:
 
 ```vhdl
--- Pseudocode 
+entity spi_block_rx is
+    port (  clk: in std_logic; 
+            reset: in std_logic; 
+            clk_spi: in std_logic;
+            rx: in std_logic;
+            data: out std_logic_vector (7 downto 0);
+            full_buf: out std_logic
+        );
+end entity spi_block_rx; 
+```
+
+ 
+As it can be observed, our design includes three blocks. A delay or synchronizer that is used to avoid reading data during ramps in the `SPI_clk`;  rising edge detector, used to detect rising edges of our `SPI_clk`; and the SPI reception component which is in charge of recieving the data frame.   
+
+
+![SPI RX - block diagram](images/spi_block_rx_diagram.png)
+
+A pseudocode of the main functionality of the SPI recieving block is presented
+
+```vhdl
+-- SPI reception block Pseudocode 
 while ( rising_edge_detected )
-    full_buf <= '0'
+    buffer_full <= '0'
     data <= fill_with(rx_BIT)
 
-full_buf <= '1'
+buffer_full <= '1'
 inMemory(data) 
 ```
 
 
-All the blocks have a clock and reset signal. 
-
-- SPI TX Block: 
-    - **NOTE**: Maybe we should add one more delay before transmit the data. 
-
-![SPI TX - block diagram](images/spi_block_tx_diagram.png)
-
-- SPI TX Block testbench:
-
-![SPI TX - testbench result](images/spi_block_tx_tb.png)
-
-- SPI RX Block: 
-    - **NOTE**: Not tested
-
-![SPI RX - block diagram](images/spi_block_rx_diagram.png)
-
-- SPI RX Block testbench
+# Test Case
+The goal is to send a telegram from one FPGA to another using serial communication. Both FPGAs should be able to send a telegram. The telegram is 8-bit long and this information should be displayed in two 7-segment screen located in the other FPGA. 
+In our case,  our communication is a SPI-based one. Our design uses two SPI-based lines of communications in order to make possible the bidirectional communication. 
  
-![SPI RX - testbench result](images/spi_block_rx_tb.png)
 
-
-# Other blocks
-## FPGA ports:
-- 135: external clock with a jumper based freq selector (1, 5, 10, 100, 1K, 10K, 100K, 1M)hz
-- 106, 110-115: 7-segment display
-- 17, 19, 22, 30: Debounced buttons
-- 51-92: Port 2 
-- 137-180: Brevia Port
-
-## Idea:
-The goal is to push in the FPGA master  any combination of debounced buttons, for example _0101_, and the 7-segment display of the FPGA slave should decimal number of the combination, in this case is 5. 
-The communication protocol is based on SPI. Thus, this will be our setting: 
-
-- Clk from FPGA master will be used as SPI clk
-- Transmit a 4-bit data packet 
-
-
-![Block Diagram](images/block.jpg)
+![One-way communication - Block Diagram](images/testcase.png)
 
 In blocks:
 
