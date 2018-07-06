@@ -56,13 +56,16 @@ BEGIN
       -- enough time to send the data
       push_button <= '0'; wait for 500 ns;
 
-
       dip_switch <= "00110011"; wait for 100 ns;
       -- send dip "10101100" 
       dip_switch <= "10101100"; wait for 100 ns;
       push_button <= '1'; wait for 100 ns;
       -- enough time to send the data
-      push_button <= '0'; wait for 1500 ns;
+      push_button <= '0'; wait for 1200 ns;
+      
+      push_button <= '1'; wait for 100 ns;
+      -- enough time to send the data
+      push_button <= '0'; wait for 2700 ns;
   END PROCESS;
 -- *** End Test Bench - User Defined Section ***
 
