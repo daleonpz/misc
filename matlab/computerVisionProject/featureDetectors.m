@@ -17,6 +17,13 @@ I2=double(imright)/255;
 % Put the landmark descriptors in a matrix
   D1 = Ipts1.descriptor;
   D2 = Ipts2.descriptor; 
+  
+  corners1 = detectHarrisFeatures( rgb2gray(I1));
+  corners2 = detectHarrisFeatures( rgb2gray(I2));
+  
+  D1 = corners1.Metric';
+  D2 = corners2.Metric';
+
 % Find the best matches
   err=zeros(1,length(Ipts1.x));
   cor1=1:length(Ipts1.x); 
