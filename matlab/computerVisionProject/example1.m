@@ -2,7 +2,7 @@ I=double(imread('huella.pgm'))/255;
  
 % Get the Key Point
 Options.thresh = 0.001;
-tic; Ipts   =   my_surf(I,Options); t1 = toc
+tic; Ipts   =   my_surf(I,Options);  t=toc
 length(Ipts.x)
  
 figure, imshow(I,[]); hold on;
@@ -16,9 +16,11 @@ plot(Ipts.x,Ipts.y,...
 PaintSURF(I, Ipts)
 
 % Put the landmark descriptors in a matrix
-tic; surfPoints = detectSURFFeatures(I); t2=toc
-tic; harrisCorners = detectHarrisFeatures(I); t2=toc
-    
+tic; surfPoints = detectSURFFeatures(I); 
+surfFeatures = extractFeatures(I,surfPoints); t = toc
+tic; harrisCorners = detectHarrisFeatures(I); 
+harrisFeatures = extractFeatures(I, harrisCorners); t = toc
+
 figure, imshow(I,[]); hold on;
 plot(surfPoints)
 

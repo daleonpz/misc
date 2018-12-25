@@ -4,15 +4,15 @@ function featureDetectorPerformance()
 leftDataset = load('ZED_video_left.mat');
 
 im = leftDataset.im(:,:,:,1);
-I = double(im)/255;
-   
-% Get the Key Points
-Options.tresh=0.0001;
-Ipts   =   my_surf(I,Options);
-% Put the landmark descriptors in a matrix
-surfDescriptor = Ipts.descriptor;
-surfPoints = detectSURFFeatures(rgb2gray(I));
-harrisCorners = detectHarrisFeatures( rgb2gray(I));
+I = rgb2gray( double(im)/255 );
+
+% SURF
+tic; surfPoints = detectSURFFeatures(I);
+surfFeatures = extractFeatures(I,surfPoints); toc
+
+% Harris
+tic; harrisCorners = detectHarrisFeatures(I);
+harrisFeatures = extractFeatures(I, harrisCorners); toc
     
 figure, imshow(I,[]); hold on;
 plot(surfPoints)

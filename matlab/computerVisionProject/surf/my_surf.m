@@ -24,7 +24,7 @@ surf_extras.img                 = iimg;
  
 ipts = GetInterestPoints(surf_extras);
 
-ipts = DescribeInterestPoints(ipts,iimg);
+ipts = DescribeInterestPoints(ipts,iimg); 
 
 end
 
