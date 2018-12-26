@@ -1,4 +1,4 @@
-function [inliers, bestfit] = ransac_match(imleft, imright,threshold, rate )
+function [matches, bestfit] = ransac_match(imleft, imright,threshold, rate )
 
 % imleft = [x y]
 % imright = [x y]
@@ -47,41 +47,7 @@ while( (nInliers < rate*m) && (numIterations < 100))
 end 
 
 numIterations
-h_est 
+bestfit = h_est 
+matches.left =  imleft(inliers,:);
+matches.right = imright(inliers,:);
 
-
-leftDataset = load('ZED_video_left.mat');
-rightDataset = load('ZED_video_right.mat'); 
-
-I1=double(leftDataset.im(:,:,:,1))/255;
-I2=double(rightDataset.im(:,:,:,1))/255;
-  
-% Show both images
-I = zeros([size(I1,1) size(I1,2)*2 size(I1,3)]);
-I(:,1:size(I1,2),:)=I1; I(:,size(I1,2)+1:size(I1,2)+size(I2,2),:)=I2;
-figure, imshow(I,[]); hold on;
-% Show the best matches
-for i=1:m
-      plot([ imleft(i,1)  imright(i,1) + size(I1,2)],[ imleft(i,2) imright(i,2)],...
-                '-mo',...
-                'LineWidth',2,...
-                'MarkerEdgeColor','k',...
-                'MarkerFaceColor',[.49 1 .63],...
-                'MarkerSize',10)
-end
-
-% Show both images
-figure, imshow(I,[]); hold on;
-
-
-% Show the best matches
-leftim = imleft(inliers,:);
-rightim = imright(inliers,:);
-for i=1:nInliers
-      plot([ leftim(i,1)  rightim(i,1) + size(I1,2)],[ leftim(i,2) rightim(i,2)],...
-                '-mo',...
-                'LineWidth',2,...
-                'MarkerEdgeColor','k',...
-                'MarkerFaceColor',[.49 1 .63],...
-                'MarkerSize',10)
-end

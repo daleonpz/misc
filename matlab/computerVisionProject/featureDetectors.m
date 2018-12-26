@@ -36,9 +36,12 @@ I2=double(imright)/255;
 
   end
 
-  cor1 = find(matches>0);
-  cor2 = matches(matches>0); 
-  
+cor1 = find(matches>0);
+cor2 = matches(matches>0); 
+
+
+
+
 % Show both images
   I = zeros([size(I1,1) size(I1,2)*2 size(I1,3)]);
   I(:,1:size(I1,2),:)=I1; I(:,size(I1,2)+1:size(I1,2)+size(I2,2),:)=I2;
@@ -51,11 +54,4 @@ I2=double(imright)/255;
                 'MarkerEdgeColor','k',...
                 'MarkerFaceColor',[.49 1 .63],...
                 'MarkerSize',10)
-      plot([Ipts1.x(cor1(i)) Ipts2.x(cor2(i))+size(I1,2)],[Ipts1.y(cor1(i)) Ipts2.y(cor2(i))],...
-                '-mo',...
-                'LineWidth',2,...
-                'MarkerEdgeColor','k',...
-                'MarkerFaceColor',[.49 1 .63],...
-                'MarkerSize',10)
-      
-  end
+end
