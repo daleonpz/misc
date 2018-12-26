@@ -1,4 +1,4 @@
-function [inliers, bestfit] = ransac_match(imleft, imright )
+function [inliers, bestfit] = ransac_match(imleft, imright,threshold, rate )
 
 % imleft = [x y]
 % imright = [x y]
@@ -7,7 +7,7 @@ function [inliers, bestfit] = ransac_match(imleft, imright )
 nInliers = 0;
 numIterations = 0;
 
-threshold = 10e-4; 
+% threshold = 10e-4; 
 nSamples = 4;
 m = size(imleft,1); 
 
@@ -15,39 +15,33 @@ H_full = [];
 for k = 1:m
     h = [imleft(k,:) 1]; 
     H_full = [H_full ; 
-         h zeros(1,3) -imright(k,1)*h ;
-         zeros(1,3) h -imright(k,2)*h]; 
+          zeros(1,3) -h imright(k,2)*h;
+          h zeros(1,3) -imright(k,1)*h];
 end
 
 
-while( (nInliers < (0.5)*m) && (numIterations < 100))
-
+while( (nInliers < rate*m) && (numIterations < 100))
 
     subsetIndex = randsample(m, nSamples);
-
-    p1 = imleft(subsetIndex,:);
-    p2 = imright(subsetIndex,:); 
-
-    % creating Homography matrix
-    H = [];
-    for k = 1:nSamples
-        h = [p1(k,:) 1]; 
-        H = [H ; 
-             h zeros(1,3) -p2(k,1)*h ;
-             zeros(1,3) h -p2(k,2)*h]; 
-    end
-
     subset = [subsetIndex*2-1 subsetIndex*2]';
 
-    hh = H_full(subset(:),:);
+    % Homeography subsample
+    H = H_full(subset(:),:);
 
     % least square solution
     hth = H'*H;
     [V,~] = eig(hth);
     h_est = V(:,1);
-     
+
+    % normalization
+    h_est = reshape(h_est,[3 3])'/h_est(end);
+
     % finding inliers
-    inliers =  abs(H_full*h_est) < threshold;
+    est = h_est*[imleft'; ones(1,m)];
+    % normalization
+    est = [est(1,:)./est(end,:) ;est(2,:)./est(end,:)]';
+
+    inliers = sum(( imright - est).^2,2).^0.5 < threshold;
     nInliers = sum(inliers);
     numIterations = numIterations + 1 ;
 end 
