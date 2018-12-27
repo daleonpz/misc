@@ -78,6 +78,10 @@ k2 = [ 1401.62 0 944.482;
 
 distorCoeffRight = [-0.16997; 0.024937];
 
+%matchleft = fixRadialDistortion(matchleft, distorCoeffLeft);
+%matchright = fixRadialDistortion(matchright, distorCoeffRight);
+
+
 p1    = k1\[matchleft'; ones(1, size(matchleft,1))];
 p2    = k2\[matchright'; ones(1, size(matchright,1))];
 
