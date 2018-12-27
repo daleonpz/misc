@@ -95,22 +95,38 @@ P1 = [eye(3) zeros(3,1)];
 P2_ = getP2(E);
 
 for i = 1:4
-    invP2 = inv([ P2_(:,:,i);[0 0 0 1] ]);
     pose = findPose( P1, p1, P2_(:,:,i), p2);
 
     % checking if the pose is in front of the camera
-    P2test = invP2*pose; % reprojection to camera 2
-
-    if all(pose(:,3) > 0) && all(P2test(:,3) > 0)
+    P2test = [ P2_(:,:,i);[0 0 0 1] ]\pose; % reprojection to camera 2
+  
+    if all(pose(3,:) > 0) && all(P2test(3,:) > 0)
         P2 = P2_(:,:,i);
         break;
     end
+       
 end
 
 figure
 plot3(pose(1,:),pose(2,:),pose(3,:),'d');
 axis equal;
 axis vis3d;
+
+
+figure
+imshow(I1,[]); hold on
+n = 40;
+plot(matchleft(1:n,1),matchleft(1:n,2),'o',...
+                'MarkerEdgeColor','k',...
+                'MarkerFaceColor',[.49 1 .63],...
+                'MarkerSize',10)
+
+for i=1:n
+    text(matchleft(i,1), matchleft(i,2),...
+        mat2str(abs(round( pose(1:3,i)'.*[100 100 1000]))),...
+        'Color','g',...
+    'BackgroundColor',[0 0 0]);
+end
 
 end
 
@@ -123,7 +139,7 @@ I(:,1:size(I1,2),:)=I1; I(:,size(I1,2)+1:size(I1,2)+size(I2,2),:)=I2;
 figure, imshow(I,[]); hold on;
 for i=1:size(matches1,1)
       plot([ matches1(i,1)  matches2(i,1) + size(I1,2)],[ matches1(i,2) matches2(i,2)],...
-                'mo',...
+                '-mo',...
                 'LineWidth',2,...
                 'MarkerEdgeColor','k',...
                 'MarkerFaceColor',[.49 1 .63],...
