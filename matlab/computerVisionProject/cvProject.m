@@ -7,8 +7,8 @@ clc
 leftDataset = load('ZED_video_left.mat');
 rightDataset = load('ZED_video_right.mat'); 
 
-imleft = leftDataset.im(:,:,:,5);
-imright = rightDataset.im(:,:,:,5);
+imleft = leftDataset.im(:,:,:,1);
+imright = rightDataset.im(:,:,:,1);
 
 I1 = double(imleft)/255;
 I2 = double(imright)/255;
@@ -87,7 +87,7 @@ p2    = k2\[matchright'; ones(1, size(matchright,1))];
 % P1 = [ I 0]
 % P2 = [ R|t] ;
 F = estimateFundamentalMatrix(matchleft, matchright,'NumTrials',4000,'Method','RANSAC')
-
+F = getF(matchleft, matchright)
 % essential matrix to find P2
 % property : E = U diag([1 1 0]) V'
 E = k2'*F*k1;
