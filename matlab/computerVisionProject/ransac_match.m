@@ -19,6 +19,7 @@ for k = 1:m
           h zeros(1,3) -imright(k,1)*h];
 end
 
+maxInliers = 0;
 
 while( (nInliers < rate*m) && (numIterations < 100))
 
@@ -43,11 +44,18 @@ while( (nInliers < rate*m) && (numIterations < 100))
 
     inliers = sum(( imright - est).^2,2).^0.5 < threshold;
     nInliers = sum(inliers);
+    
+    if (nInliers > maxInliers )
+        maxInliers = nInliers;
+        tempInliers = inliers;
+    end
+    
     numIterations = numIterations + 1 ;
 end 
 
 numIterations
-bestfit = h_est 
+bestfit = h_est ;
+inliers = tempInliers;
 matches.left =  imleft(inliers,:);
 matches.right = imright(inliers,:);
 

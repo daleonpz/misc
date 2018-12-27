@@ -39,7 +39,7 @@ for i=1:N
     % ratio ssd -
     % bad candidates will have ratios near 1
     [ssd_candidates, ind_candidates] = sort(distance);
-    if ( ssd_candidates(1)/ssd_candidates(2) < 0.5) 
+    if ( ssd_candidates(1)/ssd_candidates(2) < 0.75) 
         matches(i) = ind_candidates(1);
     end
 
@@ -52,13 +52,15 @@ matchleft = double(surfPoints1.Location(cor1,:));
 matchright =  double(surfPoints2.Location(cor2,:));
 
 PlotMatches(I1, I2, matchleft, matchright);
+%showEpipolarLines(I1, I2, matchleft, matchright);
 
-[inliers, bestfit] = ransac_match(matchleft, matchright, 50, 0.7 );
+[inliers, bestfit] = ransac_match(matchleft, matchright, 10, 0.5 ); 
 
 matchleft = inliers.left;
 matchright = inliers.right;
 
 PlotMatches(I1, I2, matchleft, matchright);
+
 
 % intrinsic camera parameters
 % P_image = ICP*P_real 
@@ -76,73 +78,39 @@ k2 = [ 1401.62 0 944.482;
 
 distorCoeffRight = [-0.16997; 0.024937];
 
-ptsleft     = inv(k1)*[matchleft'; ones(1, size(matchleft,1))];
-ptsright    = inv(k2)*[matchright'; ones(1, size(matchright,1))];
+p1    = k1\[matchleft'; ones(1, size(matchleft,1))];
+p2    = k2\[matchright'; ones(1, size(matchright,1))];
 
 
 % Goal
 % Camera matrices R|t
 % P1 = [ I 0]
 % P2 = [ R|t] ;
-F = estimateFundamentalMatrix(matchleft, matchright);
+F = estimateFundamentalMatrix(matchleft, matchright,'NumTrials',4000,'Method','RANSAC')
 
 % essential matrix to find P2
 % property : E = U diag([1 1 0]) V'
 E = k2'*F*k1;
-[U,S,V] = svd(E);
-
-% S is k diag([1 1 0])
-W = [ 0 -1 0; 1 0 0; 0 0 1];
-Z = [ 0 1 0; -1 0 0; 0 0 0];
-
-% E = RS
-% S = [ 0 -Tz Ty; Tz 0 -Tx; -Ty Tx 0]
-% R = rotation matrix
-
-% There are 4 solutions
-S1 = -U*Z*U'; R1 = U*W'*V';
-t1 = [S1(3,2); S1(1,3); S1(2,1)];
-% det(R1) is not 1 is -1
-P2_1 = [R1 t1];
-S2 = U*Z*U' ; R2 = U*W*V';
-t2 = [S2(3,2); S2(1,3); S2(2,1)];
-P2_2 = [R2 t2];
-P2_3 = [R1 t2];
-P2_4 = [R2 t1];
-
 P1 = [eye(3) zeros(3,1)];
-P2 = P2_4;
-
-P2_ = camera2(E);
-
-X = zeros(4,size(matchleft,1));
-
-for i=1:size(matchleft,1)
-    A = [
-        matchleft(i,1)*P1(3,:) - P1(1,:);
-        matchleft(i,2)*P1(3,:) - P1(2,:);
-        matchright(i,1)*P2(3,:) - P2(1,:);
-        matchright(i,2)*P2(3,:) - P2(2,:)];
-
-    [V,~] = eig(A);
-    X(:,i) = V(:,1)/V(end,1);
-end
-figure
-scatter3(X(1,:), X(2,:),X(3,:))
+P2_ = getP2(E);
 
 for i = 1:4
-    P_ = triangulate(k1*P1, matchleft, k2*P2_(:,:,i), matchright);
-    if all(P_(:,3) > 0)
-        P = P_;
+    invP2 = inv([ P2_(:,:,i);[0 0 0 1] ]);
+    pose = findPose( P1, p1, P2_(:,:,i), p2);
+
+    % checking if the pose is in front of the camera
+    P2test = invP2*pose; % reprojection to camera 2
+
+    if all(pose(:,3) > 0) && all(P2test(:,3) > 0)
         P2 = P2_(:,:,i);
+        break;
     end
 end
 
-P1 = k1*P1;
-P2 = k2*P2;
-
 figure
-scatter3(P(:,1),P(:,2),P(:,3));
+plot3(pose(1,:),pose(2,:),pose(3,:),'d');
+axis equal;
+axis vis3d;
 
 end
 
