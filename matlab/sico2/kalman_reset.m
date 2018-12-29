@@ -1,4 +1,4 @@
-function [] = RV_T6_2(ver)
+function [] = kalman_reset(ver)
 %close all
 clc
 
@@ -11,7 +11,7 @@ K = 800;
 
 T = 1;
 
-s_rho = 1e6;
+s_rho = 1e8;
 s_theta = 25;
 
 V = 600;  %Velocidad radial
@@ -50,8 +50,6 @@ y = -68762 +y;
 %Datos reales
 r(1,:) = sqrt( x.^2 + y.^2 );
 r(2,:) = (180/pi) *angle(y+1i*x); 
-figure
-plot(y,x)
 
 %Datos observados
 rm(1,:) = r(1,:) + v_rho;
@@ -62,6 +60,8 @@ if  ver == 1
 else
     re = kalman2(s_rho,s_theta,rm,m,r,n);
 end
+
+plotResults (x,y,  re, rm, n, m, r)
 
 end
 
@@ -98,23 +98,6 @@ for k = 2:m
     re(:,k) = re(:,k) + K*(rm(:,k) - re(1:2,k));
     P = (eye(4) - K*C)*P;
 end
-
-hold on
-y = re(1,:) .* cosd (re(2,:));
-x = re(1,:) .* sind (re(2,:));
-yn = rm(1,:) .*cosd (rm(2,:));
-xn = rm(1,:) .*sind (rm(2,:));
-plot(y(25:m),x(25:m),'r')
-plot(yn(25:m),xn(25:m),'g:')
-legend('Trayectoria Original','Estimada','Con ruido')
-
-figure
-subplot(1,2,1)
-plot(n,re(1,:),n,r(1,:),n,rm(1,:),'r:')
-legend('Posicion Filtrado','Posicion original','Posicion Ruidosa')
-subplot(1,2,2)
-plot(n,re(2,:),n,r(2,:),n,rm(2,:),'r:')
-legend('Angulo Filtrado','Angulo original','Angulo Ruidoso')
 
 end
 
@@ -155,22 +138,47 @@ for k = 2:m
     
 end
 
+end
+
+
+function plotResults (x,y,re, rm, n, m, r)
+linewidth = 3; 
+figure
+plot(y,x,'LineWidth', linewidth)
 hold on
 y = re(1,:) .* cosd (re(2,:));
 x = re(1,:) .* sind (re(2,:));
 yn = rm(1,:) .*cosd (rm(2,:));
 xn = rm(1,:) .*sind (rm(2,:));
-plot(y(25:m),x(25:m),'r')
-plot(yn(25:m),xn(25:m),'g:')
-legend('Trayectoria Original','Estimada','Con ruido')
+plot(yn(25:m),xn(25:m),'g:', 'LineWidth', linewidth)
+plot(y(25:m),x(25:m),'r', 'LineWidth', linewidth)
+title('Trajectory')
+legend('Real value','Measurement', 'Estimated')
+
+
+mse_pos = abs(re(1,:) - r(1,:));
+mse_angle = abs(re(2,:) - r(2,:));
 
 figure
 subplot(1,2,1)
-plot(n,re(1,:),n,r(1,:),n,rm(1,:),'r:')
-legend('Posicion Filtrado','Posicion original','Posicion Ruidosa')
+plot(n,re(1,:),n,rm(1,:),'g:',n,r(1,:),'r', 'LineWidth',linewidth)
+legend( 'Estimated','Measurement','Real value')
+title('Position')
+
 subplot(1,2,2)
-plot(n,re(2,:),n,r(2,:),n,rm(2,:),'r:')
-legend('Angulo Filtrado','Angulo original','Angulo Ruidoso')
+plot(n,mse_pos,'r','LineWidth', linewidth)
+title('MSE Position')
+
+
+figure
+subplot(1,2,1)
+plot(n,re(2,:),n,rm(2,:),'g:',n,r(2,:),'r','LineWidth', linewidth)
+title('Angle')
+legend( 'Estimated','Measurement', 'Real value')
+
+subplot(1,2,2)
+plot(n,mse_angle,'r','LineWidth', linewidth)
+title('MSE Angle')
 
 
 end
