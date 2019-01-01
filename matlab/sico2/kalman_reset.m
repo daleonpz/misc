@@ -60,23 +60,22 @@ if  ver == 1
 else
     re = kalman2(s_rho,s_theta,rm,m,r,n);
 end
-
 plotResults (x,y,  re, rm, n, m, r)
 
 end
 
 function [re]= kalman1(s_rho,s_theta,rm,m,r,n)
 % Prediccion
-re(1,1) = 400000;
-re(2,1) = 150;
-re(3,1) = 600;
-re(4,1) = 330;
+re(1,1) = 400000; %rho
+re(2,1) = 150;% angle
+re(3,1) = 600;% radial speed
+re(4,1) = 330;% direction
 
 % Covariance Matrix, uncentainty around predictions
 P =  diag([s_rho,s_theta,s_rho,s_theta]);%eye(4);
 
 % http://www.bzarg.com/p/how-a-kalman-filter-works-in-pictures/
-% A = F
+% A = F, predicton matrix
 A = [1 0 1 0; 0 1 0 1; 0 0 1 0; 0 0 0 1];
 % C = H , for unit scalation between reading and estimation
 C = [1 0 0 0;0 1 0 0 ]; 
@@ -86,15 +85,16 @@ R = [s_rho 0 ; 0 s_theta];
 
 for k = 2:m
     % next state
+    % Prediction : 
     re(:,k) = A*re(:,k-1); 
     P = A*P*A'; 
   
+    % Update: 
     % Calculando la ganancia Kalman
-    % old
     K = P*C'/( C*P*C' + R); 
 
     % Correccion basada en la observacion
-    %re(:,k) = re(:,k) + K*(rm(:,k) - C*re(1:2,k)); % from tutorial
+    %re(:,k) = re(:,k) + K*(rm(:,k) - C*re(:,k)); % from tutorial
     re(:,k) = re(:,k) + K*(rm(:,k) - re(1:2,k));
     P = (eye(4) - K*C)*P;
 end
