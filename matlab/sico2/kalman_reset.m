@@ -66,10 +66,10 @@ end
 
 function [re]= kalman1(s_rho,s_theta,rm,m,r,n)
 % Prediccion
-re(1,1) = 400000; %rho
+re(1,1) = 400000; % radial distance
 re(2,1) = 150;% angle
-re(3,1) = 600;% radial speed
-re(4,1) = 330;% direction
+re(3,1) = 600;% noise in radial distance
+re(4,1) = 330;% noise in angle
 
 % Covariance Matrix, uncentainty around predictions
 P =  diag([s_rho,s_theta,s_rho,s_theta]);%eye(4);
