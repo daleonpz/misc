@@ -3,10 +3,15 @@ function [P2] = getP2(E)
 % property : E = U diag([1 1 0]) V'
 [U,S,V] = svd(E);
 
+if ( det(U*V') < 0)
+    V = -V;
+end
+
 % we must force S = diag([1 1 0])
-% m = (S(1,1)+S(2,2))/2;
+ m = (S(1,1)+S(2,2))/2;
 % E = U*[m,0,0;0,m,0;0,0,0]*V';
-% [U,S,V] = svd(E);
+ E = U*[1,0,0;0,1,0;0,0,0]*V';
+[U,S,V] = svd(E);
 
 % S is k diag([1 1 0])
 W = [ 0 -1 0; 1 0 0; 0 0 1];
@@ -25,7 +30,7 @@ R1 = U*W'*V';
 R2 = U*W*V';
 t = U(:,3);
 %t = [S1(3,2); S1(1,3); S1(2,1)];
-%t = t/max(t);
+t = t/max(t);
 
 % There are 4 solutions
 P2 = zeros(3,4,4);
@@ -33,11 +38,11 @@ P2(:,:,1) = [R1 t];
 P2(:,:,2) = [R2 t];
 P2(:,:,3) = [R1 -t];
 P2(:,:,4) = [R2 -t];
-
-for k = 1:4
-    if ( det(P2(1:3,1:3,k))<0 )
-        P2(1:3,1:3,k) = -P2(1:3,1:3,k);
-    end
-end
-
+%
+%for k = 1:4
+%    if ( det(P2(1:3,1:3,k))<0 )
+%        P2(1:3,1:3,k) = -P2(1:3,1:3,k);
+%    end
+%end
+%
 end
