@@ -25,6 +25,9 @@ v_theta = s_theta^0.5*randn(size(n));
 rho  = 400000;
 theta = 150;
 
+x = zeros(total_t,1);
+y = x;
+
 % Real Values
 x(1) = rho*sin(theta*pi/180);
 y(1) = rho*cos(theta*pi/180);
@@ -41,8 +44,8 @@ for k = K+1:total_t
     y(k) = y(k-1) + V*cos(R*pi/180)*delta;
 end
 
-y_offset = max(y) 
-x_offset = x(y==y_offset)
+y_offset = max(y); 
+x_offset = x(y==y_offset);
 
 % send the curve to the center
 x = x - x_offset;
@@ -57,16 +60,16 @@ rm(1,:) = r(1,:) + v_rho;
 rm(2,:) = r(2,:) + v_theta;
 
 if  ver == 1
-    re = kalman1(s_rho,s_theta,rm,total_t,r,n);
+    re = kalman1(s_rho,s_theta,rm,total_t);
 else
-    re = kalman2(s_rho,s_theta,rm,total_t,r,n);
+    re = kalman2(s_rho,s_theta,rm,total_t);
 end
 
 plotResults (x,y,  re, rm, n, total_t, r)
 
 end
 
-function [re]= kalman1(s_rho,s_theta,rm,m,r,n)
+function [re]= kalman1(s_rho,s_theta,rm,m)
 % Prediccion
 re(1,1) = 400000; % radial distance
 re(2,1) = 150;% angle
@@ -74,45 +77,39 @@ re(3,1) = 600;% noise in radial distance
 re(4,1) = 330;% noise in angle
 
 % Covariance Matrix, uncentainty around predictions
-%P =  diag([s_rho,s_theta,s_rho,s_theta]);%eye(4);
 P = eye(4);
 
 % http://www.bzarg.com/p/how-a-kalman-filter-works-in-pictures/
-% A = F, predicton matrix
-A = [1 0 1 0; 0 1 0 1; 0 0 1 0; 0 0 0 1];
-% C = H , for unit scalation between reading and estimation
-C = [1 0 0 0;0 1 0 0 ]; 
+
+% Predicton matrix
+F = [1 0 1 0; 0 1 0 1; 0 0 1 0; 0 0 0 1];
+
+% For unit scalation between reading and estimation
+H = [1 0 0 0;0 1 0 0 ]; 
 
 % sensor noise
 R = [s_rho 0 ; 0 s_theta];
 
 for k = 2:m
-    % next state
     % Prediction : 
-    re(:,k) = A*re(:,k-1); 
-    P = A*P*A'; 
+    re(:,k) = F*re(:,k-1); 
+    P       = F*P*F'; 
   
     % Update: 
-    % Calculando la ganancia Kalman
-    K = P*C'/( C*P*C' + R); 
-
-    % Correccion basada en la observacion
-    %re(:,k) = re(:,k) + K*(rm(:,k) - C*re(:,k)); % from tutorial
+    K       = P*H'/( H*P*H' + R); % Kalman Gain
     re(:,k) = re(:,k) + K*(rm(:,k) - re(1:2,k));
-    P = (eye(4) - K*C)*P;
+    P       = (eye(4) - K*H)*P;
 end
 
 end
 
-function [re]= kalman2(s_rho,s_theta,rm,m,r,n)
+function [re]= kalman2(s_rho,s_theta,rm,m)
 % Prediccion
 re(1,1) = 400000;
 re(2,1) = 150;
 re(3,1) = 600;
 re(4,1) = 330;
 
-P =  diag([s_rho,s_theta,s_rho,s_theta]);%eye(4);
-
 P = eye(4);
 A = [1 0 1 0; 0 1 0 1; 0 0 1 0; 0 0 0 1];
 C = [1 0 0 0;0 1 0 0 ]; 
@@ -120,25 +117,24 @@ C = [1 0 0 0;0 1 0 0 ];
 R = [s_rho 0 ; 0 s_theta];
 
 for k = 2:m
+    % Prediction
     re(:,k) = A*re(:,k-1); 
-    P = A*P*A'; 
-  
-    % Calculando la ganancia Kalman
-    K = P*C'/( C*P*C' + R); 
-
-    % Correccion basada en la observacion
-    re(:,k) = re(:,k) + K*(rm(:,k) - re(1:2,k));
-    P = (eye(4) - K*C)*P;
+    P       = A*P*A'; 
     
-        if  abs(re(2,k) - rm(2,k)) > s_theta*4
-                re(1,k) = 400000;
-                re(2,k) = -150;  
-                re(3,k) = 600;
-                re(4,k) = 200;
+    % Update
+    K       = P*C'/( C*P*C' + R); % Kalman Gain
+    re(:,k) = re(:,k) + K*(rm(:,k) - re(1:2,k));
+    P       = (eye(4) - K*C)*P;
+   
+    if  abs(re(2,k) - rm(2,k)) > s_theta*4
+            re(1,k) = 400000;
+            re(2,k) = -150;  
+            re(3,k) = 600;
+            re(4,k) = 200;
 
           P = diag([s_rho,s_theta,s_rho,s_theta]);
 
-        end
+    end
     
 end
 
