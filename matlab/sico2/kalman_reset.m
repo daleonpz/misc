@@ -59,17 +59,13 @@ r(2,:) = (180/pi) *angle(y+1i*x);
 rm(1,:) = r(1,:) + v_rho;
 rm(2,:) = r(2,:) + v_theta;
 
-if  ver == 1
-    re = kalman1(s_rho,s_theta,rm,total_t);
-else
-    re = kalman2(s_rho,s_theta,rm,total_t);
-end
+re = kalman(s_rho,s_theta,rm,total_t, ver);
 
 plotResults (x,y,  re, rm, n, total_t, r)
 
 end
 
-function [re]= kalman1(s_rho,s_theta,rm,m)
+function [re]= kalman(s_rho,s_theta,rm,m, version)
 % Prediccion
 re(1,1) = 400000; % radial distance
 re(2,1) = 150;% angle
@@ -97,44 +93,19 @@ for k = 2:m
     K       = P*H'/( H*P*H' + R); % Kalman Gain
     re(:,k) = re(:,k) + K*(rm(:,k) - re(1:2,k));
     P       = (eye(4) - K*H)*P;
-end
 
-end
+    if ( version == 2)
+        if  abs(re(2,k) - rm(2,k)) > s_theta*4
+                re(1,k) = 400000;
+                re(2,k) = -150;  
+                re(3,k) = 600;
+                re(4,k) = 200;
 
-function [re]= kalman2(s_rho,s_theta,rm,m)
-% Prediccion
-re(1,1) = 400000;
-re(2,1) = 150;
-re(3,1) = 600;
-re(4,1) = 330;
+              P = diag([s_rho,s_theta,s_rho,s_theta]);
 
-P = diag([s_rho,s_theta,s_rho,s_theta]);
-F = [1 0 1 0; 0 1 0 1; 0 0 1 0; 0 0 0 1];
-H = [1 0 0 0;0 1 0 0 ]; 
-
-R = [s_rho 0 ; 0 s_theta];
-
-for k = 2:m
-    % Prediction
-    re(:,k) = F*re(:,k-1); 
-    P       = F*P*F'; 
-    
-    % Update
-    K       = P*H'/( H*P*H' + R); % Kalman Gain
-    re(:,k) = re(:,k) + K*(rm(:,k) - re(1:2,k));
-    P       = (eye(4) - K*H)*P;
-   
-    if  abs(re(2,k) - rm(2,k)) > s_theta*4
-            re(1,k) = 400000;
-            re(2,k) = -150;  
-            re(3,k) = 600;
-            re(4,k) = 200;
-
-          P = diag([s_rho,s_theta,s_rho,s_theta]);
-
+        end
     end
-    
-end
+ end
 
 end
 
