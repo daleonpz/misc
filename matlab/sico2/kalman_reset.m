@@ -77,9 +77,7 @@ re(3,1) = 600;% noise in radial distance
 re(4,1) = 330;% noise in angle
 
 % Covariance Matrix, uncentainty around predictions
-P = eye(4);
-
-% http://www.bzarg.com/p/how-a-kalman-filter-works-in-pictures/
+P = diag([s_rho,s_theta,s_rho,s_theta]);
 
 % Predicton matrix
 F = [1 0 1 0; 0 1 0 1; 0 0 1 0; 0 0 0 1];
@@ -110,21 +108,21 @@ re(2,1) = 150;
 re(3,1) = 600;
 re(4,1) = 330;
 
-P = eye(4);
-A = [1 0 1 0; 0 1 0 1; 0 0 1 0; 0 0 0 1];
-C = [1 0 0 0;0 1 0 0 ]; 
+P = diag([s_rho,s_theta,s_rho,s_theta]);
+F = [1 0 1 0; 0 1 0 1; 0 0 1 0; 0 0 0 1];
+H = [1 0 0 0;0 1 0 0 ]; 
 
 R = [s_rho 0 ; 0 s_theta];
 
 for k = 2:m
     % Prediction
-    re(:,k) = A*re(:,k-1); 
-    P       = A*P*A'; 
+    re(:,k) = F*re(:,k-1); 
+    P       = F*P*F'; 
     
     % Update
-    K       = P*C'/( C*P*C' + R); % Kalman Gain
+    K       = P*H'/( H*P*H' + R); % Kalman Gain
     re(:,k) = re(:,k) + K*(rm(:,k) - re(1:2,k));
-    P       = (eye(4) - K*C)*P;
+    P       = (eye(4) - K*H)*P;
    
     if  abs(re(2,k) - rm(2,k)) > s_theta*4
             re(1,k) = 400000;
@@ -144,7 +142,7 @@ end
 function plotResults (x,y,re, rm, n, m, r)
 
 linewidth = 3; 
-figure; plot(y,x,'LineWidth', linewidth)
+figure; plot(y,x,'b','LineWidth', linewidth)
 hold on
 y = re(1,:) .* cosd (re(2,:));
 x = re(1,:) .* sind (re(2,:));
