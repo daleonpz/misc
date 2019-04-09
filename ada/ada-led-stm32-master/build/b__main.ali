@@ -1,0 +1,81 @@
+V "GNAT Lib v2017"
+A -gnatA
+A --RTS=/usr/gnat-elf/arm-eabi/lib/gnat/ravenscar-full-stm32f4/
+A -mlittle-endian
+A -mfloat-abi=hard
+A -mcpu=cortex-m4
+A -mfpu=fpv4-sp-d16
+A -mthumb
+A -gnatA
+A -gnatWb
+A -gnatiw
+A -gnatws
+A -mlittle-endian
+A -mfloat-abi=hard
+A -mcpu=cortex-m4
+A -mfpu=fpv4-sp-d16
+A -mthumb
+P DB ZX
+
+RN
+RV NO_IMPLEMENTATION_ATTRIBUTES
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_OBSOLESCENT_FEATURES
+RV SPARK_05
+
+U ada_main%b		b__main.adb		f9b2e103 NE OO PK IL
+W system%s		system.ads		system.ali
+
+U ada_main%s		b__main.ads		b546578a EE NE OO PK IL
+W system%s		system.ads		system.ali
+
+D b__main.ads		20190409144211 6ec5420b ada_main%s
+D b__main.adb		20190409144211 9777a308 ada_main%b
+D system.ads		20170517144320 db831581 system%s
+X 1 b__main.ads
+4K9*ada_main 148l5 148e13 2|7b14 143l5 143t13
+7a4*GNAT_Version{string} 9r22
+11a4*Ada_Main_Program_Name{string} 12r22 2|122r52
+14U14*adainit 15i<c,adainit>22 2|36b14 109l8 109t15 127s7
+17U14*adafinal 18i<c,adafinal>22 2|20b14 34l8 34t16 129s7
+20U14*main 21i<c,main>22 2|114b14 131t7
+X 2 b__main.adb
+9i4 E095{short_integer} 9m46 9r46 102m7 102r15
+10i4 E053{short_integer} 10m46 10r46 105m7 105r15
+11i4 E051{short_integer} 11m46 11r46 100m7 100r15
+12i4 E109{short_integer} 12m46 12r46 104m7 104r15
+13i4 E006{short_integer} 13m46 13r46 107m7 107r15
+15a4 Local_Priority_Specific_Dispatching{string} 86r9
+16a4 Local_Interrupt_States{string} 89r27
+18b4 Is_Elaborated{boolean} 28r14 31m7 75r10 78m7
+21U17*s_stalib_adafinal 22b<c,system__standard_library__adafinal>25 33s7
+24U17*Runtime_Finalize 25b<c,__gnat_runtime_finalize>25 32s7
+37i7*Main_Priority{integer} 38m25 38r25 79m7
+39i7*Time_Slice_Value{integer} 40m25 40r25 80m7
+41e7*WC_Encoding{character} 42m25 42r25 81m7
+43e7*Locking_Policy{character} 44m25 44r25 82m7
+45e7*Queuing_Policy{character} 46m25 46r25 83m7
+47e7*Task_Dispatching_Policy{character} 48m25 48r25 84m7
+49m7*Priority_Specific_Dispatching{3|80M9} 50m25 50r25 85m7
+51i7*Num_Specific_Dispatching{integer} 52m25 52r25 87m7
+53i7*Main_CPU{integer} 54m25 54r25 88m7
+55m7*Interrupt_States{3|80M9} 56m25 56r25 89m7
+57i7*Num_Interrupt_States{integer} 58m25 58r25 90m7
+59i7*Unreserve_All_Interrupts{integer} 60m25 60r25 91m7
+61i7*Detect_Blocking{integer} 62m25 62r25 92m7
+63i7*Default_Stack_Size{integer} 64m25 64r25 93m7
+65i7*Leap_Seconds_Support{integer} 66m25 66r25 94m7
+67m7*Bind_Env_Addr{3|80M9} 68m25 68r25
+70U17*Runtime_Initialize 70>37 71b<c,__gnat_runtime_initialize>25 96s7
+70i37 Install_Handler{integer}
+72U17*Start_Slave_CPUs 73b<c,__gnat_start_slave_cpus>25 108s7
+111U14 Ada_Main_Program 112b<ada,_ada_main>24 128s7
+115U17*Initialize 115>29 116b<c,__gnat_initialize>25 126s7
+115m29 Addr{3|80M9}
+118U17*Finalize 119b<c,__gnat_finalize>25 130s7
+120a7 SEH(integer) 126m19 126r19
+122m7 Ensure_Reference{3|80M9} 123r24
+X 3 system.ads
+50K9*System 1|3w6 2|49r39 55r26 67r23 115r36 122r34 3|164e11
+80M9*Address 2|49r46 55r33 67r30 115r43 122r41
+
