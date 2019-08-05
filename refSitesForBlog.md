@@ -18,3 +18,8 @@ Sites to use as reference when creating a new post for blog
 - [reference](https://themes.gohugo.io//theme/KeepIt/): i want my homepage to look similar to that one
 - [reference](https://adueck.github.io/good-clean-read/): i thought about it, but  i kinda like more the other post template 
 - [comments](https://www.talkyard.io/plans-blog-comments): to add comments (up to 100 comments for "free"/0.5 Euro, but then it can be 4euro because i'm from Peru 
+- [ref ](https://themes.gohugo.io/theme/hugo-theme-yuki/) for blog
+
+## Things to check later
+- [smartpassiveincome](https://www.smartpassiveincome.com/)
+- [seo dinge](https://www.matthewwoodward.co.uk/seo/)
