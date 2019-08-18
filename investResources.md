@@ -18,7 +18,8 @@ title: resources
 # Books I read or reading
 - Rich Dad, poor dad
 - Money Master the game
-
+- The Dhandho Investor
+- Intelligent Investor
 
 # Book to read
 - Real Estate Crowdfunding Explained: How to get in on the explosive growth of the real estate crowdfunding industry
