@@ -21,6 +21,7 @@ Sites to use as reference when creating a new post for blog
 - [ref ](https://themes.gohugo.io/theme/hugo-theme-yuki/) for blog
 - [landing page](http://artemsheludko.com/adam-blog/): new ref
 - [other landing page](https://lenpaul.github.io/Millennial/): new ref
+- [Monetize](https://opencollective.com/): similar to patreon
 
 ## Things to check later
 - [smartpassiveincome](https://www.smartpassiveincome.com/)
