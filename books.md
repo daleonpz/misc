@@ -16,5 +16,7 @@
 - How To Sell Your Way Through Life by Napoleon Hill
 - The 4-Hour Work Week-Harmony by Timothy Ferriss
 
-
+# zu kaufen
+- Building Wealth One House at a Time: Making it Big on Little Deals by John Schaub
+- How I Turned $1,000 into a Million in Real Estate in My Spare Time by William Nickerson
 
