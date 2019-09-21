@@ -1,4 +1,3 @@
-- The Intelligent Investor by Benjamin Graham
 
 # schon gelesen
 ## 2019
@@ -9,6 +8,7 @@
 - Rich Dad, Poor Dad by Robert Kiyosaki
 - The Dhandho Investor by Mohnish Pabrai
 - The Richest Man In Babylon by George Clason
+- The Intelligent Investor by Benjamin Graham
 - 
 
 # naechsten buecher
