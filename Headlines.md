@@ -10,6 +10,7 @@ title: Headlines
 - Why men crack...
 - How three trunks of India Madras started Yale University
 - The man in the Hathaway shirt
+- Have you ever wondered what you would look like with a "million dollar smile"?
 
 
 
