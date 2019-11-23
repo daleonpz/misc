@@ -11,6 +11,9 @@ title: Headlines
 - How three trunks of India Madras started Yale University
 - The man in the Hathaway shirt
 - Have you ever wondered what you would look like with a "million dollar smile"?
+- Coach Stahl wants *you* to walk to Seatle!
+- *To People Who Want to Write* but can't get started
+
 
 
 
