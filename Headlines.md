@@ -13,7 +13,10 @@ title: Headlines
 - Have you ever wondered what you would look like with a "million dollar smile"?
 - Coach Stahl wants *you* to walk to Seatle!
 - *To People Who Want to Write* but can't get started
-
+- Who else wants a whiter wash - with no hard work
+- Now! Run your car without spark plugs
+- How to win friends and influence people
+- When doctors feel rotten - this is what they do
 
 
 
