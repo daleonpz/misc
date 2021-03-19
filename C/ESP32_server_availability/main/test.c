@@ -68,7 +68,6 @@ void availability_check (void *pvParameter){
             default:
                 gpio_set_level(LED_RED,0);
                 gpio_set_level(LED_GREEN,0);
-                break;
         vTaskDelay(1000 / portTICK_PERIOD_MS);
         }
     }
