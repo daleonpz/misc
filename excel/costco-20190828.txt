@@ -1,0 +1,27 @@
+# Log
+# Get Raw Data
+- Get the raw data from the income statement, balance sheet, cashflow last X years (2015 - 2019). 10-K
+- Know the currency of the data.
+- Know the Date of the data. When possible use the most recent data.
+
+# Historical Changes 
+
+1. Income Statement
+- Clean data and organize data
+- Calculate the growth rate of each item of the revenue
+- Calculate drivers rate for Merchandise, Services, Depreciation, Preopening, and other expenses
+- Create initial forecast using the last driver rate as proxy.
+
+2. Balance Sheet
+- Clean data and organize data
+- Calculate drivers rate for :
+    - Assets: cash and cash equivalents, receviables, inventories, PPE, Other current assets, other assets
+    - Liabilities: accounts payable, accrued expenses, deferred revenue
+
+3. Taxes
+- Get Taxes reconciliation from 10-K
+- Forecast operating taxes using the last tax rate as proxy
+- Calcurate Operating Taxes deferred using 10-K data
+
+4. Balance Sheet
+- Use Operating taxes to forecast deferred taxes
