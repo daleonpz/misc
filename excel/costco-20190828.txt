@@ -40,3 +40,9 @@
 - Non-controlling interest stay the same
 - Calculate shareholders equity
 
+7. Income Statement
+- Estimate interest income from excess cash (t-1)
+- Use Income(t) to calculate excess cash(t)
+- Income Statment complete
+
+8. Calculate Invested capital, operating current assets, operating current liabilities, and total fund invested
