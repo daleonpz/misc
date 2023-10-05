@@ -30,3 +30,13 @@
 5. Income Statement
 - Use table 13.8 from valuation book to forecast provision for income taxes
 - Non-controlling interest as a groth rate of net income
+
+6. Balance Sheet
+- Estimate total debt using growth rate of total debt
+- Estimate long-term debt, current portion of long-term debt, and capital lease obligations using total debt
+- Other liabilities as a percentage of total revenue
+- Other current liabilities using days revenue 
+- E = A - L 
+- Non-controlling interest stay the same
+- Calculate shareholders equity
+
