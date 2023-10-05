@@ -46,3 +46,9 @@
 - Income Statment complete
 
 8. Calculate Invested capital, operating current assets, operating current liabilities, and total fund invested
+
+9. Create FCF
+- Estimate NOPAT
+- Fill the entries for FCF
+
+
