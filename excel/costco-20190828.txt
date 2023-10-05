@@ -16,7 +16,8 @@
 - Clean data and organize data
 - Calculate drivers rate for :
     - Assets: cash and cash equivalents, receviables, inventories, PPE, Other current assets, other assets
-    - Liabilities: accounts payable, accrued expenses, deferred revenue
+    - Liabilities: accounts payable, accrued expenses, deferred revenue, accrued member rewards
+    - Total Debt
 
 3. Taxes
 - Get Taxes reconciliation from 10-K
@@ -25,3 +26,7 @@
 
 4. Balance Sheet
 - Use Operating taxes to forecast deferred taxes
+
+5. Income Statement
+- Use table 13.8 from valuation book to forecast provision for income taxes
+- Non-controlling interest as a groth rate of net income
