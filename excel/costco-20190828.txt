@@ -51,4 +51,12 @@
 - Estimate NOPAT
 - Fill the entries for FCF
 
+10. Calculate WACC
+
+11. Calculate Terminal Value
+
+12. Calculate Intrinsic Value
+
+13. Calculate Margin of Safety
+
 
